@@ -1,0 +1,823 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Sheet
+Q1) Which of the following instance types are available as Amazon EBS-backed only? (Choose 2 answers)
+Compute-optimized C3
+Compute-optimized C4
+General purpose M3
+General purpose T2
+Storage-optimized 12
+Q2) Which of the following notification endpoints or clients are supported by Amazon Simple Notification Service? (Choose 2
+answers)
+Simple Network Management Protocol
+Short Message Service
+File Transfer Protocol
+CloudFront distribution
+Email
+Q3) A company is building software on AWS that requires access to various AWS services. Which configuration should be used to
+ensure mat AWS credentials (i.e., Access Key ID/Secret Access Key combination) are not compromised?
+Assign an IAM role to the Amazon EC2 instance.
+Store the AWS Access Key ID/Secret Access Key combination in software comments.
+Enable Multi-Factor Authentication for your AWS root account. 
+Explanation:-Refer: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html
+Assign an IAM user to the Amazon EC2 Instance.
+Q4)
+You manually launch a NAT AMI in a public subnet. The network is properly configured. Security groups and network access control
+lists are property configured. Instances in a private subnet can access the NAT. The NAT can access the Internet. However, private
+instances cannot access the Internet.
+What additional step is required to allow access from the private instances?
+Enable Source/Destination Check on the private Instances.
+Enable Source/Destination Check on the NAT instance.
+Disable Source/Destination Check on the private instances.
+Disable Source/Destination Check on the NAT instance. 
+Explanation:-Disabling source/destination checks. In the navigation pane, choose Instances. Select the NAT instance, choose Actions, Networking,
+Change Source/Dest. For the NAT instance, verify that this attribute is disabled. Refer:
+https://docs.aws.amazon.com/vpc/latest/userguide/VPC_NAT_Instance.html
+Q5) A company is deploying a two-tier, highly available web application to AWS. Which service provides durable storage for static
+content while utilizing lower Overall CPU resources for the web tier?
+Amazon EC2 instance store
+Amazon S3 
+Explanation:- Amazon Simple Storage Service is storage for the Internet. It is designed to make web-scale computing easier for developers. Amazon S3
+has a simple web services interface that you can use to store and retrieve any amount of data, at any time, from anywhere on the web. Refer:
+https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html
+Amazon EBS volume
+Amazon RDS instance
+Q6) The Trusted Advisor service provides insight regarding which four categories of an AWS account?
+Performance, cost optimization, access control, and connectivity
+Performance, cost optimization, security, and fault tolerance 
+Explanation:-AWS Trusted Advisor provides best practices in four categories: cost optimization, security, fault tolerance, and performance improvement.
+Refer:
+https://www.amazonaws.cn/en/support/trustedadvisor/#:~:text=AWS%20Trusted%20Advisor%20provides%20best,fault%20tolerance%2C%20and%20performance%20improvement.
+Security, access control, high availability, and performance
+Security, fault tolerance, high availability, and connectivity
+Q7) Which of the following are true regarding encrypted Amazon Elastic Block Store (EBS) volumes? (Choose 2 answers)
+Available to all instance types
+Snapshots are automatically encrypted 
+Explanation:-This feature is supported on all Amazon EBS volume types (General Purpose (SSD), Provisioned IOPS (SSD), and Magnetic). You can
+access encrypted Amazon EBS volumes the same way you access existing volumes; encryption and decryption are handled transparently and they require
+no additional action from you, your Amazon EC2 instance, or your application. Snapshots of encrypted Amazon EBS volumes are automatically encrypted,
+and volumes that are created from encrypted Amazon EBS snapshots are also au
+Supported on all Amazon EBS volume types 
+Explanation:-This feature is supported on all Amazon EBS volume types (General Purpose (SSD), Provisioned IOPS (SSD), and Magnetic). You can
+access encrypted Amazon EBS volumes the same way you access existing volumes; encryption and decryption are handled transparently and they require
+no additional action from you, your Amazon EC2 instance, or your application. Snapshots of encrypted Amazon EBS volumes are automatically encrypted,
+and volumes that are created from encrypted Amazon EBS snapshots are also au
+Existing volumes can be encrypted
+shared volumes can be encrypted
+Q8) When will you incur costs with an Elastic IP address (EIP)?
+When it is allocated and associated with a running instance.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When it is allocated and associated with a stopped instance.
+Costs are incurred regardless of whether the EIP is associated with a running instance.
+When an EIP is allocated. 
+Explanation:-An Elastic IP address doesn’t incur charges as long as all the following conditions are true:
+The Elastic IP address is associated with an EC2 instance. 
+The instance associated with the Elastic IP address is running.
+The instance has only one Elastic IP address attached to it. 
+Note: If the address is from a BYOIP address pool, you're never charged for that address. 
+Refer: https://aws.amazon.com/premiumsupport/knowledge-center/elastic-ip-charges/
+Q9) Which set of Amazon S3 features helps to prevent and recover from accidental data loss?
+Access controls and server-side encryption
+Object versioning and Multi-factor authentication 
+Explanation:-With S3 Versioning, you can easily preserve, retrieve, and restore every version of an object stored in Amazon S3, which allows you to
+recover from unintended user actions and application failures. To prevent accidental deletions, enable Multi-Factor Authentication (MFA) Delete on an S3
+bucket. Refer: https://aws.amazon.com/s3/features/#:~:text=With%20S3%20Versioning%2C%20you%20can,Delete%20on%20an%20S3%20bucket.
+Object lifecycle and service access logging
+Website hosting and Amazon S3 policies
+Q10)
+You have a load balancer configured for VPC, and all back-end Amazon EC2 instances are in service. However, your web browser
+times out when connecting to the load balancer's DNS name.
+Which options are probable causes of this behavior? (Choose 2 answers)
+The load balancer is not configured in a private subnet with a NAT instance.
+The security groups or network ACLs are not property configured for web traffic.
+The Amazon EC2 instances do not have a dynamically allocated private IP address
+The load balancer was not configured to use a public subnet with an Internet gateway configured
+The VPC does not have a VGW configured.
+Q11)
+A company is deploying a new two-tier web application in AWS. The company has limited staff and requires high availability, and the
+application requires complex queries and table joins.
+Which configuration provides the solution for the company's requirements?
+MySQL Installed on two Amazon EC2 Instances in a single Availability Zone
+Amazon RDS for MySQL with Multi-AZ
+Amazon ElastiCache
+Amazon DynamoDB 
+Explanation:-Amazon DynamoDB is a key-value and document database that delivers single-digit millisecond performance at any scale. It's a fully
+managed, multiregion, multimaster, durable database with built-in security, backup and restore, and in-memory caching for internet-scale applications.
+Refer: https://aws.amazon.com/dynamodb/
+Q12) You need to pass a custom script to new Amazon Linux instances created in your Auto Scaling group. Which feature allows you
+to accomplish this?
+EC2Config service 
+Explanation:-Windows AMIs for Windows Server 2012 R2 and earlier include an optional service, the EC2Config service ( EC2Config.exe ). EC2Config
+starts when the instance boots and performs tasks during startup and each time you stop or start the instance. EC2Config can also perform tasks on
+demand. Refer: https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2config-service.html
+User data
+IAM roles
+AWS Config
+Q13)
+You have a distributed application that periodically processes large volumes of data across multiple Amazon EC2 Instances. The
+application is designed to recover gracefully from Amazon EC2 instance failures. You are required to accomplish this task in the most
+costeffective way.
+Which of the following will meet your requirements?
+Reserved instances
+Spot Instances 
+Explanation:-A Spot Instance is an unused EC2 instance that is available for less than the On-Demand price. Because Spot Instances enable you to
+request unused EC2 instances at steep discounts, you can lower your Amazon EC2 costs significantly. The hourly price for a Spot Instance is called a Spot
+price. Refer: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html
+Dedicated instances
+On-Demand instances
+Q14) What is the minimum time Interval for the data that Amazon CloudWatch receives and aggregates?
+One minute 
+Explanation:-The minimum resolution supported by CloudWatch is 1-second data points, which is a high-resolution metric, or you can store metrics at 1-
+minute granularity. Sometimes metrics are received by Cloudwatch at varying intervals, such as 3-minute or 5-minute intervals. If you do not specify that a
+metric is high resolution, by setting the StorageResolution field in the PutMetricData API request, then by default CloudWatch will aggregate and store the
+metrics at 1-minute resolution. Depending on the age of data requested, metrics will be available at the resolutions defined in the retention schedules
+above. For example, if you request for 1-minute data for a day from 10 days ago, you will receive the 1440 data points. However, if you request for 1-minute
+data from 5 months back, the UI will automatically change the granularity to 1-hour and the GetMetricStatistics API will not return any output. Refer:
+https://aws.amazon.com/cloudwatch/faqs/
+Five seconds
+One second
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Three minutes
+Five minutes
+Q15) How are snapshots for an EBS volume created when it is the root device for an instance?
+Pause instance, unmount volume and snapshot
+Terminate instance and snapshot
+Unencrypt volume and snapshot dynamically
+Stop instance, unmount volume and snapshot 
+Explanation:-You can take a snapshot of an attached volume that is in use. However, snapshots only capture data that has been written to your Amazon
+EBS volume at the time the snapshot command is issued. This might exclude any data that has been cached by any applications or the operating system. If
+you can pause any file writes to the volume long enough to take a snapshot, your snapshot should be complete. However, if you can't pause all file writes
+to the volume, you should unmount the volume from within the instance, issue the snapshot command, and then remount the volume to ensure a consistent
+and complete snapshot. You can remount and use your volume while the snapshot status is pending. Refer:
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html
+Q16) What cloud compute components are configured by tenants and not Amazon AWS support engineers? (Select three)
+Guest operating system
+Virtual appliances
+Upstream physical switch
+Hypervisor
+Applications and databases
+RDS
+Q17) What three attributes are used to define a launch configuration template for an Auto-Scaling group?
+Private IP address
+Instance type 
+Explanation:-Keep the following considerations in mind when creating a launch template for use with an Auto Scaling group:
+Launch templates give you the flexibility of launching one type of instance, or a combination of instance types and On-Demand and Spot purchase options.
+For more information, see Auto Scaling Groups with Multiple Instance Types and Purchase Options. Launching instances with such a combination is not
+supported:
+If you specify a Spot Instance request in Additional Details
+In EC2-Classic
+If you configure a network type (VPC or EC2-Classic), subnet, and Availability Zone for your template, these settings are ignored in favor of what is
+specified in the Auto Scaling group.
+If you specify a network interface, you must configure the security group as part of the network interface, and not in the Security Groups section of the
+template.
+You cannot specify multiple network interfaces.
+You cannot assign specific private IP addresses. When an instance launches, a private address is allocated from the CIDR range of the subnet in which the
+instance is launched. For more information on specifying CIDR ranges for your VPC or subnet, see the Amazon VPC User Guide.
+To specify an existing network interface to use, its device index must be 0 (eth0). For this scenario, you must use the CLI or API to create the Auto Scaling
+group. When you create the group using the CLI create-auto-scaling-group command or API CreateAutoScalingGroup action, you must specify the
+Availability Zones parameter instead of the subnet (VPC zone identifier) parameter.
+You cannot use host placement affinity or target a specific host by choosing a host ID.
+Support for Dedicated Hosts (host tenancy) is only available if you specify a host resource group. For more information, see Host Resource Groups in the
+AWS License Manager User Guide. Note that each AMI based on a license configuration association can be mapped to only one host resource group at a
+time.
+Refer: https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html
+Elastic IP
+Security group
+AMI
+Q18) What three characteristics or limitations differentiate EC2 instance types?
+Virtualization type
+EBS volume only
+Application type
+VPC only 
+Explanation:-When you launch an instance, the instance type that you specify determines the hardware of the host computer used for your instance. Each
+instance type offers different compute, memory, and storage capabilities and are grouped in instance families based on these capabilities. Select an
+instance type based on the requirements of the application or software that you plan to run on your instance. Refer:
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html
+AWS service selected
+Q19) Select two difference between HVM and PV virtualization types?
+HVM doesn’t support enhanced networking
+PV provides better performance than HVM for most instance types
+HVM is similar to bare metal hypervisor architecture
+HVM supports all current generation instance types 
+Explanation:-Linux Amazon Machine Images use one of two types of virtualization: paravirtual (PV) or hardware virtual machine (HVM). The main
+differences between PV and HVM AMIs are the way in which they boot and whether they can take advantage of special hardware extensions (CPU,
+network, and storage) for better performance.
+Paravirtual guests traditionally performed better with storage and network operations than HVM guests because they could leverage special drivers for I/O
+that avoided the overhead of emulating network and disk hardware, whereas HVM guests had to translate these instructions to emulated hardware. Now
+PV drivers are available for HVM guests, so operating systems that cannot be ported to run in a paravirtualized environment can still see performance
+advantages in storage and network I/O by using them. With these PV on HVM drivers, HVM guests can get the same, or better, performance than
+paravirtual guests.
+Refer:
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html#:~:text=Linux%20Amazon%20Machine%20Images%20use,and%20storage)%20for%20better%20performance.
+HVM doesn’t support current generation instance types
+Q20)
+A customer is running a multi-tier web application farm in a virtual private cloud (VPC) that is not connected to their corporate
+network. They are connecting to the VPC over the Internet to manage all of their Amazon EC2 instances running in both the public
+and private subnets. They have only authorized the bastion-security-group with Microsoft Remote Desktop Protocol (RDP) access to
+the application instance security groups, but the company wants to further limit administrative access to all of the instances in the
+VPC.
+Which of the following Bastion deployment scenarios will meet this requirement?
+Deploy a Windows Bastion host with an auto-assigned Public IP address in the public subnet, and allow RDP access to the bastion from only the
+corporate public IP addresses.
+Deploy a Windows Bastion host with an Elastic IP address in the private subnet, and restrict RDP access to the bastion from only the corporate public
+IP addresses.
+Deploy a Windows Bastion host with an Elastic IP address in the public subnet and allow SSH access to the bastion from anywhere.
+Deploy a Windows Bastion host on the corporate network that has RDP access to all instances in the VPC.
+Q21) Which of the following statements are true about Amazon Route 53 resource records? (Choose 2 answers)
+An Amazon Route 53 Alias record can point to any DNS record hosted anywhere.
+TTL can be set for an Alias record in Amazon Route 53.
+An Amazon Route 53 CNAME record can point to any DNS record hosted anywhere.
+A CNAME record can be created for your zone apex.
+An Alias record can map one DNS name to another Amazon Route 53 DNS name.
+Q22)
+You are building an automated transcription service in which Amazon EC2 worker instances process an uploaded audio file and
+generate a text file. You must store both of these files in the same durable storage until the text file is retrieved. You do not know
+what the storage capacity requirements are.
+Which storage option is both cost-efficient and scalable?
+A single Amazon S3 bucket 
+Explanation:-Refer: https://aws.amazon.com/s3/
+A single Amazon Glacier vault
+Multiple Amazon EBS volume with snapshots
+Multiple instance stores
+Q23) Which of the following are true regarding AWS CloudTrail? (Choose 3 answers)
+Logs can be delivered to a single Amazon S3 bucket for aggregation.
+CloudTrail is enabled on a per-service basis.
+CloudTrail is enabled on a per-region basis
+CloudTrail is enabled by default
+CloudTrail is enabled globally
+CloudTrail is enabled for all available services within a region.
+Q24) You have a content management system running on an Amazon EC2 instance that is approaching 100% CPU utilization. Which
+option will reduce load on the Amazon EC2instance?
+Create a launch configuration from the instance using the CreateLaunchConfiguration action
+Create an Auto Scaling group from the instance using the CreateAutoScalingGroup action
+Create a CloudFront distribution, and configure the Amazon EC2 instance as the origin 
+Explanation:-Refer: https://aws.amazon.com/cloudfront/getting-started/EC2/
+Create a load balancer, and register the Amazon EC2 instance with it
+Q25) A t2.medium EC2 instance type must be launched with what type of Amazon Machine Image (AMI)?
+An Amazon EBS-backed Hardware Virtual Machine AMI 
+Explanation:-Virtualization type: Choose whether instances launched from this AMI use paravirtual (PV) or hardware virtual machine (HVM) virtualization.
+Refer: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html
+An Instance store Paravirtual AMI
+An Instance store Hardware Virtual Machine AMI
+An Amazon EBS-backed Paravirtual AMI
+Q26)
+A US-based company is expanding their web presence into Europe. The company wants to extend their AWS infrastructure from
+Northern Virginia (us-east-1) into the Dublin (eu-west1) region.
+Which of the following options would enable an equivalent experience for users on both continents?
+Use Amazon Route 53, and apply a weighted routing policy to distribute traffic across both regions.
+Use Amazon Route 53, and apply a geolocation routing policy to distribute traffic across both regions.
+Use a public-facing load balancer per region to load-balance web traffic, and enable sticky sessions.
+Use a public-facing load balancer per region to load-balance web traffic, and enable HTTP health checks.
+Q27)
+A customer wants to track access to their Amazon Simple Storage Service (S3) buckets and also use this information for their internal
+security and access audits.
+Which of the following will meet the Customer requirement?
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Enable server access logging for all required Amazon S3 buckets.
+Enable the Requester Pays option to track access via AWS Billing
+Enable AWS CloudTrail to audit all Amazon S3 bucket access. 
+Explanation:-Choose Properties. Choose Object-level logging. Choose an existing CloudTrail trail in the drop-down menu. The trail you select must be in
+the same AWS Region as your bucket, so the drop-down list contains only trails that are in the same Region as the bucket or trails that were created for all
+Regions. Refer: https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-cloudtrail-
+events.html#:~:text=Choose%20Properties.,were%20created%20for%20all%20Regions.
+Enable Amazon S3 event notifications for Put and Post.
+Q28)
+A company has an AWS account that contains three VPCs (Dev, Test, and Prod) in the same region. Test is peered to both Prod and
+Dev. All VPCs have non-overlapping CIDR blocks. The company wants to push minor code releases from Dev to Prod to speed up
+time to market.
+Which of the following options helps the company accomplish this?
+The VPCs have non-overlapping CIDR blocks in the same account. The route tables contain local routes for all VPCs.
+Attach a second gateway to Dev. Add a new entry in the Prod route table identifying the gateway as the target.
+Create a new entry to Prod in the Dev route table using the peering connection as the target.
+Create a new peering connection Between Prod and Dev along with appropriate routes.
+Q29) Which of the following are use cases for Amazon DynamoDB? (Choose 3 answers)
+Storing metadata for Amazon S3 objects.
+Storing JSON documents. 
+Explanation:-Storing large amounts of infrequently accessed data. Amazon DynamoDB is ideal for existing or new applications that need a flexible NoSQL
+database with low read and write latencies, and the ability to scale storage and throughput up or down as needed without code changes or downtime.
+Refer: https://aws.amazon.com/dynamodb/#:~:text=Use%20cases-,Ad%20Tech,%2C%20ad%20targeting%2C%20and%20attribution.
+Managing web sessions.
+Storing BLOB data.
+Running relational joins and complex updates.
+Storing large amounts of infrequently accessed data.
+Q30)
+You are designing a web application that stores static assets in an Amazon Simple Storage Service (S3) bucket. You expect this
+bucket to immediately receive over 150 PUT requests per second.
+What should you do to ensure optimal performance?
+Add a random prefix to the key names.
+Amazon S3 will automatically manage performance at this scale.
+Use a predictable naming scheme, such as sequential numbers or date time sequences, in the key names
+Use multi-part upload. 
+Explanation:-Multipart upload allows you to upload a single object as a set of parts. Each part is a contiguous portion of the object's data. You can upload
+these object parts independently and in any order. If transmission of any part fails, you can retransmit that part without affecting other parts. Refer:
+https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html#:~:text=Multipart%20upload%20allows%20you%20to,part%20without%20affecting%20other%20parts.
+Q31) What deployment service enables tenants to replicate an existing AWS stack?
+CloudFormation 
+Explanation:-AWS CloudFormation is a service that gives developers and businesses an easy way to create a collection of related AWS and third party
+resources and provision them in an orderly and predictable fashion. Refer: https://aws.amazon.com/cloudformation/faqs/
+Beanstalk
+RedShift
+EMR
+Q32) What three services can invoke a Lambda function?
+EC2 instance
+CloudWatch event
+SNS topic 
+Explanation:-List of services that invoke Lambda functions asynchronously: Amazon Simple Storage Service. 
+1. Amazon Simple Notification Service. 
+2. Amazon Simple Email Service. 
+3. AWS CloudFormation. 
+4. Amazon CloudWatch Logs. 
+5. Amazon CloudWatch Events. 
+6. AWS CodeCommit. 
+7. AWS Config.
+Refer: https://aws.amazon.com/blogs/architecture/understanding-the-different-ways-to-invoke-lambda-functions/
+security group
+S3 bucket notification
+Q33) What two services enable automatic polling of a stream for new records only and forward them to an AWS storage service?
+DynamoDB
+Lambda
+Kinesis
+SNS
+Q34)
+Your company is deploying a web site with dynamic content to customers in US, EU and APAC regions of the world. Content will
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+include live streaming videos to customers. SSLcertificates are required for security purposes.
+Select the AWS service delivers all requirements and provides the lowest latency?
+S3
+CloudFront 
+Explanation:-Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers
+globally with low latency, high transfer speeds, all within a developer-friendly environment. Refer: https://aws.amazon.com/cloudfront/
+DynamoDB
+Redis
+Q35) What is the difference between Warm Standby and Multi-Site fault tolerance? (Select two)
+DNS Route 53 is not required for Warm Standby
+Multi-Site provides active/standby load balancing
+Multi-Site provides active/active load balancing
+Warm Standby enables lower RTO and most recent RPO
+Multi-Site enables lower RTO and most recent RPO
+Q36) What AWS best practice is recommended for creating fault tolerant systems?
+Horizontal scaling
+Security groups
+Elastic IP (EIP)
+Vertical scaling
+RedShift
+Q37) What two statements correctly describe versioning for protecting data at rest on S3 buckets?
+Saves multiple versions of a single file
+Restores deleted files
+Overwrites most current file version
+Enabled by default
+disabled by default
+Q38) What two methods are recommended by AWS for protecting EBS data at rest?
+Snapshots
+Encryption 
+Explanation:-You can achieve data protection in transit in two ways: encrypt the connection using Secure Sockets Layer (SSL), or use client-side
+encryption (where the object is encrypted before it is sent). Both methods are valid for protecting your application data. Refer:
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/security-data-protection-encryption.html
+Replication
+VPN
+Q39) What happens when read or write requests exceed capacity units (throughput capacity) for a DynamoDB table or index? (Select
+two)
+DynamoDB automatically increases read/write units if provisioned throughput is enabled
+HTTP 400 code is returned (Bad Request)
+HTTP 500 code is returned (Server Error)
+DynamoDB can throttle requests so that requests are not exceeded 
+Explanation:-Provisioned throughput is the maximum amount of capacity that an application can consume from a table or index. If your application
+exceeds your provisioned throughput capacity on a table or index, it is subject to request throttling. Throttling prevents your application from consuming too
+many capacity units. When a request is throttled, it fails with an HTTP 400 code (Bad Request) and a ProvisionedThroughputExceededException. The
+AWS SDKs have built-in support for retrying throttled requests (see Error Retries and Exponential Backoff), so you do not need to write this logic yourself.
+Refer: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html
+DynamoDB automatically increases read/write units
+Q40) What read consistency method provides lower latency for GetItem requests?
+Strongly consistent
+Eventually consistent 
+Explanation:-DynamoDB uses eventually consistent reads, unless you specify otherwise. Read operations (such as GetItem, Query, and Scan) provide a
+ConsistentRead parameter. If you set this parameter to true, DynamoDB uses strongly consistent reads during the operation. Refer:
+https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html
+Strongly persistent
+Write consistent
+Q41)
+You must specify strongly consistent read and write capacity for your DynamoDB database. You have determined read capacity of
+128 Kbps and write capacity of 25 Kbps is required for your application.
+What is the read and write capacity units required for DynamoDB table?
+16 read units, 2.5 write units
+1 read unit, 1 write unit
+32 read units, 25 write units 
+Explanation:-BatchWriteItem—Writes up to 25 items to one or more tables. DynamoDB processes each item in the batch as an individual PutItem or
+DeleteItem request (updates are not supported). So DynamoDB first rounds up the size of each item to the next 1 KB boundary, and then calculates the
+total size. The result is not necessarily the same as the total size of all the items. For example, if BatchWriteItem writes a 500-byte item and a 3.5 KB item,
+DynamoDB calculates the size as 5 KB (1 KB + 4 KB), not 4 KB (500 bytes + 3.5 KB). Refer:
+https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/switching.capacitymode.html
+64 read units, 10 write units
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q42) What DynamoDB capacity management technique is based on the tenant specifying an upper and lower range for read/write
+capacity units?
+Reserved capacity
+Auto scaling 
+Explanation:-DynamoDB auto scaling actively manages throughput capacity for tables and global secondary indexes. With auto scaling, you define a
+range (upper and lower limits) for read and write capacity units. You also define a target utilization percentage within that range. DynamoDB auto scaling
+seeks to maintain your target utilization, even as your application workload increases or decreases. With DynamoDB auto scaling, a table or a global
+secondary index can increase its provisioned read and write capacity to handle sudden increases in traffic, without request throttling. When the workload
+decreases, DynamoDB auto scaling can decrease the throughput so that you don't pay for unused provisioned capacity. Refer:
+https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual
+Provisioned throughput
+Demand
+General purpose
+Q43) What is the maximum volume size of a MySQLRDS database?
+16 TB 
+Explanation:-Amazon RDS for SQL Server Increases Maximum Database Storage Size to 16TB. You can now create Amazon RDS for SQL Server
+database instances with up to 16TB of storage, up from 4TB. The new storage limit is available when using the Provisioned IOPS and General Purpose
+(SSD) storage types. Refer:https://aws.amazon.com/about-aws/whats-new/2017/08/amazon-rds-for-sql-server-increases-maxiumum-database-storage-
+size-to-16-tb/#:~:text=Amazon%20RDS%20for%20SQL%20Server%20Increases%20Maximum%20Database%20Storage%20Size%20to%2016TB,-
+Posted%20On%3A%20Aug&text=You%20can%20now%20create%20Amazon,Purpose%20(SSD)%20storage%20types.
+3 TB
+6 TB
+unlimited
+Q44) What is the maximum size of a DynamoDB record (item)?
+64 KB
+400 KB 
+Explanation:-The maximum item size in DynamoDB is 400 KB, which includes both attribute name binary length (UTF-8 length) and attribute value lengths
+(again binary length). The attribute name counts towards the size limit. Refer: The maximum item size in DynamoDB is 400 KB, which includes both
+attribute name binary length (UTF-8 length) and attribute value lengths (again binary length). The attribute name counts towards the size limit.
+1 KB
+10 KB
+Q45)
+You have an Elastic Load Balancer assigned to a VPC with public and private subnets. ELB is configured to load balance traffic to a
+group of EC2 instances assigned to an Auto-Scaling group.
+What three statements are correct?
+Cross-zone load balancing is not supported
+Security group is assigned to Elastic Load Balancer
+Network ACLis assigned to Elastic Load Balancer
+Elastic Load Balancer is assigned to a public subnet
+Elastic Load Balancer forwards traffic to primary private IP address (eth0 interface) on each instance
+Q46) How does AWS uniquely identify S3 objects?
+Version
+Bucket name 
+Explanation:-Each Amazon S3 object has data, a key, and metadata. The object key (or key name) uniquely identifies the object in a bucket. Object
+metadata is a set of name-value pairs. The only way to modify object metadata is to make a copy of the object and set the metadata. Refer:
+https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.htm
+Key
+Object tag
+Q47) What is the advantage of read-after-write consistency for S3 buckets?
+Stale reads for PUT requests in some regions 
+Explanation:-With this enhancement, Amazon S3 now supports read-after-write consistency in all regions for new objects added to Amazon S3. Read-
+after-write consistency allows you to retrieve objects immediately after creation in Amazon S3. Refer: https://aws.amazon.com/about-aws/whats-
+new/2015/08/amazon-s3-introduces-new-usability-enhancements
+Higher throughput for all requests
+No stale reads for PUT of any new object in all regions
+No stale reads for GET requests in a single regions
+Q48) What is the maximum single file object size supported with Amazon S3?
+1 TB
+5 TB 
+Explanation:-AWS has raised the limit by three orders of magnitude. Individual Amazon S3 objects can now range in size from 1 byte all the way to 5
+terabytes (TB). Now customers can store extremely large files as single objects, which greatly simplifies their storage experience. Amazon S3 does the
+bookkeeping behind the scenes for our customers, so you can now GET that large object just like you would any other Amazon S3 object. Refer:
+https://aws.amazon.com/blogs/aws/amazon-s3-object-size-limit/
+5 GB
+100 GB
+Q49) What security problem is solved by using Cross-Origin Resource Sharing (CORS)?
+Permits sharing objects between AWS services
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Provide security for third party objects within AWS
+Enable sharing of web-based files between different buckets
+Enable HTTP requests from within scripts to a different domain
+Q50) What is recommended for migrating 40 TB of data from on-premises to S3 when the internet link is often overutilized?
+AWS Multi-Part Upload API
+AWS Elasticsearch
+AWS Elastic File System
+AWS Import/Export
+AWS Snowball
+AWS Storage gateway
+Q51)
+Your company is publishing an online catalog of books that is currently using DynamoDB for storing the information associated with
+each item. There is a requirement to add images for each book.
+What solution is most cost effective and designed for that purpose?
+S3
+RDS
+EBS
+RedShift
+Kinesis
+Q52) How is routing enabled by default within a VPC for an EC2 instance?
+Custom route table
+Main route table 
+Explanation:-When you create a VPC, it automatically has a main route table. The main route table controls the routing for all subnets that are not
+explicitly associated with any other route table. On the Route Tables page in the Amazon VPC console, you can view the main route table for a VPC by
+looking for Yes in the Main column. Refer: https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html#RouteTableDetails
+Add a default route
+Must be configured explicitly
+Q53) What three features are not supported with VPC peering?
+Transitive routing 
+Explanation:-VPC peering does not support transitive peering relationships. In a VPC peering connection, your VPC does not have access to any other
+VPCs with which the peer VPC may be peered. This includes VPC peering connections that are established entirely within your own AWS account.
+IPv6 addressing 
+Explanation:-A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them using private IPv4
+addresses or IPv6 addresses. Instances in either VPC can communicate with each other as if they are within the same network. Refer:
+https://docs.aws.amazon.com/vpc/latest/peering/vpc-pg.pdf
+Gateways 
+Explanation:-You can establish peering relationships between VPCs across different AWS Regions (also called InterRegion VPC Peering). This allows
+VPC resources including EC2 instances, Amazon RDS databases and Lambda functions that run in different AWS Regions to communicate with each other
+using private IP addresses, without requiring gateways, VPN connections, or separate network appliances.
+Overlapping CIDR blocks 
+Explanation:-You cannot create a VPC peering connection between VPCs that have matching or overlapping IPv4 or IPv6 CIDR blocks. Amazon always
+assigns your VPC a unique IPv6 CIDR block. If your IPv6 CIDR blocks are unique but your IPv4 blocks are not, you cannot create the peering connection.
+RedShift
+ElastiCache
+Q54) What route is used in a VPC routing table for packet forwarding to a Gateway?
+10.0.0.0/16
+tenant configured
+0.0.0.0/0 
+Explanation:-0.0.0.0/0 represents all possible IP addresses. In the context of the way routing tables get set up by default on AWS, 0.0.0.0/0 is effectively
+"all non local addresses". This is because another route presumably exists in the routing table to route the VPC subnet to the local network on the VPC.
+static route
+0.0.0.0/16
+Q55) You are asked to deploy a web application comprised of multiple public web servers with only private addressing assigned.
+What Amazon AWS solutions enables multiple servers on a private subnet with only a single EIP required and Availability Zone
+redundancy?
+NAT gateway
+Virtual private gateway 
+Explanation:-An elastic network interface is a logical networking component in a VPC that represents a virtual network card. It can include the following
+attributes:
+A primary private IPv4 address from the IPv4 address range of your VPC
+One or more secondary private IPv4 addresses from the IPv4 address range of your VPC
+One Elastic IP address (IPv4) per private IPv4 address
+One public IPv4 address
+One or more IPv6 addresses
+One or more security groups
+A MAC address
+A source/destination check flag
+A description
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Refer: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html
+Internet gateway
+NAT instance
+Elastic Network Interface (ENI)
+Q56) What is the IP addressing schema assigned to a default VPC?
+10.0.0.0/16 CIDR block subnetted with 10.0.0.0/24
+172.16.0.0/16 CIDR block subnetted with 172.16.0.0/24
+172.31.0.0/16 CIDR block subnetted with 172.31.0.0/20 
+Explanation:-When we create a default VPC, we do the following to set it up for you - Create a VPC with a size /16 IPv4 CIDR block (172.31.0.0/16). This
+provides up to 65,536 private IPv4 addresses. Refer: https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html
+172.16.0.0/24 CIDR block subnetted with 172.31.0.0/18
+Q57) What default configuration and components are added by AWS when Default VPC type is selected? (Select three)
+DNS
+Security group
+NAT instance
+Virtual private gateway
+Internet gateway
+ 

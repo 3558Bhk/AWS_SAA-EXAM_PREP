@@ -1,0 +1,840 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Sheet
+Q1) Which is an operational process performed by AWS for data security?
+Replication of data across multiple AWS regions
+Background virus scans of Amazon Elastic Block Store (Amazon EBS) volumes and Amazon EBS snapshots
+Decommissioning of storage devices using industry-standard practices 
+Explanation:-All decommissioned magnetic storage devices are degaussed and physically destroyed in accordance with industry-standard
+practices.
+Advanced Encryption Standard (AES)-256 encryption of data stored on any shared storage device
+Secure wiping of Amazon EBS data when an Amazon EBS volume is unmounted
+Q2)
+You have launched a Windows Amazon Elastic Compute Cloud (Amazon EC2) instance and specified an Amazon EC2 key pair
+for the instance at launch.
+Which of the following accurately describes how to log in to the instance?
+Use the Amazon EC2 key pair to decrypt the administrator password and then securely connect to the instance via Remote Desktop Protocol
+(RDP) as the administrator. 
+Explanation:-The administrator password is encrypted with the public key of the key pair, and you provide the private key to decrypt the password.
+Then log in to the instance as the administrator with the decrypted password.
+Use your AWS Identity and Access Management (IAM) user X.509 certificate to log in to the instance.
+Use the Amazon EC2 key pair to securely connect to the instance via Secure Shell (SSH).
+A key pair is not needeSecurely connect to the instance via RDP.
+Q3) A Database security group controls network access to a database instance that is inside a Virtual Private Cloud (VPC) and
+by default allows access from?
+Access for the database connection string is provided by default in the DB security group.
+Access from any IP address for any port is provided by default in the DB security group.
+No access is provided by default, and any access must be explicitly added with a rule to the DB security group. 
+Explanation:-By default, network access is turned off to a DB Instance. You can specify rules in a security group that allows access from an IP
+address range, port, or Amazon Elastic Compute Cloud (Amazon EC2) security group.
+Access from any IP address for the standard ports that the database uses is provided by default.
+Q4) Which encryption algorithm is used by Amazon Simple Storage Service (Amazon S3) to encrypt data at rest with Service-
+Side Encryption (SSE)?
+RSA 1024
+Advanced Encryption Standard (AES)-256 
+Explanation:-Amazon S3 SSE uses one of the strongest block ciphers available, 256-bit AES.
+RSA 2048
+AES-128
+Q5) How many access keys may an AWS Identity and Access Management (IAM) user have active at one time?
+1
+2 
+Explanation:-IAM permits users to have no more than two active access keys at one time.
+ZERO
+3
+Q6) Which of the following is the name of the security model employed by AWS with its customers?
+The shared secret key model
+The shared responsibility model 
+Explanation:-The shared responsibility model is the name of the model employed by AWS with its customers.
+The shared secret model
+The secret key responsibility model
+Q7) Which of the following describes the scheme used by an Amazon Redshift cluster leveraging AWS Key Management
+Service (AWS KMS) to encrypt data-at-rest?
+Amazon Redshift uses a four-tier, key-based architecture for encryption. 
+Explanation:-When you choose AWS KMS for key management with Amazon Redshift, there is a four-tier hierarchy of encryption keys. These keys
+are the master key, a cluster key, a database key, and data encryption keys.
+Amazon Redshift uses a three-tier, key-based architecture for encryption.
+Amazon Redshift uses a two-tier, key-based architecture for encryption.
+Amazon Redshift uses a one-tier, key-based architecture for encryption.
+Q8) Which of the following Elastic Load Balancing options ensure that the load balancer determines which cipher is used for a
+Secure Sockets Layer (SSL) connection?
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Client Server Cipher Suite
+Server Cipher Only
+First Server Cipher
+Server Order Preference 
+Explanation:-Elastic Load Balancing supports the Server Order Preference option for negotiating connections between a client and a load balancer.
+During the SSL connection negotiation process, the client and the load balancer present a list of ciphers and protocols that they each support, in
+order of preference. By default, the first cipher on the client’s list that matches any one of the load balancer’s ciphers is selected for the SSL
+connection. If the load balancer is configured to support Server Order Pr
+Q9) Which technology does Amazon WorkSpaces use to provide data security?
+PC-over-IP (PCoIP) 
+Explanation:-Amazon WorkSpaces uses PCoIP, which provides an interactive video stream without transmitting actual data.
+Advanced Encryption Standard (AES)-256
+Secure Sockets Layer (SSL)/Transport Layer Security (TLS)
+AES-128
+Q10) As a Solutions Architect, how should you architect systems on AWS?
+You should architect with Amazon Elastic Compute Cloud (Amazon EC2) Auto Scaling to ensure capacity is available when needed.
+You should architect your AWS usage to take advantage of multiple regions and Availability Zones. 
+Explanation:-Distributing applications across multiple Availability Zones provides the ability to remain resilient in the face of most failure modes,
+including natural disasters or system failures.
+You should architect for least cost.
+You should architect your AWS usage to take advantage of Amazon Simple Storage Service’s (Amazon S3) durability.
+Q11) Which security scheme is used by the AWS Multi-Factor Authentication (AWS MFA) token?
+Ephemeral Diffie Hellman (EDH)
+Perfect Forward Secrecy (PFC)
+Time-Based One-Time Password (TOTP) 
+Explanation:-A virtual MFA device uses a software application that generates six-digit authentication codes that are compatible with the TOTP
+standard, as described in RFC 6238.
+Split-Key Encryption (SKE)
+Q12) DynamoDB tables may contain sensitive data that needs to be protected. Which of the following is a way for you to protect
+DynamoDB table content? (Choose 2 answers)
+DynamoDB should not be used to store sensitive information requiring protection.
+DynamoDB can be used with the AWS Key Management Service to encrypt the data before storing the data in DynamoDB. 
+Explanation:-Amazon DynamoDB does not have a server-side feature to encrypt items within a table. You need to use a solution outside of
+DynamoDB such as a client-side library to encrypt items before storing them, or a key management service like AWS Key Management Service to
+manage keys that are used to encrypt items before storing them in DynamoDB.
+DynamoDB obfuscates all data stored so encryption is not required.
+DynamoDB can store data encrypted with a client-side encryption library solution 
+Explanation:-Amazon DynamoDB does not have a server-side feature to encrypt items within a table. You need to use a solution outside of
+DynamoDB such as a client-side library to encrypt items before storing them, or a key management service like AWS Key Management Service to
+manage keys that are used to encrypt items before storing them in DynamoDB.
+DynamoDB encrypts all data server-side by default so nothing is required.
+Q13)
+You have launched an Amazon Linux Elastic Compute Cloud (Amazon EC2) instance into EC2-Classic, and the instance has
+successfully passed the System Status Check and Instance Status Check. You attempt to securely connect to the instance via
+Secure Shell (SSH) and receive the response, “WARNING: UNPROTECTED PRIVATE KEY FILE,” after which the login fails.
+Which of the following is the cause of the failed login?
+A security group rule is blocking the connection.
+The permissions for the private key are too insecure for the key to be trusted. 
+Explanation:-If your private key can be read or written to by anyone but you, then SSH ignores your key.
+You are using the wrong private key.
+A security group rule has not been associated with the private key.
+Q14) Which of the following public identity providers are supported by Amazon Cognito Identity?
+Amazon
+Google
+Facebook
+All of the above 
+Explanation:-Amazon Cognito Identity supports public identity providers—Amazon, Facebook, and Google—as well as unauthenticated identities.
+Q15) Which feature of AWS is designed to permit calls to the platform from an Amazon Elastic Compute Cloud (Amazon EC2)
+instance without needing access keys placed on the instance?
+IAM roles
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IAM groups
+AWS Identity and Access Management (IAM) instance profile 
+Explanation:-An instance profile is a container for an IAM role that you can use to pass role information to an Amazon EC2 instance when the
+instance starts.
+Amazon EC2 key pairs
+Q16) Which of the following Amazon Virtual Private Cloud (Amazon VPC) elements acts as a stateless firewall?
+Network Address Translation (NAT) instance
+Network Access Control List (ACL) 
+Explanation:-A network ACL is an optional layer of security for your Amazon VPC that acts as a firewall for controlling traffic in and out of one or
+more subnets. You might set up network ACLs with rules similar to your security groups in order to add an additional layer of security to your Amazon
+VPC.
+Security group
+An Amazon VPC endpoint
+Q17) Which of the following is the most recent version of the AWS digital signature calculation process?
+Signature Version 1
+Signature Version 2
+Signature Version 3
+Signature Version 4 
+Explanation:-The Signature Version 4 signing process describes how to add authentication information to AWS requests. For security, most
+requests to AWS must be signed with an access key (Access Key ID [AKI] and Secret Access Key [SAK]). If you use the AWS Command Line
+Interface (AWS CLI) or one of the AWS Software Development Kits (SDKs), those tools automatically sign requests for you based on credentials that
+you specify when you configure the tools. However, if you make direct HTTP or HTTPS calls to AWS,
+Q18) Which of the following is the name of the feature within Amazon Virtual Private Cloud (Amazon VPC) that allows you to
+launch Amazon Elastic Compute Cloud (Amazon EC2) instances on hardware dedicated to a single customer?
+Default tenancy
+Dedicated tenancy 
+Explanation:-Dedicated instances are physically isolated at the host hardware level from your instances that aren’t dedicated instances and from
+instances that belong to other AWS accounts.
+Amazon VPC-based tenancy
+Host-based tenancy
+Q19) Which of the following describes how Amazon Elastic MapReduce (Amazon EMR) protects access to the cluster?
+The master node and slave nodes are launched into a security group that allows SSH and service access.
+The master node supports a Virtual Private Network (VPN) connection from the key specified at cluster launch.
+The master node is launched into a security group that allows Secure Shell (SSH) and service access, while the slave nodes are launched into a
+separate security group that only permits communication with the master node. 
+Explanation:-Amazon EMR starts your instances in two Amazon Elastic Compute Cloud (Amazon EC2) security groups, one for the master and
+another for the slaves. The master security group has a port open for communication with the service. It also has the SSH port open to allow you to
+securely connect to the instances via SSH using the key specified at startup. The slaves start in a separate security group, which only allows
+interaction with the master instance.
+The master node and the slave nodes are launched into an Amazon Virtual Private Cloud (Amazon VPC).
+Q20) To help prevent data loss due to the failure of any single hardware component, Amazon Elastic Block Storage (Amazon
+EBS) automatically replicates EBS volume data to which of the following?
+Amazon EBS replicates EBS volume data across Availability Zones in the same region and in Availability Zones in every other region.
+Amazon EBS replicates EBS volume data across Availability Zones in the same region and in Availability Zones in one other region.
+Amazon EBS replicates EBS volume data across other Availability Zones within the same region.
+Amazon EBS replicates EBS volume data within the same Availability Zone in a region. 
+Explanation:-When you create an Amazon EBS volume in an Availability Zone, it is automatically replicated within that Availability Zone to prevent
+data loss due to failure of any single hardware component. An EBS Snapshot creates a copy of an EBS volume to Amazon S3 so that copies of the
+volume can reside in different Availability Zones within a region.
+Q21) Which AWS database service is best suited for traditional Online Transaction Processing (OLTP)?
+Amazon Glacier
+Amazon Relational Database Service (Amazon RDS) 
+Explanation:-Amazon RDS is best suited for traditional OLTP transactions. Amazon Redshift, on the other hand, is designed for OLAP workloads.
+Amazon Glacier is designed for cold archival storage.
+Amazon Redshift
+Elastic Database
+Q22) Which AWS database service is best suited for non-relational databases?
+Amazon DynamoDB 
+Explanation:-Amazon DynamoDB is best suited for non-relational databases. Amazon RDS and Amazon Redshift are both structured relational
+databases.
+Amazon Glacier
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Amazon Relational Database Service (Amazon RDS)
+Amazon Redshift
+Q23)
+You are a solutions architect working for a media company that hosts its website on AWS. Currently, there is a single Amazon
+Elastic Compute Cloud (Amazon EC2) Instance on AWS with MySQL installed locally to that Amazon EC2 Instance. You have
+been asked to make the company’s production environment more resilient and to increase performance. You suggest that the
+company split out the MySQL database onto an Amazon RDS Instance with Multi-AZ enabled. This addresses the company’s
+increased resiliency requirements. Now you need to suggest how you can increase performance. Ninety-nine percent of the
+company’s end users are magazine subscribers who will be reading additional articles on the website, so only one percent of
+end users will need to write data to the site.
+What should you suggest to increase performance?
+Migrate the MySQL database to Amazon Redshift to take advantage of columnar storage and maximize performance.
+Alter the connection string so that if a user is going to write data, it is written to the primary copy of the Multi-AZ database.
+Recommend that the company use read replicas, and distribute the traffic across multiple read replicas. 
+Explanation:-In this scenario, the best idea is to use read replicas to scale out the database and thus maximize read performance. When using
+Multi-AZ, the secondary database is not accessible and all reads and writes must go to the primary or any read replicas.
+Alter the connection string so that if a user is going to write data, it is written to the secondary copy of the Multi-AZ database.
+Q24) Which AWS Cloud service is best suited for Online Analytics Processing (OLAP)?
+Amazon Relational Database Service (Amazon RDS)
+Amazon Redshift 
+Explanation:-Amazon Redshift is best suited for traditional OLAP transactions. While Amazon RDS can also be used for OLAP, Amazon Redshift is
+purpose-built as an OLAP data warehouse.
+Amazon Glacier
+Amazon DynamoDB
+Q25)
+You have been using Amazon Relational Database Service (Amazon RDS) for the last year to run an important application with
+automated backups enabled. One of your team members is performing routine maintenance and accidentally drops an
+important table, causing an outage.
+How can you recover the missing data while minimizing the duration of the outage?
+Restore only the dropped table from the DB snapshot.
+Restore the database from a recent automated DB snapshot. 
+Explanation:-DB Snapshots can be used to restore a complete copy of the database at a specific point in time. Individual tables cannot be extracted
+from a snapshot.
+Perform an undo operation and recover the table.
+The data cannot be recovered.
+Q26) Which Amazon Relational Database Service (Amazon RDS) database engines support Multi-AZ?
+Microsoft SQL Server, MySQL, and Oracle
+All of them 
+Explanation:-All Amazon RDS database engines support Multi-AZ deployment
+Oracle, Amazon Aurora, and PostgreSQL
+MySQL
+Q27) Which Amazon Relational Database Service (Amazon RDS) database engines support read replicas?
+Aurora, Microsoft SQL Server, and Oracle
+MySQL, MariaDB, PostgreSQL, and Aurora 
+Explanation:-Read replicas are supported by MySQL, MariaDB, PostgreSQL, and Aurora.
+Microsoft SQL Server and Oracle
+MySQL and PostgreSQL
+Q28)
+Your team is building an order processing system that will span multiple Availability Zones. During testing, the team wanted to
+test how the application will react to a database failover.
+How can you enable this type of test?
+Create a support case asking for a failover.
+Terminate the DB instance, and create a new one. Update the connection string.
+Force a Multi-AZ failover from one Availability Zone to another by rebooting the primary instance using the Amazon RDS console. 
+Explanation:-You can force a failover from one Availability Zone to another by rebooting the primary instance in the AWS Management Console.
+This is often how people test a failover in the real world. There is no need to create a support case.
+It is not possible to test a failover.
+Q29)
+You are a system administrator whose company has moved its production database to AWS. Your company monitors its estate
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using Amazon CloudWatch, which sends alarms using Amazon Simple Notification Service (Amazon SNS) to your mobile phone.
+One night, you get an alert that your primary Amazon Relational Database Service (Amazon RDS) Instance has gone down. You
+have Multi-AZ enabled on this instance.
+What should you do to ensure the failover happens quickly?
+No action is necessary. Your connection string points to the database endpoint, and AWS automatically updates this endpoint to point to your
+secondary instance. 
+Explanation:-Monitor the environment while Amazon RDS attempts to recover automatically. AWS will update the DB endpoint to point to the
+secondary instance automatically.
+Take a snapshot of the secondary instance and create a new instance using this snapshot, then update your connection string to point to the
+new instance.
+Connect to your server using Secure Shell (SSH) and update your connection strings so that your application can communicate to the secondary
+instance instead of the failed primary instance.
+Update your Domain Name System (DNS) to point to the secondary instance’s new IP address, forcing your application to fail over to the
+secondary instance.
+Q30)
+You are working for a small organization without a dedicated database administrator on staff. You need to install Microsoft SQL
+Server Enterprise edition quickly to support an accounting back office application on Amazon Relational Database Service
+(Amazon RDS).
+What should you do?
+You cannot use SQL Server Enterprise edition on Amazon RDS. You should install this on to a dedicated Amazon Elastic Compute Cloud
+(Amazon EC2) Instance.
+SQL Server Enterprise edition is only available via the Command Line Interface (CLI). Install the command-line tools on your laptop, and then
+provision your new Amazon RDS Instance using the CLI.
+Provision SQL Server Enterprise Edition using the License Included option from the Amazon RDS Console.
+Launch an Amazon RDS DB Instance, and select Microsoft SQL Server Enterprise Edition under the Bring Your Own License (BYOL) model. 
+Explanation:-Amazon RDS supports Microsoft SQL Server Enterprise edition and the license is available only under the BYOL model.
+Q31) Which of the following describes a physical location around the world where AWS clusters data centers?
+Endpoint
+Collection
+Fleet
+Region 
+Explanation:-A region is a named set of AWS resources in the same geographical area. A region comprises at least two Availability Zones.
+Endpoint, Collection, and Fleet do not describe a physical location around the world where AWS clusters data centers.
+Q32) You are building the database tier for an enterprise application that gets occasional activity throughout the day. Which
+storage type should you select as your default option?
+Provisioned IOPS (SSD)
+General Purpose Solid State Drive (SSD) 
+Explanation:-General Purpose (SSD) volumes are generally the right choice for databases that have bursts of activity.
+Magnetic storage
+Storage Area Network (SAN)-attached
+Q33) You are designing an e-commerce web application that will scale to potentially hundreds of thousands of concurrent
+users. Which database technology is best suited to hold the session state for large numbers of concurrent users?
+Data warehouse using Amazon Redshift
+NoSQL database table using Amazon DynamoDB 
+Explanation:-NoSQL databases like Amazon DynamoDB excel at scaling to hundreds of thousands of requests with key/value access to user profile
+and session.
+Relational database using Amazon Relational Database Service (Amazon RDS)
+Amazon Simple Storage Service (Amazon S3)
+Q34) Which of the following techniques can you use to help you meet Recovery Point Objective (RPO) and Recovery Time
+Objective (RTO) requirements? (Choose 3 answers)
+Multi-AZ deployment 
+Explanation:-DB snapshots allow you to back up and recover your data, while read replicas and a Multi-AZ deployment allow you to replicate your
+data and reduce the time to failover.
+DB option groups
+Read replica 
+Explanation:-DB snapshots allow you to back up and recover your data, while read replicas and a Multi-AZ deployment allow you to replicate your
+data and reduce the time to failover.
+DB snapshots 
+Explanation:-DB snapshots allow you to back up and recover your data, while read replicas and a Multi-AZ deployment allow you to replicate your
+data and reduce the time to failover.
+Q35) When using Amazon Relational Database Service (Amazon RDS) Multi-AZ, how can you offload read requests from the
+primary? (Choose 2 answers)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create a caching environment using ElastiCache to cache frequently used data. Update the application logic to read/write from the cache. 
+Explanation:-Amazon RDS allows for the creation of one or more read-replicas for many engines that can be used to handle reads. Another
+common pattern is to create a cache using Memcached and Amazon ElastiCache to store frequently used queries. The secondary slave DB Instance
+is not accessible and cannot be used to offload queries.
+Configure the connection string of the clients to connect to the secondary node and perform reads while the primary is used for writes.
+Amazon RDS automatically sends writes to the primary and sends reads to the secondary.
+Add a read replica DB instance, and configure the client’s application logic to use a read-replica. 
+Explanation:-Amazon RDS allows for the creation of one or more read-replicas for many engines that can be used to handle reads. Another
+common pattern is to create a cache using Memcached and Amazon ElastiCache to store frequently used queries. The secondary slave DB Instance
+is not accessible and cannot be used to offload queries.
+Q36) You are building a large order processing system and are responsible for securing the database. Which actions will you
+take to protect the data? (Choose 3 answers)
+Configure database users, and grant permissions to database objects. 
+Explanation:-Protecting your database requires a multilayered approach that secures the infrastructure, the network, and the database itself.
+Amazon RDS is a managed service and direct access to the OS is not available.
+Configure security groups and network Access Control Lists (ACLs) to limit network access. 
+Explanation:-Protecting your database requires a multilayered approach that secures the infrastructure, the network, and the database itself.
+Amazon RDS is a managed service and direct access to the OS is not available.
+Adjust AWS Identity and Access Management (IAM) permissions for administrators. 
+Explanation:-Protecting your database requires a multilayered approach that secures the infrastructure, the network, and the database itself.
+Amazon RDS is a managed service and direct access to the OS is not available.
+Install anti-virus software on the Amazon RDS DB Instance.
+Q37)
+Your team manages a popular website running Amazon Relational Database Service (Amazon RDS) MySQL back end. The
+Marketing department has just informed you about an upcoming television commercial that will drive thousands of new visitors
+to the website.
+How can you prepare your database to handle the load? (Choose 3 answers)
+Upgrade the storage from Magnetic volumes to General Purpose Solid State Drive (SSD) volumes. 
+Explanation:-Vertically scaling up is one of the simpler options that can give you additional processing power without making any architectural
+changes. Read replicas require some application changes but let you scale processing power horizontally. Finally, busy databases are often I/O-
+bound, so upgrading storage to General Purpose (SSD) or Provisioned IOPS (SSD) can often allow for additional request processing.
+Create read replicas to offload read requests and update your application. 
+Explanation:-Vertically scaling up is one of the simpler options that can give you additional processing power without making any architectural
+changes. Read replicas require some application changes but let you scale processing power horizontally. Finally, busy databases are often I/O-
+bound, so upgrading storage to General Purpose (SSD) or Provisioned IOPS (SSD) can often allow for additional request processing.
+Vertically scale the DB Instance by selecting a more powerful instance class. 
+Explanation:-Vertically scaling up is one of the simpler options that can give you additional processing power without making any architectural
+changes. Read replicas require some application changes but let you scale processing power horizontally. Finally, busy databases are often I/O-
+bound, so upgrading storage to General Purpose (SSD) or Provisioned IOPS (SSD) can often allow for additional request processing.
+Upgrade to Amazon Redshift for faster columnar storage.
+Q38)
+You are building a photo management application that maintains metadata on millions of images in an Amazon DynamoDB
+table. When a photo is retrieved, you want to display the metadata next to the image.
+Which Amazon DynamoDB operation will you use to retrieve the metadata attributes from the table?
+Query operation 
+Explanation:-Query is the most efficient operation to find a single item in a large table.
+Search operation
+Scan operation
+Find operation
+Q39)
+You are creating an Amazon DynamoDB table that will contain messages for a social chat application. This table will have the
+following attributes: Username (String), Timestamp (Number), Message (String).
+Which attribute should you use as the partition key?
+The sort key?
+Timestamp, Message
+Username, Message
+Username, Timestamp 
+Explanation:-Using the Username as a partition key will evenly spread your users across the partitions. Messages are often filtered down by time
+range, so Timestamp makes sense as a sort key.
+Message, Timestamp
+Q40) Which of the following statements about Amazon DynamoDB tables are true? (Choose 2 answers)
+You can only have one global secondary index.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You can only have one local secondary index. 
+Explanation:-You can only have a single local secondary index, and it must be created at the same time the table is created. You can create many
+global secondary indexes after the table has been created.
+Global secondary indexes can only be created when the table is being created.
+Local secondary indexes can only be created when the table is being created. 
+Explanation:-You can only have a single local secondary index, and it must be created at the same time the table is created. You can create many
+global secondary indexes after the table has been created.
+Q41) Which of the following workloads are a good fit for running on Amazon Redshift? (Choose 2 answers)
+Manage session state and user profile data for thousands of concurrent users
+Data warehouse used to aggregate multiple disparate data sources 
+Explanation:-Amazon Redshift is an Online Analytical Processing (OLAP) data warehouse designed for analytics, Extract, Transform, Load (ETL),
+and high-speed querying. It is not well suited for running transactional applications that require high volumes of small inserts or updates.
+Reporting database supporting back-office analytics 
+Explanation:-Amazon Redshift is an Online Analytical Processing (OLAP) data warehouse designed for analytics, Extract, Transform, Load (ETL),
+and high-speed querying. It is not well suited for running transactional applications that require high volumes of small inserts or updates.
+Transactional database supporting a busy e-commerce order processing website
+Q42)
+Each AWS region is composed of two or more locations that offer organizations the ability to operate production systems that
+are more highly available, fault tolerant, and scalable than would be possible using a single data center.
+What are these locations called?
+Replication areas
+Availability Zones 
+Explanation:-An Availability Zone is a distinct location within a region that is insulated from failures in other Availability Zones and provides
+inexpensive, low-latency network connectivity to other Availability Zones in the same region. Replication areas, geographic districts, and compute
+centers are not terms used to describe AWS data center locations.
+Geographic districts
+Compute centers
+Q43) What is the deployment term for an environment that extends an existing on-premises infrastructure into the cloud to
+connect cloud resources to internal systems?
+On-premises deployment
+Hybrid deployment 
+Explanation:-A hybrid deployment is a way to connect infrastructure and applications between cloud-based resources and existing resources that
+are not located in the cloud. An all-in deployment refers to an environment that exclusively runs in the cloud. An on-premises deployment refers to an
+environment that runs exclusively in an organization’s data center.
+All-in deployment
+Scatter deployment
+Q44) Which AWS Cloud service allows organizations to gain system-wide visibility into resource utilization, application
+performance, and operational health?
+Amazon Simple Notification Service (Amazon SNS)
+Amazon CloudWatch 
+Explanation:-Amazon CloudWatch is a monitoring service for AWS Cloud resources and the applications organizations run on AWS. It allows
+organizations to collect and track metrics, collect and monitor log files, and set alarms. AWS IAM, Amazon SNS, and AWS CloudFormation do not
+provide visibility into resource utilization, application performance, and the operational health of your AWS resources.
+AWS Identity and Access Management (IAM)
+AWS CloudFormation
+Q45) Which of the following AWS Cloud services is a fully managed NoSQL database service?
+Amazon ElastiCache
+Amazon DynamoDB 
+Explanation:-. Amazon DynamoDB is a fully managed, fast, and flexible NoSQL database service for all applications that need consistent, single-
+digit millisecond latency at any scale. Amazon SQS, Amazon ElastiCache, and Amazon RDS do not provide a NoSQL database service. Amazon
+SQS is a managed message queuing service. Amazon ElastiCache is a service that provides in-memory cache in the cloud. Finally, Amazon RDS
+provides managed relational databases.
+Amazon Simple Queue Service (Amazon SQS)
+Amazon Relational Database Service (Amazon RDS)
+Q46) Your company experiences fluctuations in traffic patterns to their e-commerce website based on flash sales. What service
+can help your company dynamically match the required compute capacity to the spike in traffic during flash sales?
+Amazon Virtual Private Cloud (Amazon VPC)
+Amazon Simple Notification Service (Amazon SNS)
+Amazon Glacier
+Auto Scaling 
+Explanation:-Auto Scaling helps maintain application availability and allows organizations to scale Amazon Elastic Compute Cloud (Amazon EC2)
+capacity up or down automatically according to conditions defined for the particular workload. Not only can it be used to help ensure that the desired
+number of Amazon EC2 instances are running, but it also allows resources to scale in and out to match the demands of dynamic workloads. Amazon
+Glacier, Amazon SNS, and Amazon VPC do not provide services to scale compute
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Glacier, Amazon SNS, and Amazon VPC do not provide services to scale compute
+Q47)
+Your company provides an online photo sharing service. The development team is looking for ways to deliver image files with
+the lowest latency to end users so the website content is delivered with the best possible performance.
+What service can help speed up distribution of these image files to end users around the world?
+Amazon Elastic Compute Cloud (Amazon EC2)
+Amazon Route 53
+AWS Storage Gateway
+Amazon CloudFront 
+Explanation:-Amazon CloudFront is a web service that provides a CDN to speed up distribution of your static and dynamic web content—for
+example, .html , .css , .php , image, and media files—to end users. Amazon CloudFront delivers content through a worldwide network of edge
+locations. Amazon EC2, Amazon Route 53, and AWS Storage Gateway do not provide CDN services that are required to meet the needs for the
+photo sharing service.
+Q48)
+Your company runs an Amazon Elastic Compute Cloud (Amazon EC2) instance periodically to perform a batch processing job
+on a large and growing filesystem. At the end of the batch job, you shut down the Amazon EC2 instance to save money but
+need to persist the filesystem on the Amazon EC2 instance from the previous batch runs.
+What AWS Cloud service can you leverage to meet these requirements?
+Amazon Glacier
+Amazon DynamoDB
+Amazon Elastic Block Store (Amazon EBS) 
+Explanation:-Amazon EBS provides persistent block-level storage volumes for use with Amazon EC2 instances on the AWS Cloud. Amazon
+DynamoDB, Amazon Glacier, and AWS CloudFormation do not provide persistent block-level storage for Amazon EC2 instances. Amazon
+DynamoDB provides managed NoSQL databases. Amazon Glacier provides low- cost archival storage. AWS CloudFormation gives developers and
+systems administrators an easy way to create and manage a collection of related AWS resources.
+AWS CloudFormation
+Q49) What AWS Cloud service provides a logically isolated section of the AWS Cloud where organizations can launch AWS
+resources in a virtual network that they define?
+Amazon Route 53
+Amazon Virtual Private Cloud (Amazon VPC) 
+Explanation:-Amazon VPC lets organizations provision a logically isolated section of the AWS Cloud where they can launch AWS resources in a
+virtual network that they define. Amazon SWF, Amazon Route 53, and AWS CloudFormation do not provide a virtual network. Amazon SWF helps
+developers build, run, and scale background jobs that have parallel or sequential steps. Amazon Route 53 provides a highly available and scalable
+cloud Domain Name System (DNS) web service. Amazon CloudFormation gives developers and sys
+Amazon Simple Workflow Service (Amazon SWF)
+AWS CloudFormation
+Q50) Your company provides a mobile voting application for a popular TV show, and 5 to 25 million viewers all vote in a 15-
+second timespan. What mechanism can you use to decouple the voting application from your back-end services that tally the
+votes?
+Amazon Redshift
+Amazon Simple Queue Service (Amazon SQS) 
+Explanation:-Amazon SQS is a fast, reliable, scalable, fully managed message queuing service that allows organizations to decouple the
+components of a cloud application. With Amazon SQS, organizations can transmit any volume of data, at any level of throughput, without losing
+messages or requiring other services to be always available. AWS CloudTrail records AWS API calls, and Amazon Redshift is a data warehouse,
+neither of which would be useful as an architecture component for decoupling components. Amazon
+AWS CloudTrail
+Amazon Simple Notification Service (Amazon SNS)
+Q51) In what ways does Amazon Simple Storage Service (Amazon S3) object storage differ from block and file storage?
+(Choose 2 answers)
+Objects are stored in buckets. 
+Explanation:-Objects are stored in buckets, and objects contain both data and metadata
+Objects can be any size.
+Objects contain both data and metadata. 
+Explanation:-Objects are stored in buckets, and objects contain both data and metadata
+Objects are identified by a numbered address.
+Amazon S3 stores data in fixed size blocks.
+Q52) Which of the following are not appropriates use cases for Amazon Simple Storage Service (Amazon S3)? (Choose 2
+answers)
+Storing backups for a relational database
+Primary storage for a database 
+Explanation:-Amazon S3 cannot be mounted to an Amazon EC2 instance like a file system and should not serve as primary database storage.
+Storing a file system mounted to an Amazon Elastic Compute Cloud (Amazon EC2) instance 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Explanation:-Amazon S3 cannot be mounted to an Amazon EC2 instance like a file system and should not serve as primary database storage.
+Storing web content
+Storing logs for analytics
+Q53) What are some of the key characteristics of Amazon Simple Storage Service (Amazon S3)? (Choose 3 answers)
+Objects are world-readable by default.
+Amazon S3 uses a REST (Representational State Transfer) Application Program Interface (API).
+Amazon S3 can store unlimited amounts of data.
+All objects have a URL. 
+Explanation:-Objects are private by default, and storage in a bucket does not need to be pre-allocated.
+You must pre-allocate the storage in a bucket.
+Q54) Which features can be used to restrict access to Amazon Simple Storage Service (Amazon S3) data? (Choose 3 answers)
+Use an Amazon S3 bucket policy. 
+Explanation:-Static website hosting does not restrict data access, and neither does an Amazon S3 lifecycle policy.
+Use a lifecycle policy.
+Use an Amazon S3 Access Control List (ACL) on a bucket or object. 
+Explanation:-Static website hosting does not restrict data access, and neither does an Amazon S3 lifecycle policy.
+Enable static website hosting on the bucket.
+Create a pre-signed URL for an object. 
+Explanation:-Static website hosting does not restrict data access, and neither does an Amazon S3 lifecycle policy.
+Q55)
+Your application stores critical data in Amazon Simple Storage Service (Amazon S3), which must be protected against
+inadvertent or intentional deletion.
+How can this data be protected? (Choose 2 answers)
+Use a lifecycle policy to migrate data to Amazon Glacier.
+Enable MFA Delete on the bucket. 
+Explanation:-Versioning protects data against inadvertent or intentional deletion by storing all versions of the object, and MFA Delete requires a
+one-time code from a Multi-Factor Authentication (MFA) device to delete objects. Cross-region replication and migration to the Amazon Glacier
+storage class do not protect against deletion. Vault locks are a feature of Amazon Glacier, not a feature of Amazon S3.
+Use cross-region replication to copy data to another bucket automatically.
+Set a vault lock.
+Enable versioning on the bucket. 
+Explanation:-Versioning protects data against inadvertent or intentional deletion by storing all versions of the object, and MFA Delete requires a
+one-time code from a Multi-Factor Authentication (MFA) device to delete objects. Cross-region replication and migration to the Amazon Glacier
+storage class do not protect against deletion. Vault locks are a feature of Amazon Glacier, not a feature of Amazon S3.
+Q56)
+Your company stores documents in Amazon Simple Storage Service (Amazon S3), but it wants to minimize cost. Most
+documents are used actively for only about a month, then much less frequently. However, all data needs to be available within
+minutes when requested.
+How can you meet these requirements?
+Migrate the data to Amazon S3 Standard – Infrequent Access (IA) after 30 days. 
+Explanation:-Migrating the data to Amazon S3 Standard-IA after 30 days using a lifecycle policy is correct. Amazon S3 RRS should only be used for
+easily replicated data, not critical data. Migration to Amazon Glacier might minimize storage costs if retrievals are infrequent, but documents would
+not be available in minutes when needed.
+Migrate the data to Amazon Glacier after 30 days.
+Migrate the data to Amazon S3 Reduced Redundancy Storage (RRS) after 30 days.
+Turn on versioning, then migrate the older version to Amazon Glacier.
+Q57) Amazon Simple Storage Service (S3) bucket policies can restrict access to an Amazon S3 bucket and objects by which of
+the following? (Choose 3 answers)
+Country of origin
+AWS account
+Company name
+IP address range 
+Explanation:-Amazon S3 bucket policies cannot specify a company name or a country or origin, but they can specify request IP range, AWS
+account, and a prefix for objects that can be accessed.
+Objects with a specific prefix
+Q58) Amazon Simple Storage Service (Amazon S3) is an eventually consistent storage system. For what kinds of operations is
+it possible to get stale data as a result of eventual consistency? (Choose 2 answers)
+DELETE after PUT of new object
+GET after overwrite PUT (PUT to an existing key) 
+Explanation:-Amazon S3 provides read-after-write consistency for PUTs to new objects (new key), but eventual consistency for GETs and
+DELETEs of existing objects (existing key).
+GET or LIST after a DELETE 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Explanation:-Amazon S3 provides read-after-write consistency for PUTs to new objects (new key), but eventual consistency for GETs and
+DELETEs of existing objects (existing key).
+GET after PUT of a new object
+Q59) What must be done to host a static website in an Amazon Simple Storage Service (Amazon S3) bucket? (Choose 3
+answers)
+Make the objects in the bucket world-readable.
+Enable File Transfer Protocol (FTP) on the bucket.
+Create a bucket with the same name as the website.
+Configure the bucket for static hosting and specify an index and error document. 
+Explanation:-The three options are required and normally you also set a friendly CNAME to the bucket URL. Amazon S3 does not support FTP
+transfers, and HTTP does not need to be enabled.
+Enable HTTP on the bucket.
+Q60)
+You have valuable media files hosted on AWS and want them to be served only to authenticated users of your web application.
+You are concerned that your content could be stolen and distributed for free.
+How can you protect your content?
+Use logging to track your content.
+Use AWS Identity and Access Management (IAM) policies to restrict access.
+Generate pre-signed URLs for content in the web application. 
+Explanation:-Pre-signed URLs allow you to grant time-limited permission to download objects from an Amazon Simple Storage Service (Amazon
+S3) bucket. Static web hosting generally requires world-read access to all content. AWS IAM policies do not know who the authenticated users of the
+web app are. Logging can help track content loss, but not prevent it.
+Use static web hosting.
+Q61) Amazon Glacier is well-suited to data that is which of the following? (Choose 2 answers)
+Is frequently erased within 30 days
+Is available after a three- to five-hour restore period
+Must be immediately available when needed
+Is infrequently or rarely accessed
+ 

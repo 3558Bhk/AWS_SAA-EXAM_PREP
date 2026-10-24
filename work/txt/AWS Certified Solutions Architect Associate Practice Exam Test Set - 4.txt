@@ -1,0 +1,676 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Sheet
+Q1) When an EC2 instance that is backed by an S3-based AMI is terminated, what happens to the data on the root volume?
+Data is automatically saved as an EBS snapshot.
+Data is automatically saved as an EBS volume.
+Data is unavailable until the instance is restarted.
+Data is automatically deleted. 
+Explanation:-By default, the root volume for an AMI backed by Amazon EBS is deleted when the instance terminates. You can change the default behavior
+to ensure that the volume persists after the instance terminates. To change the default behavior, set the DeleteOnTermination attribute to false using a
+block device mapping. Refer: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html
+Q2) Do the Amazon EBS volumes persist independently from the running life of an Amazon EC2 instance?
+Only if instructed to when created
+Yes
+No
+Q3) Select the incorrect statement.
+In Amazon EC2, the private IP address is associated exclusively with the instance for its lifetime
+In Amazon VPC, an instance does NOT retain its private IP addresses when the instance is stopped. 
+Explanation:-The instance retains its private IP addresses when stopped and restarted. If your instance is running in EC2-Classic, it receives a new
+private IPv4 address, which means that an Elastic IP address (EIP) associated with the private IPv4 address is no longer associated with your instance.
+In Amazon VPC, an instance retains its private IP addresses when the instance is stopped
+In Amazon EC2, the private IP addresses only returned to Amazon EC2 when the instance is stopped or terminated
+Q4) As Per the AWS Acceptable Use Policy, penetration testing of EC2 instances ________________.
+May be performed by the customer on their own instances, only if performed from EC2 instances
+May be performed by the customer on their own instances with prior authorization from AWS.
+Are expressly prohibited under all circumstances.
+May be performed by AWS, and is periodically performed by AWS.
+May be performed by AWS, and will be performed by AWS upon customer request.
+Q5) When you put objects in Amazon S3, what is the indication that an object was successfully stored?
+Each S3 account has a special bucket named _s3_logs. Success codes are written to this bucket with a timestamp and checksum.
+A success code is inserted into the S3 object metadata.
+Amazon S3 is engineered for 99.999999999% durability. Therefore there is no need to confirm that data was inserted.
+A HTTP 200 result code and MD5 checksum, taken together, indicate that the operation was successful. 
+Explanation:-Refer: https://aws.amazon.com/premiumsupport/knowledge-center/data-integrity-s3/
+Q6) Can I delete a snapshot of the root device of an EBS volume used by a registered AMI?
+Yes
+Only via Console
+Only via API
+No
+Q7) By default what are ENIs that are automatically created and attached to instances using the EC2 console set to do when the
+attached instance terminates?
+Terminate 
+Explanation:-You can set the termination behavior for a network interface that's attached to an instance. You can specify whether the network interface
+should be automatically deleted when you terminate the instance to which it's attached. In the Change Termination Behavior dialog box, select the Delete
+on termination check box if you want the network interface to be deleted when you terminate an instance. Refer:
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html
+Remain as is
+Hibernate
+Pause
+Q8) A company is storing data on Amazon Simple Storage Service (S3). The company's security policy mandates that data is
+encrypted at rest. Which of the following methods can achieve this? Choose 3 answers
+Encrypt the data on the client-side before ingesting to Amazon S3 using their own master key.
+Use Amazon S3 bucket policies to restrict access to the data at rest.
+Use Amazon S3 server-side encryption with customer-provided keys.
+Use Amazon S3 server-side encryption with EC2 key pair.
+Use Amazon S3 server-side encryption with AWS Key Management Service managed keys. 
+Explanation:-Reference: http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html
+Use SSL to encrypt the data while in transit to Amazon S3.
+Q9) In the Amazon RDS which uses the SQL Server engine, what is the maximum size for a Microsoft SQL Server DB Instance with
+SQL Server Express edition?
+2 TB per DB
+100 GB per DB
+10 GB per DB
+1TB per DB
+Q10)
+Amazon RDS creates an SSL certificate and installs the certificate on the DB Instance when Amazon RDS provisions the instance.
+These certificates are signed by a certificate authority.
+The _____ is stored athttps://rds.amazonaws.com/doc/rds-ssl-ca-cert.pem.
+protected key
+public key
+foreign key
+private key
+Q11)
+You have an environment that consists of a public subnet using Amazon VPC and 3 instances that are running in this subnet. These
+three instances can successfully communicate with other hosts on the Internet. You launch a fourth instance in the same subnet,
+using the same AMI and security group configuration you used for the others, but find that this instance cannot be accessed from the
+internet.
+What should you do to enable Internet access?
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Configure a publically routable IP Address in the host OS of the fourth instance.
+Assign an Elastic IP address to the fourth instance. 
+Explanation:-You first allocate an Elastic IP address for use in a VPC, and then associate it with an instance in your VPC (it can be assigned to only one
+instance at a time). Refer: https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html
+Deploy a NAT instance into the public subnet.
+Modify the routing table for the public subnet.
+Q12) Which of the following are valid statements about Amazon S3? (Choose 2 answers)
+Partially saved objects are immediately readable with a GET after an overwrite PUT.
+A successful response to a PUT request only occurs when a complete object is saved.
+Consistency is not guaranteed for any type of PUT or DELETE.
+S3 provides read-after-write consistency for any type of PUT or DELETE.
+S3 provides eventual consistency for overwrite PUTS and DELETES.
+Q13) What is one key difference between an Amazon EBS-backed and an instance-store backed instance?
+Instance-store backed instances can be stopped and restarted.
+Auto scaling requires using Amazon EBS-backed instances.
+Amazon EBS-backed instances can be stopped and restarted. 
+Explanation:-For data you want to retain longer, or if you want to encrypt the data, use Amazon Elastic Block Store (Amazon EBS) volumes instead. EBS
+volumes preserve their data through instance stops and terminations, can be easily backed up with EBS snapshots, can be removed from one instance and
+reattached to another, and support full-volume encryption. Refer: https://aws.amazon.com/premiumsupport/knowledge-center/instance-store-vs-ebs/
+Virtual Private Cloud requires EBS backed instances.
+Q14) A __________ is the concept of allowing (or disallowing) an entity such as a user, group, or role some type of access to one or
+more resources.
+AWS Account 
+Explanation:-An AWS account ID is a 12-digit number, such as 123456789012, that you use to construct Amazon Resource Names (ARNs). When you
+refer to resources, such as an IAM user or an S3 Glacier vault, the account ID distinguishes your resources from resources in other AWS accounts. Refer:
+https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html
+user
+resource
+permission
+Q15) Can the string value of 'Key' be prefixed with :aws:"?
+Only in GovCloud
+Only for S3 not EC2
+Yes
+No 
+Explanation:-The string value can be from 1 to 256 Unicode characters in length and cannot be prefixed with "aws:". The string can contain only the set of
+Unicode letters, digits, white-space, '_', '. Refer:
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#:~:text=The%20string%20value%20can%20be%20from%201%20to%20256%20Unicode,%2Dspace%2C%20'_'%2C%20'.
+Q16) Which of the following is a storage device that moves data in sequences of bytes or bits (blocks)? 
+Hint: These devices support random access and generally use buffered I/O.
+Block device 
+Explanation:-A block device is a storage device that moves data in sequences of bytes or bits (blocks). These devices support random access and
+generally use buffered I/O. Refer: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html
+Mapping device
+Storage block
+Block map
+Q17)
+A customer needs to capture all client connection information from their load balancer every five minutes. The company wants to
+use this data for analyzing traffic patterns and troubleshooting their applications.
+Which of the following options meets the customer requirements?
+Enable Amazon CloudWatch metrics on the load balancer.
+Install the Amazon CloudWatch Logs agent on the load balancer.
+Enable access logs on the load balancer.
+Enable AWS CloudTrail for the load balancer.
+Q18) Does AWS Direct Connect allow you access to all Availabilities Zones within a Region?
+No
+Yes
+Only when there's just one availability zone in a region. If there are more than one, only one availability zone can be accessed directly.
+Depends on the type of connection
+Q19) Is creating a Read Replica of another Read Replica supported?
+Only in certain regions
+Yes
+Only in VPC
+No
+Q20)
+You are building a solution for a customer to extend their on-premises data center to AWS. The customer requires a 50-Mbps
+dedicated and private connection to their VPC.
+Which AWS product or feature satisfies this requirement?
+AWS Direct Connect 
+Explanation:-Refer: https://aws.amazon.com/directconnect/faqs/
+Elastic IP Addresses
+Amazon VPC peering
+Amazon VPC virtual private gateway
+Q21) Is the encryption of connections between my application and my DB Instance using SSL for the MySQL server engines
+available?
+Only in certain regions
+Only in VPC
+Yes
+No
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q22) Amazon EC2 has no Amazon Resource Names (ARNs) because you can't specify a particular Amazon EC2 resource in an IAM
+policy
+INCORRECT
+CORRECT
+Q23) What does Amazon SES stand for?
+Software Email Solution
+Simple Email Service 
+Explanation:-Amazon Simple Email Service (SES) is a cost-effective, flexible, and scalable email service that enables developers to send mail from within
+any application. With Amazon SES, you can send email securely, globally, and at scale. Refer:
+https://aws.amazon.com/ses/#:~:text=Amazon%20Simple%20Email%20Service%20(SES,mail%20from%20within%20any%20application.&text=With%20Amazon%20SES%2C%20you%20can,%2C%20globally%2C%20and%20at%20scale.
+Simple Elastic Server
+Software Enabled Server
+Q24) When you resize the Amazon RDS DB instance, Amazon RDS will perform the upgrade during the next maintenance window. If
+you want the upgrade to be performed now, rather than waiting for the maintenance window, specify the _____ option.
+ApplyImmediately 
+Explanation:-Deferred DB instance modifications that you have chosen not to apply immediately are applied during the maintenance window. For
+example, you may choose to change the DB instance class or parameter group during the maintenance window. To apply the changes to the maintenance
+window immediately, select Apply immediately. Refer:
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html
+ApplyThis
+ApplySoon
+ApplyNow
+Q25) If an Amazon EBS volume is the root device of an instance, can I detach it without stopping the instance?
+Yes but only if a Linux instance
+Yes
+No
+Yes but only if Windows instance
+Q26) A __________ is a document that provides a formal statement of one or more permissions.
+policy 
+Explanation:-IAM Policy is a document that formally states one or more permissions. Refer:
+permission
+Role
+resource
+Q27)
+After launching an instance that you intend to serve as a NAT (Network Address Translation) device in a public subnet you modify
+your route tables to have the NAT device be the target of internet bound traffic of your private subnet. When you try and make an
+outbound connection to the internet from an instance in the private subnet, you are not successful.
+Which of the following steps could resolve the issue?
+Attaching a second Elastic Network Interface (ENI) to the instance in the private subnet, and placing it in the public subnet
+Attaching a second Elastic Network Interface (ENI) to the NAT instance, and placing it in the private subnet
+Attaching an Elastic IP address to the instance in the private subnet
+Disabling the Source/Destination Check attribute on the NAT instance 
+Explanation:-Refer: https://docs.aws.amazon.com/vpc/latest/userguide/VPC_NAT_Instance.html
+Q28) An Auto-Scaling group spans 3 AZs and currently has 4 running EC2 instances. When Auto Scaling needs to terminate an EC2
+instance by default, AutoScaling will ___________________. (Choose 2 answers)
+Terminate an instance in the AZ which currently has 2 running EC2 instances.
+Send an SNS notification, if configured to do so. 
+Explanation:-Refer: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html
+Terminate the instance with the least active network connections. If multiple instances meet this criterion, one will be randomly selected.
+Allow at least five minutes for Windows/Linux shutdown scripts to complete, before terminating the instance.
+Randomly select one of the 3 AZs, and then terminate an instance in that AZ.
+Q29) Which of the following requires a custom CloudWatch metric to monitor?
+CPU Utilization of an EC2 instance
+Disk usage activity of an EC2 instance
+Memory Utilization of an EC2 instance 
+Explanation:-Amazon CloudWatch is a web service that enables you to monitor, manage, and publish various metrics, as well as configure alarm actions
+based on data from metrics. You can define custom metrics for your own use, and Elastic Beanstalk will push those metrics to Amazon CloudWatch. Refer:
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customize-containers-cw.html
+Data transfer of an EC2 instance
+Q30) Which of the following items are required to allow an application deployed on an EC2 instance to write data to a DynamoDB
+table? Assume that no security keys are allowed to be stored on the EC2 instance. (Choose 2 answers)
+Launch an EC2 Instance with the IAM Role included in the launch configuration.
+Add an IAM User to a running EC2 instance.
+Create an IAM User that allows write access to the DynamoDB table.
+Add an IAM Role to a running EC2 instance.
+Create an IAM Role that allows write access to the DynamoDB table.
+Q31) Which of the following features ensures even distribution of traffic to Amazon EC2 instances in multiple Availability Zones
+registered with a load balancer?
+An Amazon Route 53 weighted routing policy
+Elastic Load Balancing cross-zone load balancing
+Elastic Load Balancing request routing 
+Explanation:-Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances,
+containers, IP addresses, and Lambda functions. It can handle the varying load of your application traffic in a single Availability Zone or across multiple
+Availability Zones. Elastic Load Balancing offers three types of load balancers that all feature the high availability, automatic scaling, and robust security
+necessary to make your applications fault tolerant. Refer: https://aws.amazon.com/elasticloadbalancing/
+An Amazon Route 53 latency routing policy
+Q32) Can I use Provisioned IOPS with VPC?
+Only with MSSQL based RDS
+No
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Only Oracle based RDS
+Yes for all RDS instances
+Q33) What is the difference between Stream-based and AWS Services when enabling Lambda?
+Streams maintains event source mapping in API
+Streams maintains event source mapping in notification
+Streams maintains event source mapping in EC2 instance
+Streams maintains event source mapping in event source
+Streams maintains event source mapping in Lambda
+Q34) Select two custom origin servers from the following options?
+Elastic Load Balancer
+EC2 instance
+S3 object
+S3 bucket
+API gateway
+Q35) What three features are characteristic of Classic Load Balancer?
+Backend server authentication
+SSLlistener 
+Explanation:-Refer: https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/introduction.html
+Path-based routing
+Dynamic port mapping
+ECS
+Layer 4 based load balancer
+Q36) What security feature is only available with Classic Load Balancer?
+Back-end server authentication 
+Explanation:-Refer: https://aws.amazon.com/elasticloadbalancing/features/
+SAML
+IAM role
+security groups
+LDAP
+Q37) What is a primary difference between Classic and Network Load Balancer?
+Cross-zone load balancing
+Protocol target
+Auto-Scaling
+IP address target 
+Explanation:-You can load balance any application hosted in AWS or on-premises using IP addresses of the application backends as targets. This allows
+load balancing to an application backend hosted on any IP address and any interface on an instance. Each application hosted on the same instance can
+have an associated security group and use the same port. You can also use IP addresses as targets to load balance applications hosted in on-premises
+locations (over a Direct Connect or VPN connection), peered VPCs and EC2-Classic (using ClassicLink). The ability to load balance across AWS and on-
+prem resources helps you migrate-to-cloud, burst-to-cloud or failover-to-cloud.
+For Network Load Balancer - Network Load Balancer preserves the client side source IP allowing the back-end to see the IP address of the client. This can
+then be used by applications for further processing.
+For Classic Load Balancer - When using Amazon Virtual Private Cloud (Amazon VPC), you can create and manage security groups associated with Classic
+Load Balancer to provide additional networking and security options. You can also create a Classic Load Balancer without public IP addresses to serve as
+an internal (non-internet-facing) load balancer. Refer: https://aws.amazon.com/elasticloadbalancing/features/
+listener
+Q38) What are the first two conditions used by Amazon AWS default termination policy for Multi-AZ architecture?
+Unprotected instance closest to the next billing hour
+At least one instance that is not protected from scale in
+Availability Zone (AZ) with the most instances
+Unprotected instance with oldest launch configuration
+Random selection of any unprotected instance
+Q39) What feature is used for horizontal scaling of consumers to process data records from a Kinesis data stream?
+Lambda
+Auto-Scaling 
+Explanation:-Recently, AWS launched a new feature of AWS Application Auto Scaling that let you define scaling policies that automatically add and
+remove shards to an Amazon Kinesis Data Stream. Refer: https://aws.amazon.com/blogs/big-data/scaling-amazon-kinesis-data-streams-with-aws-
+application-auto-scaling/
+Vertical scaling shards
+Elastic Load Balancer
+Q40) What two attributes are only associated with CloudFront private content?
+Web distribution
+Signed URL 
+Explanation:-A signed URL includes additional information, for example, an expiration date and time, that gives you more control over access to your
+content. Refer: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-urls.html
+Signed cookies 
+Explanation:-CloudFront signed cookies allow you to control who can access your content when you don't want to change your current URLs or when you
+want to provide access to multiple restricted files, for example, all of the files in the subscribers' area of a website. This topic explains the considerations
+when using signed cookies and describes how to set signed cookies using canned and custom policies. Refer:
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-cookies.html
+Amazon S3 URL
+Object
+Q41) How are origin servers located within CloudFront? (Select two)
+Source mapping
+RTMP protocol
+Web distribution
+Distribution list
+DNS request
+Q42)
+An instance is launched into a VPC subnet with the network ACL configured to allow all inbound traffic and deny all outbound traffic.
+The instance's security group is configured to allow SSH from any IP address and deny all outbound traffic.
+What changes need to be made to allow SSH access to the instance?
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nothing, it can be accessed from any IP address using SSH.
+Both the outbound security group and outbound network ACL need to be modified to
+The outbound network ACL needs to be modified to allow outbound traffic. 
+Explanation:-Network ACLs are stateless, which means that responses to allowed inbound traffic are subject to the rules for outbound traffic (and vice
+versa). You can create a custom network ACL for your VPC. By default, a network ACL that you create blocks all inbound and outbound traffic until you add
+rules, and is not associated with a subnet until you explicitly associate it with one. Refer: https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-
+acls.html
+The outbound security group needs to be modified to allow outbound traffic.
+Q43) What are three primary reasons for deploying ElastiCache?
+Replication with Redis
+Managed service 
+Explanation:-Amazon ElastiCache for Redis is a web service that makes it easy to deploy and run Redis protocol-compliant server nodes in the cloud.
+The service enables the management, monitoring and operation of a Redis node; creation, deletion and modification of the node can be carried out through
+the ElastiCache console, the command line interface or the web service APIs. Amazon ElastiCache for Redis supports Redis Master / Slave replication.
+Refer: https://aws.amazon.com/elasticache/redis/faqs/
+Data security
+Durability
+Low latency
+Q44) What service does not support session data persistence store to enable web-based stateful applications?
+DynamoDB
+Memcached 
+Explanation:-Amazon ElastiCache for Memcached is a Memcached-compatible in-memory key-value store service that can be used as a cache or a data
+store. It delivers the performance, ease-of-use, and simplicity of Memcached. ElastiCache for Memcached is fully managed, scalable, and secure - making
+it an ideal candidate for use cases where frequently accessed data must be in-memory. It is a popular choice for use cases such as Web, Mobile Apps,
+Gaming, Ad-Tech, and E-Commerce. Refer: https://aws.amazon.com/elasticache/memcached/
+RDS
+Redis
+RedShift
+Q45) How does Memcached implement horizontal scaling?
+Database store
+Partitioning 
+Explanation:-The Memcached engine supports partitioning your data across multiple nodes. Because of this, Memcached clusters scale horizontally
+easily. A Memcached cluster can have from 1 to 20 nodes. To horizontally scale your Memcached cluster, merely add or remove nodes. Refer:
+https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Scaling.html#:~:text=Scaling%20Memcached%20Vertically-
+,Scaling%20Memcached%20Horizontally,merely%20add%20or%20remove%20nodes.
+Auto-Scaling
+EC2 instances
+S3 bucket
+Q46) Can I encrypt connections between my application and my DB Instance using SSL?
+Only in VPC
+Yes
+No
+Only in certain regions
+Q47)
+Your customer is willing to consolidate their log streams (access logs application logs security logs etc.) in one single system. Once
+consolidated, the customer wants to analyze these logs in real time based on heuristics. From time to time, the customer needs to
+validate heuristics, which requires going back to data samples extracted from the last 12 hours?
+What is the best approach to meet your customer’s requirements?
+Setup an Auto Scaling group of EC2 syslogd servers, store the logs on S3 use EMR to apply heuristics on the logs
+Configure Amazon Cloud Trail to receive custom logs, use EMR to apply heuristics the logs
+Send all the log events to Amazon Kinesis develop a client process to apply heuristics on the logs
+Send all the log events to Amazon SQS. Setup an Auto Scaling group of EC2 servers to consume the logs and apply the heuristics.
+Q48)
+Your startup wants to implement an order fulfillment process for selling a personalized gadget that needs an average of 3-4 days to
+produce with some orders taking up to 6 months you expect 10 orders per day on your first day. 1000 orders per day after 6 months
+and 10,000 orders after 12 months. Orders coming in are checked for consistency men dispatched to your manufacturing plant for
+production quality control packaging shipment and payment processing If the product does not meet the quality standards at any
+stage of the process employees may force the process to repeat a step Customers are notified via email about order status and any
+critical issues with their orders such as payment failure. Your case architecture includes AWS Elastic Beanstalk for your website with
+an RDS MySQL instance for customer data and orders.
+How can you implement the order fulfillment process while making sure that the emails are delivered reliably?
+Use an SQS queue to manage all process tasks Use an Auto Scaling group of EC2 Instances that poll the tasks and execute them. Use SES to send
+emails to customers.
+Use SWF with an Auto Scaling group of activity workers and a decider instance in another Auto Scaling group with min/max=1 use SES to send emails
+to customers.
+Use SWF with an Auto Scaling group of activity workers and a decider instance in another Auto Scaling group with min/max=1 Use the decider instance
+to send emails to customers.
+Add a business process management application to your Elastic Beanstalk app servers and re-use the ROS database for tracking order status use one
+of the Elastic Beanstalk instances to send emails to customers.
+Q49)
+You are designing the network infrastructure for an application server in Amazon VPC Users will access all the application instances
+from the Internet as well as from an onpremises network The on-premises network is connected to your VPC over an AWS Direct
+Connect link.
+How would you design routing to meet the above requirements?
+Configure two routing tables one that has a default route via the Internet gateway and another that has a default route via the VPN gateway Associate
+both routing tables with each VPC subnet.
+Configure a single routing table with two default routes: one to the internet via an Internet gateway the other to the on-premises network via the VPN
+gateway use this routing table across all subnets in your VPC.
+Configure a single routing table with a default route via the internet gateway Propagate specific routes for the on-premises networks via BGP on the
+AWS Direct Connect customer router Associate the routing table with all VPC subnets.
+Configure a single routing Table with a default route via the Internet gateway Propagate a default route via BGP on the AWS Direct Connect customer
+router Associate the routing table with all VPC subnets.
+Q50)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A company is running a batch analysis every hour on their main transactional DB. running on an RDS MySQL instance to populate
+their central Data Warehouse running on Redshift During the execution of the batch their transactional applications are very slow
+When the batch completes they need to update the top management dashboard with the new data The dashboard is produced by
+another system running on-premises that is currently started when a manually-sent email notifies that an update is required The on-
+premises system cannot be modified because is managed by another team.
+How would you optimize this scenario to solve performance issues and automate the process as much as possible?
+Create an RDS Read Replica for the batch analysis and SQS to send a message to the on-premises system to update the dashboard.
+Create an RDS Read Replica for the batch analysis and SNS to notify me on-premises system to update the dashboard
+Replace ROS with Redsnift for the oaten analysis and SQS to send a message to the on-premises system to update the dashboard
+Replace RDS with Redshift for the batch analysis and SNS to notify the on-premises system to update the dashboard
+Q51) What new feature was recently added to SQS that defines how messages are ordered?
+TLS
+FIFO 
+Explanation:-SQS FIFO queues are designed to guarantee that messages are processed exactly once, in the exact order that they are sent.
+SNS
+streams
+decoupling
+Q52) You have 1 TB of data and want to archive the data that won't be accessed that often. Which is the most suitable Amazon AWS
+storage solution recommended in this case?
+ephemeral
+EBS
+Glacier 
+Explanation:-Amazon S3 Glacier and S3 Glacier Deep Archive are a secure, durable, and extremely low-cost Amazon S3 cloud storage classes for data
+archiving and long-term backup. Refer: https://aws.amazon.com/glacier/
+CloudFront
+Q53) What enables load balancing between multiple applications per load balancer?
+Backend server authentication
+Path-based routing 
+Explanation:-You can create a listener with rules to forward requests based on the URL path. This is known as path-based routing. If you are running
+microservices, you can route traffic to multiple back-end services using path-based routing. For example, you can route general requests to one target
+group and requests to render images to another target group. Refer: https://docs.aws.amazon.com/elasticloadbalancing/latest/application/tutorial-load-
+balancer-routing.html
+Sticky sessions
+Listeners
+Q54) What features are required to prevent users from bypassing AWS CloudFront security? (Select three)
+Origin access identity (OAI)
+Signed cookies
+IP whitelist
+Signed URL
+Bastion host
+ 

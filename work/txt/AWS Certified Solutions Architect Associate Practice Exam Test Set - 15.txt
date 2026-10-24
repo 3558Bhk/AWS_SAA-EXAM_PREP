@@ -1,0 +1,532 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Sheet
+Q1) Which type of record is commonly used to route traffic to an IPv6 address?
+An MX record
+An AAAA record 
+Explanation:-An AAAA record is used to route traffic to an IPv6 address, whereas an A record is used to route traffic to an IPv4 address.
+A CNAME
+An A record
+Q2) Where do you register a domain name?
+With InterNIC directly
+With a domain registrar 
+Explanation:-Domain names are registered with a domain registrar, which then registers the name to InterNIC.
+With your local government authority
+With the Internet Assigned Numbers Authority (IANA)
+Q3)
+You have an application that for legal reasons must be hosted in the United States when U.S. citizens access it. The application
+must be hosted in the European Union when citizens of the EU access it. For all other citizens of the world, the application must
+be hosted in Sydney.
+Which routing policy should you choose in order to achieve this?
+Simple routing
+Geolocation routing 
+Explanation:-You should route your traffic based on where your end users are located. The best routing policy to achieve this is geolocation
+routing.
+Latency-based routing
+Failover routing
+Q4) Which type of DNS record should you use to resolve an IP address to a domain name?
+A PTR record 
+Explanation:-A PTR record is used to resolve an IP address to a domain name, and it is commonly referred to as “reverse DNS.”
+An SPF record
+A C Name
+An A record
+Q5)
+You host a web application across multiple AWS regions in the world, and you need to configure your DNS so that your end
+users will get the fastest network performance possible.
+Which routing policy should you apply?
+Simple routing
+Latency-based routing 
+Explanation:-You want your users to have the fastest network access possible. To do this, you would use latency-based routing. Geolocation
+routing would not achieve this as well as latency- based routing, which is specifically geared toward measuring the latency and thus would direct you
+to the AWS region in which you would have the lowest latency.
+Geolocation routing
+Weighted routing
+Q6) Which DNS record should you use to configure the transmission of email to your intended mail server?
+SOA record
+MX records 
+Explanation:-You would use Mail eXchange (MX) records to define which inbound destination mail server should be used.
+A records
+SPF records
+Q7) 7. Which DNS records are commonly used to stop email spoofing and spam?
+A records
+SPF records 
+Explanation:-SPF records are used to verify authorized senders of mail from your domain.
+MX records
+C names
+Q8)
+You are rolling out A and B test versions of a web application to see which version results in the most sales. You need 10
+percent of your traffic to go to version A, 10 percent to go to version B, and the rest to go to your current production version.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Which routing policy should you choose to achieve this?
+Geolocation routing
+Weighted routing 
+Explanation:-Weighted routing would best achieve this objective because it allows you to specify which percentage of traffic is directed to each
+endpoint.
+Simple routing
+Failover routing
+Q9) Which DNS record must all zones have by default?
+SOA 
+Explanation:-The start of a zone is defined by the SOA; therefore, all zones must have an SOA record by default.
+MX
+TXT
+SPF
+Q10)
+Your company has its primary production site in Western Europe and its DR site in the Asia Pacific. You need to configure DNS
+so that if your primary site becomes unavailable, you can fail DNS over to the secondary site.
+Which DNS routing policy would best achieve this?
+Failover routing 
+Explanation:-Failover-based routing would best achieve this objective.
+Simple routing
+Geolocation routing
+Weighted routing
+Q11) Which type of DNS record should you use to resolve a domain name to another domain name?
+An SPF record
+A CNAME record 
+Explanation:-The CNAME record maps a name to another name. It should be used only when there are no other records on that name.
+An A record
+A PTR record
+Q12) Which is a function that Amazon Route 53 does not perform?
+DNS service
+Load balancing 
+Explanation:-Amazon Route 53 performs three main functions: domain registration, DNS service, and health checking.
+Domain registration
+Health checks
+Q13) Which DNS record can be used to store human-readable information about a server, network, and other accounting data
+with a host?
+An MX record
+A TXT record 
+Explanation:-A TXT record is used to store arbitrary and unformatted text with a host.
+An SPF record
+A PTR record
+Q14) Which resource record set would not be allowed for the hosted zone example.com ?
+www.example.ca 
+Explanation:-The resource record sets contained in a hosted zone must share the same suffix.
+www.aws.example.com
+www.example.com
+www.beta.example.com
+Q15) What is the longest time available for an Amazon Simple Queue Service (Amazon SQS) visibility timeout?
+12 hours 
+Explanation:-The maximum time for an Amazon SQS visibility timeout is 12 hours
+1 hour
+60 seconds
+30 seconds
+Q16) Can an Amazon Simple Notification Service (Amazon SNS) message be deleted after being published to a topic?
+No. After a message has been successfully published to a topic, it cannot be recalled. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Explanation:-No. After a message has been successfully published to a topic, it cannot be recalled.
+Only if the Amazon SNS recall message parameter has been set
+Only if a subscriber(s) has/have not read the message yet
+Yes. However it can be deleted only if the subscribers are Amazon SQS queues.
+Q17) Can an Amazon Simple Notification Service (Amazon SNS) topic be recreated with a previously used topic name?
+Yes. The topic name should typically be available after 30–60 seconds after the previous topic with the same name has been deleted. 
+Explanation:-Topic names should typically be available for reuse approximately 30–60 seconds after the previous topic with the same name has
+been deleted. The exact time will depend on the number of subscriptions active on the topic; topics with a few subscribers will be available instantly
+for reuse, while topics with larger subscriber lists may take longer.
+Yes. The topic name should typically be available after 1–3 hours after the previous topic with the same name has been deleted.
+Yes. The topic name should typically be available after 24 hours after the previous topic with the same name has been deleted.
+At this time, this feature is not supported.
+Q18) What should you do in order to grant a different AWS account permission to your Amazon Simple Queue Service (Amazon
+SQS) queue?
+Create an Amazon SQS policy that grants the other account access. 
+Explanation:-The main difference between Amazon SQS policies and IAM policies is that an Amazon SQS policy enables you to grant a different
+AWS account permission to your Amazon SQS queues, but an IAM policy does not.
+Create a user for that account in AWS Identity and Access Management (IAM) and establish an IAM policy that grants access to the queue.
+Share credentials to your AWS account and have the other account’s applications use your account’s credentials to access the Amazon SQS
+queue.
+Amazon Virtual Private Cloud (Amazon VPC) peering must be used to achieve this.
+Q19) What is the longest time available for an Amazon Simple Queue Service (Amazon SQS) long polling timeout?
+30 seconds
+20 seconds 
+Explanation:-The maximum time for an Amazon SQS long polling timeout is 20 seconds
+10 seconds
+1 hour
+Q20) What is the longest configurable message retention period for Amazon Simple Queue Service (Amazon SQS)?
+30 seconds
+14 days 
+Explanation:-The longest configurable message retention period for Amazon SQS is 14 days.
+4 days
+30 minutes
+Q21) What is the default message retention period for Amazon Simple Queue Service (Amazon SQS)?
+30 seconds
+4 days 
+Explanation:-The default message retention period that can be set in Amazon SQS is four days.
+30 minutes
+14 days
+Q22)
+Amazon Simple Notification Service (Amazon SNS) is a push notification service that lets you send individual or multiple
+messages to large numbers of recipients.
+What types of clients are supported?
+Mobile and AMQP support for publisher and subscriber client types
+Publisher and subscriber client types 
+Explanation:-With Amazon SNS, you send individual or multiple messages to large numbers of recipients using publisher and subscriber client
+types.
+Producers and consumers supported by C and C++ clients
+Java and JavaScript clients that support publisher and subscriber types
+Q23) In Amazon Simple Workflow Service (Amazon SWF), a decider is responsible for what?
+Executing your workflow
+Defining work coordination logic by specifying work sequencing, timing, and failure conditions 
+Explanation:-The decider schedules the activity tasks and provides input data to the activity workers. The decider also processes events that arrive
+while the workflow is in progress and closes the workflow when the objective has been completed.
+Executing each step of the work
+Registering activities and workflow with Amazon SWF
+Q24) Which port number is used to serve requests by DNS?
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+161
+53 
+Explanation:-DNS uses port number 53 to serve requests.
+22
+389
+Q25) Which protocol is primarily used by DNS to serve requests?
+User Datagram Protocol (UDP) 
+Explanation:-DNS primarily uses UDP to serve requests.
+File Transfer Protocol (FTP)
+Hyper Text Transfer Protocol (HTTP)
+Transmission Control Protocol (TCP)
+Q26) Which protocol is used by DNS when response data size exceeds 512 bytes?
+File Transfer Protocol (FTP)
+Hyper Text Transfer Protocol (HTTP)
+Transmission Control Protocol (TCP) 
+Explanation:-The TCP protocol is used by DNS server when the response data size exceeds 512 bytes or for tasks such as zone transfers.
+User Datagram Protocol (UDP)
+Q27) What are the different hosted zones that can be created in Amazon Route 53?
+1. Public hosted zone 
+2. Global hosted zone 
+3. Private hosted zone
+2 and 3
+1 and 3 
+Explanation:-Using Amazon Route 53, you can create two types of hosted zones: public hosted zones and private hosted zones.
+1 and 2
+1, 2, and 3
+Q28)
+Your e-commerce application provides daily and ad hoc reporting to various business units on customer purchases. This is
+resulting in an extremely high level of read traffic to your MySQL Amazon Relational Database Service (Amazon RDS) instance.
+What can you do to scale up read traffic without impacting your database’s performance?
+Create a read replica for an Amazon RDS instance. 
+Explanation:-Amazon RDS read replicas provide enhanced performance and durability for Amazon RDS instances. This replication feature makes it
+easy to scale out elastically beyond the capacity constraints of a single Amazon RDS instance for read-heavy database workloads. You can create
+one or more replicas of a given source Amazon RDS instance and serve high-volume application read traffic from multiple copies of your data,
+thereby increasing aggregate read throughput.
+Modify the Amazon RDS instance to be a Multi-AZ deployment.
+Increase the allocated storage for the Amazon RDS instance.
+Change the Amazon RDS instance DB engine version.
+Q29)
+Your website is hosted on a fleet of web servers that are load balanced across multiple Availability Zones using an Elastic Load
+Balancer (ELB).
+What type of record set in Amazon Route 53 can be used to point myawesomeapp.com to your website?
+MX record set
+Type A Alias resource record set 
+Explanation:-An alias resource record set can point to an ELB. You cannot create a CNAME record at the top node of a Domain Name Service
+(DNS) namespace, also known as the zone apex, as the case in this example. Alias resource record sets can save you time because Amazon Route
+53 automatically recognizes changes in the resource record sets to which the alias resource record set refers.
+TXT record set
+CNAME record set
+Q30)
+You need a secure way to distribute your AWS credentials to an application running on Amazon Elastic Compute Cloud (Amazon
+EC2) instances in order to access supplementary AWS Cloud services.
+What approach provides your application access to use short-term credentials for signing requests while protecting those
+credentials from other users?
+Add your credentials to the UserData parameter of each Amazon EC2 instance.
+Use a configuration file to store your access and secret keys on the Amazon EC2 instances.
+Specify your access and secret keys directly in your application.
+Provision the Amazon EC2 instances with an instance profile that has the appropriate privileges. 
+Explanation:-An instance profile is a container for an AWS Identity and Access Management (IAM) role that you can use to pass role information to
+an Amazon EC2 instance when the instance starts. The IAM role should have a policy attached that only allows access to the AWS Cloud services
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+necessary to perform its function.
+Q31)
+You are running a suite of microservices on AWS Lambda that provide the business logic and access to data stored in Amazon
+DynamoDB for your task management system. You need to create well-defined RESTful Application Program Interfaces (APIs)
+for these microservices that will scale with traffic to support a new mobile application.
+What AWS Cloud service can you use to create the necessary RESTful APIs?
+Amazon Cognito
+Amazon Kinesis
+Amazon API Gateway 
+Explanation:-Amazon API Gateway is a fully managed service that makes it easy for developers to publish, maintain, monitor, and secure APIs at
+any scale. You can create an API that acts as a “front door” for applications to access data, business logic, or functionality from your code running on
+AWS Lambda. Amazon API Gateway handles all of the tasks involved in accepting and processing up to hundreds of thousands of concurrent API
+calls, including traffic management, authorization and access control, monitor
+Amazon Elastic Compute Cloud (Amazon EC2) Container Registry
+Q32) When designing a loosely coupled system, which AWS services provide an intermediate durable storage layer between
+components? (Choose 2 answers)
+Amazon Route 53
+AWS CloudFormation
+Amazon Simple Queue Service (Amazon SQS) 
+Explanation:-Amazon Kinesis is a platform for streaming data on AWS, offering powerful services to make it easy to load and analyze streaming
+data. Amazon SQS is a fast, reliable, scalable, and fully managed message queuing service. Amazon SQS makes it simple and cost-effective to
+decouple the components of a cloud application.
+Amazon CloudFront
+Amazon Kinesis 
+Explanation:-Amazon Kinesis is a platform for streaming data on AWS, offering powerful services to make it easy to load and analyze streaming
+data. Amazon SQS is a fast, reliable, scalable, and fully managed message queuing service. Amazon SQS makes it simple and cost-effective to
+decouple the components of a cloud application.
+Q33) Which of the following options will help increase the availability of a web server farm? (Choose 2 answers)
+Deploy the instances in an Amazon Virtual Private Cloud (Amazon VPC).
+Leverage Auto Scaling to recover from failed instances. 
+Explanation:-Launching instances across multiple Availability Zones helps ensure the application is isolated from failures in a single Availability
+Zone, allowing the application to achieve higher availability. Whether you are running one Amazon EC2 instance or thousands, you can use Auto
+Scaling to detect impaired Amazon EC2 instances and unhealthy applications and replace the instances without your intervention. This ensures that
+your application is getting the compute capacity that you expect.
+Launch the web server instances across multiple Availability Zones. 
+Explanation:-Launching instances across multiple Availability Zones helps ensure the application is isolated from failures in a single Availability
+Zone, allowing the application to achieve higher availability. Whether you are running one Amazon EC2 instance or thousands, you can use Auto
+Scaling to detect impaired Amazon EC2 instances and unhealthy applications and replace the instances without your intervention. This ensures that
+your application is getting the compute capacity that you expect.
+Use Amazon CloudFront to deliver content to the end users with low latency and high data transfer speeds.
+Add more CPU and RAM to each instance.
+Q34) Which of the following AWS Cloud services are designed according to the Multi-AZ principle? (Choose 2 answers)
+Amazon Virtual Private Cloud (Amazon VPC)
+Amazon Simple Storage Service (Amazon S3) 
+Explanation:-Amazon DynamoDB runs across AWS proven, high-availability data centers. The service replicates data across three facilities in an
+AWS region to provide fault tolerance in the event of a server failure or Availability Zone outage. Amazon S3 provides durable infrastructure to store
+important data and is designed for durability of 99.999999999% of objects. Your data is redundantly stored across multiple facilities and multiple
+devices in each facility.
+Elastic Load Balancing
+Amazon ElastiCache
+Amazon DynamoDB 
+Explanation:-Amazon DynamoDB runs across AWS proven, high-availability data centers. The service replicates data across three facilities in an
+AWS region to provide fault tolerance in the event of a server failure or Availability Zone outage. Amazon S3 provides durable infrastructure to store
+important data and is designed for durability of 99.999999999% of objects. Your data is redundantly stored across multiple facilities and multiple
+devices in each facility.
+Q35)
+Your e-commerce site was designed to be stateless and currently runs on a fleet of Amazon Elastic Compute Cloud (Amazon
+EC2) instances. In an effort to control cost and increase availability, you have a requirement to scale the fleet based on CPU
+and network utilization to match the demand curve for your site.
+What services do you need to meet this requirement? (Choose 2 answers)
+Amazon Simple Storage Service (Amazon S3)
+Auto Scaling 
+Explanation:-Auto Scaling enables you to follow the demand curve for your applications closely, reducing the need to provision Amazon EC2
+capacity manually in advance. For example, you can set a condition to add new Amazon EC2 instances in increments to the Auto Scaling group
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+when the average CPU and network utilization of your Amazon EC2 fleet monitored in Amazon CloudWatch is high; similarly, you can set a condition
+to remove instances in the same increments when CPU and network utilization are low.
+Elastic Load Balancing
+Amazon DynamoDB
+Amazon CloudWatch 
+Explanation:-Auto Scaling enables you to follow the demand curve for your applications closely, reducing the need to provision Amazon EC2
+capacity manually in advance. For example, you can set a condition to add new Amazon EC2 instances in increments to the Auto Scaling group
+when the average CPU and network utilization of your Amazon EC2 fleet monitored in Amazon CloudWatch is high; similarly, you can set a condition
+to remove instances in the same increments when CPU and network utilization are low.
+Q36) Your compliance department has mandated a new requirement that all data on Amazon Elastic Block Storage (Amazon
+EBS) volumes must be encrypted. Which of the following steps would you follow for your existing Amazon EBS volumes to
+comply with the new requirement? (Choose 3 answers)
+Copy the data from the unencrypted Amazon EBS volume to the Amazon EBS volume with encryption enabled. 
+Explanation:-There is no direct way to encrypt an existing unencrypted volume. However, you can migrate data between encrypted and
+unencrypted volumes.
+Modify the existing Amazon EBS volume properties to enable encryption.
+Attach an Amazon EBS volume with encryption enabled to the instance that hosts the data, then migrate the data to the encryption-enabled
+Amazon EBS volume. 
+Explanation:-There is no direct way to encrypt an existing unencrypted volume. However, you can migrate data between encrypted and
+unencrypted volumes.
+Move the existing Amazon EBS volume into an Amazon Virtual Private Cloud (Amazon VPC).
+Create a new Amazon EBS volume with encryption enabled. 
+Explanation:-There is no direct way to encrypt an existing unencrypted volume. However, you can migrate data between encrypted and
+unencrypted volumes.
+Q37) When building a Distributed Denial of Service (DDoS)-resilient architecture, how does Amazon Virtual Private Cloud
+(Amazon VPC) help minimize the attack surface area? (Choose 3 answers)
+Adds non-critical Internet entry points to the architecture 
+Explanation:-The attack surface is composed of the different Internet entry points that allow access to your application. The strategy to minimize the
+attack surface area is to (a) reduce the number of necessary Internet entry points, (b) eliminate non-critical Internet entry points, (c) separate end
+user traffic from management traffic, (d) obfuscate necessary Internet entry points to the level that untrusted end users cannot access them, and (e)
+decouple Internet entry points to minimize the effects
+Obfuscates necessary Internet entry points to the level that untrusted end users 
+Explanation:-The attack surface is composed of the different Internet entry points that allow access to your application. The strategy to minimize the
+attack surface area is to (a) reduce the number of necessary Internet entry points, (b) eliminate non-critical Internet entry points, (c) separate end
+user traffic from management traffic, (d) obfuscate necessary Internet entry points to the level that untrusted end users cannot access them, and (e)
+decouple Internet entry points to minimize the effects
+Combines end user traffic with management traffic
+Reduces the number of necessary Internet entry points 
+Explanation:-The attack surface is composed of the different Internet entry points that allow access to your application. The strategy to minimize the
+attack surface area is to (a) reduce the number of necessary Internet entry points, (b) eliminate non-critical Internet entry points, (c) separate end
+user traffic from management traffic, (d) obfuscate necessary Internet entry points to the level that untrusted end users cannot access them, and (e)
+decouple Internet entry points to minimize the effects
+Scales the network to absorb DDoS attacks
+Q38)
+Your application polls an Amazon Simple Queue Service (Amazon SQS) queue frequently and returns immediately, often with
+empty ReceiveMessageResponses.
+What is one thing that can be done to reduce Amazon SQS costs?
+Pricing on Amazon SQS does not include a cost for service requests; therefore, there is no concern.
+Increase the timeout value for short polling to wait for messages longer before returning a response.
+Change the message visibility value to a higher number.
+Use long polling by supplying a WaitTimeSeconds of greater than 0 seconds when calling ReceiveMessage. 
+Explanation:-Long polling allows your application to poll the queue, and, if nothing is there, Amazon Elastic Compute Cloud (Amazon EC2) waits for
+an amount of time you specify (between 1 and 20 seconds). If a message arrives in that time, it is delivered to your application as soon as possible. If
+a message does not arrive in that time, you need to execute the ReceiveMessage function again.
+Q39) 19. Amazon Route 53 cannot route queries to which AWS resource?
+Amazon CloudFront distribution
+Elastic Load Balancing load balancer
+Amazon EC2
+AWS OpsWorks 
+Explanation:-Amazon Route 53 can route queries to a variety of AWS resources such as an Amazon CloudFront distribution, an Elastic Load
+Balancing load balancer, an Amazon EC2 instance, a website hosted in an Amazon S3 bucket, and an Amazon Relational Database (Amazon RDS).
+Q40) When configuring Amazon Route 53 as your DNS service for an existing domain, which is the first step that needs to be
+performed?
+Create hosted zones.
+Create resource record sets.
+Register a domain with Amazon Route 53.
+ 
+ Transfer domain registration from current registrar to Amazon Route 53. 
+Explanation:-You must first transfer the existing domain registration from another registrar to Amazon Route 53 to configure it as your DNS service.
+ 

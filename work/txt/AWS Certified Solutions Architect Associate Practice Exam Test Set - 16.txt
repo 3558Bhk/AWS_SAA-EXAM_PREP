@@ -1,0 +1,720 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Sheet
+Q1) Which of the following objects are good candidates to store in a cache? (Choose 3 answers)
+Product catalog 
+Explanation:-Many types of objects are good candidates to cache because they have the potential to be accessed by numerous users repeatedly.
+Even the balance of a bank account could be cached for short periods of time if the back-end database query is slow to respond.
+Shopping cart 
+Explanation:-Many types of objects are good candidates to cache because they have the potential to be accessed by numerous users repeatedly.
+Even the balance of a bank account could be cached for short periods of time if the back-end database query is slow to respond.
+Session state 
+Explanation:-Many types of objects are good candidates to cache because they have the potential to be accessed by numerous users repeatedly.
+Even the balance of a bank account could be cached for short periods of time if the back-end database query is slow to respond.
+Bank account balance
+Q2) Which of the following cache engines are supported by Amazon ElastiCache? (Choose 2 answers)
+Redis 
+Explanation:-Amazon ElastiCache supports Memcached and Redis cache engines. MySQL is not a cache engine, and Couchbase is not
+supported.
+Memcached 
+Explanation:-Amazon ElastiCache supports Memcached and Redis cache engines. MySQL is not a cache engine, and Couchbase is not
+supported.
+MySQL
+Couchbase
+Q3) How many nodes can you add to an Amazon ElastiCache cluster running Memcached?
+100
+20 
+Explanation:-The default limit is 20 nodes per cluster.
+5
+1
+Q4) How many nodes can you add to an Amazon ElastiCache cluster running Redis?
+1 
+Explanation:-Redis clusters can only contain a single node; however, you can group multiple clusters together into a replication group.
+5
+20
+100
+Q5) An application currently uses Memcached to cache frequently used database queries. Which steps are required to migrate
+the application to use Amazon ElastiCache with minimal changes? (Choose 2 answers)
+Connect to the Amazon ElastiCache nodes using Secure Shell (SSH) and install the latest version of Memcached.
+Configure a security group to allow access from the application servers. 
+Explanation:-Amazon ElastiCache is Application Programming Interface (API)-compatible with existing Memcached clients and does not require the
+application to be recompiled or linked against the libraries. Amazon ElastiCache manages the deployment of the Amazon ElastiCache binaries.
+Update the configuration file with the endpoint for the Amazon ElastiCache cluster. 
+Explanation:-Amazon ElastiCache is Application Programming Interface (API)-compatible with existing Memcached clients and does not require the
+application to be recompiled or linked against the libraries. Amazon ElastiCache manages the deployment of the Amazon ElastiCache binaries.
+Recompile the application to use the Amazon ElastiCache libraries.
+Q6) How can you back up data stored in Amazon ElastiCache running Redis? (Choose 2 answers)
+Create a snapshot manually. 
+Explanation:-Amazon ElastiCache with the Redis engine allows for both manual and automatic snapshots. Memcached does not have a backup
+function.
+Configure automatic snapshots to back up the cache environment every night. 
+Explanation:-Amazon ElastiCache with the Redis engine allows for both manual and automatic snapshots. Memcached does not have a backup
+function.
+Create an image of the Amazon Elastic Compute Cloud (Amazon EC2) instance.
+Redis clusters cannot be backed up.
+Q7) How can you secure an Amazon ElastiCache cluster? (Choose 3 answers)
+Restrict network access using a network Access Control List (ACL). 
+Explanation:-Limit access at the network level using security groups or network ACLs, and limit infrastructure changes using IAM.
+Restrict network access using security groups. 
+Explanation:-Limit access at the network level using security groups or network ACLs, and limit infrastructure changes using IAM.
+Change the Memcached root password.
+Restrict Application Programming Interface (API) actions using AWS Identity and Access Management (IAM) policies. 
+Explanation:-Limit access at the network level using security groups or network ACLs, and limit infrastructure changes using IAM.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q8) You are working on a mobile gaming application and are building the leaderboard feature to track the top scores across
+millions of users. Which AWS services are best suited for this use case?
+Amazon ElastiCache using Redis 
+Explanation:-Amazon ElastiCache with Redis provides native functions that simplify the development of leaderboards. With Memcached, it is more
+difficult to sort and rank large datasets. Amazon Redshift and Amazon S3 are not designed for high volumes of small reads and writes, typical of a
+mobile game.
+Amazon ElastiCache using Memcached
+Amazon Redshift
+Amazon Simple Storage Service (S3)
+Q9)
+You have built a large web application that uses Amazon ElastiCache using Memcached to store frequent query results. You
+plan to expand both the web fleet and the cache fleet multiple times over the next year to accommodate increased user traffic.
+How do you minimize the amount of changes required when a scaling event occurs?
+Update the configuration file each time a new cluster
+Configure AutoDiscovery on the server side
+Configure AutoDiscovery on the client side 
+Explanation:-When the clients are configured to use AutoDiscovery, they can discover new cache nodes as they are added or removed.
+AutoDiscovery must be configured on each client and is not active server side. Updating the configuration file each time will be very difficult to
+manage. Using an Elastic Load Balancer is not recommended for this scenario.
+Use an Elastic Load Balancer to proxy the requests
+Q10) Which cache engines does Amazon ElastiCache support? (Choose 2 answers)
+Redis 
+Explanation:-Amazon ElastiCache supports both Memcached and Redis. You can run self- managed installations of Membase and Couchbase
+using Amazon Elastic Compute Cloud
+Memcached 
+Explanation:-Amazon ElastiCache supports both Memcached and Redis. You can run self- managed installations of Membase and Couchbase
+using Amazon Elastic Compute Cloud
+Membase
+Couchbase
+Q11) What origin servers are supported by Amazon CloudFront? (Choose 3 answers)
+An Amazon EC2 Auto Scaling Group
+An HTTP server running on-premises 
+Explanation:-Amazon CloudFront can use an Amazon S3 bucket or any HTTP server, whether or not it is running in Amazon EC2. A Route 53
+Hosted Zone is a set of DNS resource records, while an Auto Scaling Group launches or terminates Amazon EC2 instances automatically. Neither
+can be specified as an origin server for a distribution.
+An HTTP server running on Amazon Elastic Compute Cloud (Amazon EC2) 
+Explanation:-Amazon CloudFront can use an Amazon S3 bucket or any HTTP server, whether or not it is running in Amazon EC2. A Route 53
+Hosted Zone is a set of DNS resource records, while an Auto Scaling Group launches or terminates Amazon EC2 instances automatically. Neither
+can be specified as an origin server for a distribution.
+An Amazon Route 53 Hosted Zone
+An Amazon Simple Storage Service (Amazon S3) bucket 
+Explanation:-Amazon CloudFront can use an Amazon S3 bucket or any HTTP server, whether or not it is running in Amazon EC2. A Route 53
+Hosted Zone is a set of DNS resource records, while an Auto Scaling Group launches or terminates Amazon EC2 instances automatically. Neither
+can be specified as an origin server for a distribution.
+Q12) Which of the following are good use cases for Amazon CloudFront? (Choose 2 answers)
+A corporate HR website that supports a global workforce. Because the site contains sensitive data, all users must connect through a corporate
+Virtual Private Network (VPN).
+A heavily used video and music streaming service that requires content to be delivered only to paid subscribers 
+Explanation:-The site in A is “popular” and supports “users around the world,” key indicators that CloudFront is appropriate. Similarly, the site in C
+is “heavily used,” and requires private content, which is supported by Amazon CloudFront. Both B and D are corporate use cases where the
+requests come from a single geographic location or appear to come from one (because of the VPN). These use cases will generally not see benefit
+from Amazon CloudFront.
+A corporate website that serves training videos to employees. Most employees are located in two corporate campuses in the same city.
+A popular software download site that supports users around the world, with dynamic content that changes rapidly 
+Explanation:-The site in A is “popular” and supports “users around the world,” key indicators that CloudFront is appropriate. Similarly, the site in C
+is “heavily used,” and requires private content, which is supported by Amazon CloudFront. Both B and D are corporate use cases where the
+requests come from a single geographic location or appear to come from one (because of the VPN). These use cases will generally not see benefit
+from Amazon CloudFront.
+Q13)
+You are building a media-sharing web application that serves video files to end users on both PCs and mobile devices. The
+media files are stored as objects in an Amazon Simple Storage Service (Amazon S3) bucket, but are to be delivered through
+Amazon CloudFront.
+What is the simplest way to ensure that only Amazon CloudFront has access to the objects in the Amazon S3 bucket?
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Use public and private keys with signed cookies.
+Use an Amazon CloudFront Origin Access Identifier (OAI). 
+Explanation:-Amazon CloudFront OAI is a special identity that can be used to restrict access to an Amazon S3 bucket only to an Amazon
+CloudFront distribution. Signed URLs, signed cookies, and IAM bucket policies can help to protect content served through Amazon CloudFront, but
+OAIs are the simplest way to ensure that only Amazon CloudFront has access to a bucket.
+Create Signed URLs for each Amazon S3 object.
+Use an AWS Identity and Access Management (IAM) bucket policy.
+Q14)
+Your company data center is completely full, but the sales group has determined a need to store 200TB of product video. The
+videos were created over the last several years, with the most recent being accessed by sales the most often. The data must
+be accessed locally, but there is no space in the data center to install local storage devices to store this data.
+What AWS cloud service will meet sales’ requirements?
+Amazon Elastic Compute Cloud (Amazon EC2) instances with attached Amazon EBS Volumes
+AWS Storage Gateway Gateway-Cached volumes 
+Explanation:-AWS Storage Gateway allows you to access data in Amazon S3 locally, with the Gateway-Cached volume configuration allowing you
+to expand a relatively small amount of local storage into Amazon S3.
+AWS Storage Gateway Gateway-Stored volumes
+AWS Import/Export Disk
+Q15)
+Your company wants to extend their existing Microsoft Active Directory capability into an Amazon Virtual Private Cloud
+(Amazon VPC) without establishing a trust relationship with the existing on-premises Active Directory.
+Which of the following is the best approach to achieve this goal?
+Create and connect an AWS Directory Service for Microsoft Active Directory (Enterprise Edition).
+Create and connect an AWS Directory Service Simple AD. 
+Explanation:-Simple AD is a Microsoft Active Directory-compatible directory that is powered by Samba 4. Simple AD supports commonly used
+Active Directory features such as user accounts, group memberships, domain-joining Amazon Elastic Compute Cloud (Amazon EC2) instances
+running Linux and Microsoft Windows, Kerberos-based Single Sign-On (SSO), and group policies.
+Create and connect an AWS Directory Service AD Connector.
+None of the above
+Q16) Which of the following are AWS Key Management Service (AWS KMS) keys that will never exit AWS unencrypted?
+Envelope encryption keys
+AWS KMS Customer Master Keys (CMKs) 
+Explanation:-AWS KMS CMKs are the fundamental resources that AWS KMS manages. CMKs can never leave AWS KMS unencrypted, but data
+keys can.
+AWS KMS data keys
+A and C
+Q17) Which cryptographic method is used by AWS Key Management Service (AWS KMS) to encrypt data?
+Password-based encryption
+Asymmetric
+Shared secret
+Envelope encryption 
+Explanation:-AWS KMS uses envelope encryption to protect data. AWS KMS creates a data key, encrypts it under a Customer Master Key (CMK),
+and returns plaintext and encrypted versions of the data key to you. You use the plaintext key to encrypt data and store the encrypted key alongside
+the encrypted data. You can retrieve a plaintext data key only if you have the encrypted data key and you have permission to use the corresponding
+master key.
+Q18) Which AWS service records Application Program Interface (API) calls made on your account and delivers log files to your
+Amazon Simple Storage Service (Amazon S3) bucket?
+Amazon CloudWatch
+AWS CloudTrail 
+Explanation:-AWS CloudTrail records important information about each API call, including the name of the API, the identity of the caller, the time of
+the API call, the request parameters, and the response elements returned by the AWS Cloud service.
+Amazon Kinesis
+AWS Data Pipeline
+Q19) You are trying to decrypt ciphertext with AWS KMS and the decryption operation is failing. Which of the following are
+possible causes? (Choose 2 answers)
+The ciphertext you are trying to decrypt is not valid. 
+Explanation:-Encryption context is a set of key/value pairs that you can pass to AWS KMS when you call the Encrypt, Decrypt, ReEncrypt,
+GenerateDataKey, and GenerateDataKeyWithoutPlaintext APIs. Although the encryption context is not included in the ciphertext, it is
+cryptographically bound to the ciphertext during encryption and must be passed again when you call the Decrypt (or ReEncrypt) API. Invalid
+ciphertext for decryption is plaintext that has been encrypted in a different AWS account or ciphertext th
+The plaintext was encrypted along with an encryption context, and you are not providing the identical encryption context when calling the Decrypt
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+API. 
+Explanation:-Encryption context is a set of key/value pairs that you can pass to AWS KMS when you call the Encrypt, Decrypt, ReEncrypt,
+GenerateDataKey, and GenerateDataKeyWithoutPlaintext APIs. Although the encryption context is not included in the ciphertext, it is
+cryptographically bound to the ciphertext during encryption and must be passed again when you call the Decrypt (or ReEncrypt) API. Invalid
+ciphertext for decryption is plaintext that has been encrypted in a different AWS account or ciphertext th
+The private key does not match the public key in the ciphertext.
+You are not providing the correct symmetric key to the Decrypt API.
+Q20)
+Your company has 30 years of financial records that take up 15TB of on-premises storage. It is regulated that you maintain
+these records, but in the year you have worked for the company no one has ever requested any of this data.
+Given that the company data center is already filling the bandwidth of its Internet connection, what is an alternative way to
+store the data on the most appropriate cloud storage?
+AWS Import/Export to Amazon Glacier 
+Explanation:-Because the Internet connection is full, the best solution will be based on using AWS Import/Export to ship the data. The most
+appropriate storage location for data that must be stored, but is very rarely accessed, is Amazon Glacier.
+AWS Import/Export to Amazon Simple Storage Service (Amazon S3)
+Amazon Kinesis
+Amazon Elastic MapReduce (AWS EMR)
+Q21)
+Your company collects information from the point of sale registers at all of its franchise locations. Each month these processes
+collect 200TB of information stored in Amazon Simple Storage Service (Amazon S3). Analytics jobs taking 24 hours are
+performed to gather knowledge from this data.
+Which of the following will allow you to perform these analytics in a cost-effective way?
+Launch a d2.8xlarge (32 vCPU, 244GB RAM) Amazon Elastic Compute Cloud (Amazon EC2) instance, and run an application to read and
+process each object sequentially.
+Run a transient Amazon EMR cluster, and run the MapReduce jobs against the data directly in Amazon S3. 
+Explanation:-Because the job is run monthly, a persistent cluster will incur unnecessary compute costs during the rest of the month. Amazon
+Kinesis is not appropriate because the company is running analytics as a batch job and not on a stream. A single large instance does not scale out
+to accommodate the large compute needs.
+Create an application that reads the information of the Amazon S3 bucket and runs it through an Amazon Kinesis stream.
+Copy the data to a persistent Amazon Elastic MapReduce (Amazon EMR) cluster, and run the MapReduce jobs.
+Q22) Which service allows you to process nearly limitless streams of data in flight?
+Amazon Kinesis Firehose
+Amazon Elastic MapReduce (Amazon EMR)
+Amazon Redshift
+Amazon Kinesis Streams 
+Explanation:-The Amazon Kinesis services enable you to work with large data streams. Within the Amazon Kinesis family of services, Amazon
+Kinesis Firehose saves streams to AWS storage services, while Amazon Kinesis Streams provide the ability to process the data in the stream.
+Q23) What combination of services enable you to copy daily 50TB of data to Amazon storage, process the data in Hadoop, and
+store the results in a large data warehouse?
+Amazon Simple Storage Service (Amazon S3), Amazon Data Pipeline, Amazon EMR, and Amazon Redshift 
+Explanation:-Amazon Data Pipeline allows you to run regular Extract, Transform, Load (ETL) jobs on Amazon and on-premises data sources. The
+best storage for large data is Amazon S3, and Amazon Redshift is a large-scale data warehouse service.
+Amazon Elastic Block Store (Amazon EBS), Amazon Data Pipeline, Amazon EMR, and Amazon Redshift
+Amazon Kinesis, Amazon Data Pipeline, Amazon Elastic MapReduce (Amazon EMR), and Amazon Elastic Compute Cloud (Amazon EC2)
+Amazon S3, Amazon Simple Workflow, Amazon EMR, and Amazon DynamoDB
+Q24) Your company has 50,000 weather stations around the country that send updates every 2 seconds. What service will
+enable you to ingest this stream of data and store it to Amazon Simple Storage Service (Amazon S3) for future processing?
+Amazon Elastic Compute Cloud (Amazon EC2)
+Amazon Kinesis Firehose 
+Explanation:-Amazon Kinesis Firehose allows you to ingest massive streams of data and store the data on Amazon S3 (as well as Amazon Redshift
+and Amazon Elasticsearch).
+Amazon Simple Queue Service (Amazon SQS)
+Amazon Data Pipeline
+Q25) Your organization uses Chef heavily for its deployment automation. What AWS cloud service provides integration with
+Chef recipes to start new application server instances, configure application server software, and deploy applications?
+Amazon Kinesis
+AWS OpsWorks 
+Explanation:-AWS OpsWorks uses Chef recipes to start new app server instances, configure application server software, and deploy applications.
+Organizations can leverage Chef recipes to automate operations like software configurations, package installations, database setups, server scaling,
+and code deployment.
+AWS Elastic Beanstalk
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AWS CloudFormation
+Q26)
+A firm is moving its testing platform to AWS to provide developers with instant access to clean test and development
+environments. The primary requirement for the firm is to make environments easily reproducible and fungible.
+What service will help the firm meet their requirements?
+Amazon Redshift
+AWS Config
+AWS CloudFormation 
+Explanation:-With AWS CloudFormation, you can reuse your template to set up your resources consistently and repeatedly. Just describe your
+resources once and then provision the same resources over and over in multiple stacks.
+AWS Trusted Advisor
+Q27)
+Your company’s IT management team is looking for an online tool to provide recommendations to save money, improve
+system availability and performance, and to help close security gaps.
+What can help the management team?
+AWS Config
+AWS Trusted Advisor 
+Explanation:-AWS Trusted Advisor inspects your AWS environment and makes recommendations when opportunities exist to save money, improve
+system availability and performance, or help close security gaps. AWS Trusted Advisor draws upon best practices learned from the aggregated
+operational history of serving hundreds of thousands of AWS customers.
+Cloud-init
+Configuration Recorder
+Q28)
+Your company works with data that requires frequent audits of your AWS environment to ensure compliance with internal
+policies and best practices. In order to perform these audits, you need access to historical configurations of your resources to
+evaluate relevant configuration changes.
+Which service will provide the necessary information for your audits?
+AWS Key Management Service (AWS KMS)
+AWS Config 
+Explanation:-AWS Config is a fully managed service that provides you with an AWS resource inventory, configuration history, and configuration
+change notifications to enable security and governance. With AWS Config, you can discover existing and deleted AWS resources, determine your
+overall compliance against rules, and dive into configuration details of a resource at any point in time. These capabilities enable compliance auditing.
+AWS CloudTrail
+AWS OpsWorks
+Q29) All of the website deployments are currently done by your company’s development team. With a surge in website
+popularity, the company is looking for ways to be more agile with deployments. What AWS cloud service can help the
+developers focus more on writing code instead of spending time managing and configuring servers, databases, load balancers,
+firewalls, and networks?
+AWS Config
+AWS Trusted Advisor
+Amazon Kinesis
+AWS Elastic Beanstalk 
+Explanation:-AWS Elastic Beanstalk is the fastest and simplest way to get an application up and running on AWS. Developers can simply upload
+their application code, and the service automatically handles all the details such as resource provisioning, load balancing, Auto Scaling, and
+monitoring.
+Q30) AWS communicates with customers regarding its security and control environment through a variety of different
+mechanisms. Which of the following are valid mechanisms? (Choose 3 answers)
+Allowing customers’ auditors direct access to AWS data centers, infrastructure, and senior staff
+Directly providing customers with certificates, reports, and other documentation (under NDA in some cases) 
+Explanation:-The option describe valid mechanisms that AWS uses to communicate with customers regarding its security and control environment.
+AWS does not allow customers’ auditors direct access to AWS data centers, infrastructure, or staff.
+Publishing information about security and AWS control practices via the website, whitepapers, and blogs 
+Explanation:-The option describe valid mechanisms that AWS uses to communicate with customers regarding its security and control environment.
+AWS does not allow customers’ auditors direct access to AWS data centers, infrastructure, or staff.
+Obtaining industry certifications and independent third-party attestations 
+Explanation:-The option describe valid mechanisms that AWS uses to communicate with customers regarding its security and control environment.
+AWS does not allow customers’ auditors direct access to AWS data centers, infrastructure, or staff.
+Q31) Which of the following statements is true when it comes to the AWS shared responsibility model?
+The shared responsibility model is only applicable for customers who want to be compliant with ISO 27001.
+The shared responsibility model is only applicable for customers who want to be compliant with SOC 1 Type II.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The shared responsibility model is not just limited to security considerations; it also extends to IT controls. 
+Explanation:-The shared responsibility model can include IT controls, and it is not just limited to security considerations. Therefore, answer C is
+correct.
+The shared responsibility model is limited to security considerations only; it does not extend to IT controls.
+Q32) AWS provides IT control information to customers in which of the following ways?
+By using general control standard compliance and by complying with ISO 27001
+By using specific control definitions or through SAS 70
+By using specific control definitions or through general control standard compliance 
+Explanation:-AWS provides IT control information to customers through either specific control definitions or general control standard compliance.
+By complying with ISO 27001 and SOC 1 Type II
+Q33) Which of the following is a valid report, certification, or third-party attestation for AWS? (Choose 3 answers)
+SOC 4 
+Explanation:-There is no such thing as a SOC 4 report, therefore answer is incorrect.
+PCI DSS Level 1
+SOC 1
+ISO 27001
+Q34) Which of the following statements is true?
+AWS doesn’t take risk management very seriously, and it’s up to the customer to mitigate risks to the AWS infrastructure.
+The shared responsibility model applies to IT security only; it does not relate to governance.
+The AWS platform is PCI DSS-compliant to Level 1. Customers can deploy their web applications to this platform, and they will be PCI DSS-
+compliant automatically.
+IT governance is still the customer’s responsibility, despite deploying their IT estate onto the AWS platform. 
+Explanation:-IT governance is still the customer’s responsibility.
+Q35) Which of the following statements is true when it comes to the risk and compliance advantages of the AWS environment?
+Few, many, or all components of a workload can be moved to the AWS Cloud, but it is the customer’s responsibility to ensure that their entire
+workload remains compliant with various certifications and third-party attestations. 
+Explanation:-Any number of components of a workload can be moved into AWS, but it is the customer’s responsibility to ensure that the entire
+workload remains compliant with various certifications and third-party attestations.
+The non-critical components of a workload must be moved entirely into the AWS Cloud in order to be compliant with various certifications and
+third-party attestations, but the critical components do not.
+Workloads must be moved entirely into the AWS Cloud in order to be compliant with various certifications and third-party attestations.
+The critical components of a workload must be moved entirely into the AWS Cloud in order to be compliant with various certifications and third-
+party attestations, but the non-critical components do not.
+Q36) Which of the following statements best describes an Availability Zone?
+Each Availability Zone consists of multiple discrete data centers with shared power and redundant networking/connectivity
+Each Availability Zone consists of multiple discrete regions, each with a single data center with redundant power and networking/connectivity.
+Each Availability Zone consists of multiple discrete data centers with redundant power and networking/connectivity. 
+Explanation:-An Availability Zone consists of multiple discrete data centers, each with their own redundant power and networking/connectivity,
+therefore answer is correct.
+Each Availability Zone consists of a single discrete data center with redundant power and networking/connectivity.
+Q37) With regard to vulnerability scans and threat assessments of the AWS platform, which of the following statements are
+true? (Choose 2 answers)
+Customers can perform their own scans at any time without advance notice.
+AWS security notifies the appropriate parties to remediate any identified vulnerabilities. 
+Explanation:-AWS regularly scans public-facing, non-customer endpoint IP addresses and notifies appropriate parties. AWS does not scan
+customer instances, and customers must request the ability to perform their own scans in advance, therefore answers are correct.
+Scans performed by AWS include customer instances.
+AWS regularly performs scans of public-facing endpoint IP addresses for vulnerabilities. 
+Explanation:-AWS regularly scans public-facing, non-customer endpoint IP addresses and notifies appropriate parties. AWS does not scan
+customer instances, and customers must request the ability to perform their own scans in advance, therefore answers are correct.
+Q38) Which of the following best describes the risk and compliance communication responsibilities of customers to AWS?
+Both customers and AWS keep their security and control practices entirely confidential and do not share them in order to ensure the greatest
+security for all parties.
+Customers communicate their use and configurations to AWS at all times. AWS does not communicate AWS security and control practices to
+customers for security reasons.
+AWS and customers both communicate their security and control environment information to each other at all times.
+AWS publishes information about the AWS security and control practices online, and directly to customers under NDA. Customers do not need to
+communicate their use and configurations to AWS. 
+Explanation:-AWS publishes information publicly online and directly to customers under NDA, but customers are not required to share their use and
+configuration information with AWS, therefore answer is correct.
+Q39) When it comes to risk management, which of the following is true?
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q39) When it comes to risk management, which of the following is true?
+Neither AWS nor the customer needs to worry about risk management, so no plan is needed from either party.
+AWS has developed a strategic business plan to identify any risks and implemented controls to mitigate or manage those risks. Customers do not
+need to develop and maintain their own risk management plans.
+AWS has developed a strategic business plan to identify any risks and has implemented controls to mitigate or manage those risks. Customers
+should also develop and maintain their own risk management plans to ensure they are compliant with any relevant controls and certifications 
+Explanation:-AWS has developed a strategic business plan, and customers should also develop and maintain their own risk management plans,
+therefore answer is correct.
+AWS does not develop a strategic business plan; risk management and mitigation is entirely the responsibility of the customer.
+Q40) The AWS control environment is in place for the secure delivery of AWS Cloud service offerings. Which of the following
+does the collective control environment NOT explicitly include?
+Technology
+Energy 
+Explanation:-The collective control environment includes people, processes, and technology necessary to establish and maintain an environment
+that supports the operating effectiveness of AWS control framework. Energy is not a discretely identified part of the control environment, therefore
+this the correct answer.
+People
+Processes
+Q41) Who is responsible for the configuration of security groups in an AWS environment?
+AWS provides the security group functionality as a service, but the customer is responsible for correctly and securely configuring their own
+security groups. 
+Explanation:-Customers are responsible for ensuring all of their security group configurations are appropriate for their own applications, therefore
+answer is correct.
+Neither AWS nor the customer is responsible for the configuration of security groups; security groups are intelligently and automatically
+configured using traffic heuristics.
+AWS is responsible for ensuring that all security groups are correctly and securely configured. Customers do not need to worry about security
+group configuration.
+The customer and AWS are both jointly responsible for ensuring that security groups are correctly and securely configured.
+Q42) Which of the following is NOT a recommended approach for customers trying to achieve strong compliance and
+governance over an entire IT control environment?
+Implement generic control objectives that are not specifically designed to meet their organization’s compliance requirements. 
+Explanation:-Customers should ensure that they implement control objectives that are designed to meet their organization’s own unique compliance
+requirements, therefore answer is correct.
+Verify that all control objectives are met and all key controls are designed and operating effectively.
+Take a holistic approach: review information available from AWS together with all other information, and document all compliance requirements.
+Identify and document controls owned by all third parties.
+Q43)
+You are changing your application to move session state information off the individual Amazon Elastic Compute Cloud (Amazon
+EC2) instances to take advantage of the elasticity and cost benefits provided by Auto Scaling.
+Which of the following AWS Cloud services is best suited as an alternative for storing session state information?
+Amazon Storage Gateway
+Amazon Redshift
+Amazon DynamoDB 
+Explanation:-Amazon DynamoDB is a NoSQL database store that is a great choice as an alternative due to its scalability, high-availability, and
+durability characteristics. Many platforms provide open-source, drop-in replacement libraries that allow you to store native sessions in Amazon
+DynamoDB. Amazon DynamoDB is a great candidate for a session storage solution in a share-nothing, distributed architecture.
+Amazon Kinesis
+Q44)
+A media sharing application is producing a very high volume of data in a very short period of time. Your back-end services are
+unable to manage the large volume of transactions.
+What option provides a way to manage the flow of transactions to your back-end services?
+Store the inbound transactions in an Amazon Elastic MapReduce (Amazon EMR) cluster so that your back-end services can retrieve them as
+time permits.
+Use an Amazon Simple Notification Service (Amazon SNS) topic to buffer the inbound transactions.
+Use an Amazon Simple Queue Service (Amazon SQS) queue to buffer the inbound transactions. 
+Explanation:-Amazon SQS is a fast, reliable, scalable, and fully managed message queuing service. Amazon SQS should be used to decouple the
+large volume of inbound transactions, allowing the back-end services to manage the level of throughput without losing messages.
+Store the inbound transactions in an Amazon Relational Database Service (Amazon RDS) instance so that your back-end services can retrieve
+them as time permits.
+Q45) Which of the following are best practices for managing AWS Identity and Access Management (IAM) user access keys?
+(Choose 3 answers)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Keep unused access keys for an indefinite period of time.
+Configure Multi-Factor Authentication (MFA) for your most sensitive operations. 
+Explanation:-You should protect AWS user access keys like you would your credit card numbers or any other sensitive secret. Use different access
+keys for different applications so that you can isolate the permissions and revoke the access keys for individual applications if an access key is
+exposed. Remember to change access keys on a regular basis. For increased security, it is recommended to configure MFA for any sensitive
+operations. Remember to remove any IAM users that are no longer needed.
+Rotate access keys periodically. 
+Explanation:-You should protect AWS user access keys like you would your credit card numbers or any other sensitive secret. Use different access
+keys for different applications so that you can isolate the permissions and revoke the access keys for individual applications if an access key is
+exposed. Remember to change access keys on a regular basis. For increased security, it is recommended to configure MFA for any sensitive
+operations. Remember to remove any IAM users that are no longer needed.
+Embed access keys directly into application code.
+Use different access keys for different applications. 
+Explanation:-You should protect AWS user access keys like you would your credit card numbers or any other sensitive secret. Use different access
+keys for different applications so that you can isolate the permissions and revoke the access keys for individual applications if an access key is
+exposed. Remember to change access keys on a regular basis. For increased security, it is recommended to configure MFA for any sensitive
+operations. Remember to remove any IAM users that are no longer needed.
+Q46)
+You need to implement a service to scan Application Program Interface (API) calls and related events’ history to your AWS
+account. This service will detect things like unused permissions, overuse of privileged accounts, and anomalous logins.
+Which of the following AWS Cloud services can be leveraged to implement this service? (Choose 3 answers)
+Amazon Route 53
+Auto Scaling
+AWS Lambda 
+Explanation:-You can enable AWS CloudTrail in your AWS account to get logs of API calls and related events’ history in your account. AWS
+CloudTrail records all of the API access events as objects in an Amazon S3 bucket that you specify at the time you enable AWS CloudTrail. You can
+take advantage of Amazon S3’s bucket notification feature by directing Amazon S3 to publish object-created events to AWS Lambda. Whenever
+AWS CloudTrail writes logs to your Amazon S3 bucket, Amazon S3 can then invoke your AWS Lambda.
+Amazon Simple Storage Service (Amazon S3) 
+Explanation:-You can enable AWS CloudTrail in your AWS account to get logs of API calls and related events’ history in your account. AWS
+CloudTrail records all of the API access events as objects in an Amazon S3 bucket that you specify at the time you enable AWS CloudTrail. You can
+take advantage of Amazon S3’s bucket notification feature by directing Amazon S3 to publish object-created events to AWS Lambda. Whenever
+AWS CloudTrail writes logs to your Amazon S3 bucket, Amazon S3 can then invoke your AWS Lambda.
+AWS CloudTrail 
+Explanation:-You can enable AWS CloudTrail in your AWS account to get logs of API calls and related events’ history in your account. AWS
+CloudTrail records all of the API access events as objects in an Amazon S3 bucket that you specify at the time you enable AWS CloudTrail. You can
+take advantage of Amazon S3’s bucket notification feature by directing Amazon S3 to publish object-created events to AWS Lambda. Whenever
+AWS CloudTrail writes logs to your Amazon S3 bucket, Amazon S3 can then invoke your AWS Lambda.
+Q47) Government regulations require that your company maintain all correspondence for a period of seven years for
+compliance reasons. What is the best storage mechanism to keep this data secure in a cost-effective manner?
+Amazon EBS
+Amazon Glacier 
+Explanation:-Amazon Glacier enables businesses and organizations to retain data for months, years, or decades, easily and cost effectively. With
+Amazon Glacier, customers can retain more of their data for future analysis or reference, and they can focus on their business instead of operating
+and maintaining their storage infrastructure. Customers can also use Amazon Glacier Vault Lock to meet regulatory and compliance archiving
+requirements.
+Amazon S3
+Amazon EFS
+Q48)
+Your company provides media content via the Internet to customers through a paid subscription model. You leverage Amazon
+CloudFront to distribute content to your customers with low latency.
+What approach can you use to serve this private content securely to your paid subscribers?
+Use the Amazon CloudFront geo restriction feature to restrict access to all of the paid subscription media at the country level.
+Configure Amazon CloudFront to compress the media files automatically for paid subscribers.
+Use HTTPS requests to ensure that your objects are encrypted when Amazon CloudFront serves them to viewers.
+Provide signed Amazon CloudFront URLs to authenticated users to access the paid content. 
+Explanation:-Many companies that distribute content via the Internet want to restrict access to documents, business data, media streams, or
+content that is intended for selected users, such as users who have paid a fee. To serve this private content securely using Amazon CloudFront, you
+can require that users access your private content by using special Amazon CloudFront-signed URLs or signed cookies.
+Q49) Your company provides transcoding services for amateur producers to format their short films to a variety of video
+formats. Which service provides the best option for storing the videos?
+Amazon Relational Database Service (Amazon RDS)
+Amazon Simple Storage Service (Amazon S3) 
+Explanation:-Amazon S3 provides highly durable and available storage for a variety of content. Amazon S3 can be used as a big data object store
+for all of the videos. Amazon S3’s low cost combined with its design for durability of 99.999999999% and for up to 99.99% availability make it a great
+storage choice for transcoding services.
+Amazon Glacier
+ 
+
+
+
+
+
+AWS Storage Gateway
+Q50)
+A week before Cyber Monday last year, your corporate data center experienced a failed air conditioning unit that caused
+flooding into the server racks. The resulting outage cost your company significant revenue. Your CIO mandated a move to the
+cloud, but he is still concerned about catastrophic failures in a data center.
+What can you do to alleviate his concerns?
+Launch the compute for the processing services in a placement group.
+Use an Amazon Virtual Private Cloud (Amazon VPC) with subnets.
+Distribute the architecture across multiple Availability Zones. 
+Explanation:-An Availability Zone consists of one or more physical data centers. Availability zones within a region provide inexpensive, low-latency
+network connectivity to other zones in the same region. This allows you to distribute your application across data centers. In the event of a
+catastrophic failure in a data center, the application will continue to handle requests.
+Purchase Reserved Instances for the processing services instances.
+ 

@@ -1,0 +1,765 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Sheet
+Q1) How is data stored in Amazon Simple Storage Service (Amazon S3) for high durability?
+Data is replicated only if versioning is enabled on the bucket.
+Data is automatically replicated within a region. 
+Explanation:-Data is automatically replicated within a region. Replication to other regions and versioning are optional. Amazon S3 data is not
+backed up to tape.
+Data is automatically replicated to other regions.
+Data is automatically backed up on tape and restored if needed.
+Q2) To have a record of who accessed your Amazon Simple Storage Service (Amazon S3) data and from where, you should do
+what?
+Create an AWS Identity and Access Management (IAM) bucket policy.
+Enable server access logs on the bucket. 
+Explanation:-Amazon S3 server access logs store a record of what requestor accessed the objects in your bucket, including the requesting IP
+address
+Enable website hosting on the bucket.
+Enable versioning on the bucket.
+Enable Amazon CloudWatch logs.
+Q3) What are some reasons to enable cross-region replication on an Amazon Simple Storage Service (Amazon S3) bucket?
+(Choose 2 answers)
+For compliance reasons, you need to store data in a location at least 300 miles away from the first region. 
+Explanation:-Cross-region replication can help lower latency and satisfy compliance requirements on distance. Amazon S3 is designed for eleven
+nines durability for objects in a single region, so a second region does not significantly increase durability. Cross- region replication does not protect
+against accidental deletion.
+You have a set of users or customers who can access the second bucket with lower latency. 
+Explanation:-Cross-region replication can help lower latency and satisfy compliance requirements on distance. Amazon S3 is designed for eleven
+nines durability for objects in a single region, so a second region does not significantly increase durability. Cross-region replication does not protect
+against accidental deletion.
+You want a backup of your data in case of accidental deletion.
+Your data needs at least five nines of durability.
+Q4) Your company requires that all data sent to external storage be encrypted before being sent. Which Amazon Simple
+Storage Service (Amazon S3) encryption solution will meet this requirement?
+Server-side encryption with AWS Key Management Service (AWS KMS) keys (SSEKMS)
+Client-side encryption with customer-managed keys 
+Explanation:-If data must be encrypted before being sent to Amazon S3, client-side encryption must be used.
+SSE with customer-provided keys (SSE-C)
+Server-Side Encryption (SSE) with AWS-managed keys (SSE-S3)
+Q5)
+You have a popular web application that accesses data stored in an Amazon Simple Storage Service (Amazon S3) bucket. You
+expect the access to be very read-intensive, with expected request rates of up to 500 GETs per second from many clients.
+How can you increase the performance and scalability of Amazon S3 in this case?
+Ensure that key names are sequential to enable pre-fetch.
+Turn on server access logging.
+Ensure randomness in the namespace by including a hash prefix to key names. 
+Explanation:-Amazon S3 scales automatically, but for request rates over 100 GETS per second, it helps to make sure there is some randomness in
+the key space. Replication and logging will not affect performance or scalability. Using sequential key names could have a negative effect on
+performance or scalability.
+Turn on cross-region replication to ensure that data is served from multiple locations.
+Q6) What is needed before you can enable cross-region replication on an Amazon Simple Storage Service (Amazon S3) bucket?
+(Choose 2 answers)
+Enable static website hosting.
+Create an AWS Identity and Access Management (IAM) policy to allow Amazon S3 to replicate objects on your behalf 
+Explanation:-You must enable versioning before you can enable cross-region replication, and Amazon S3 must have IAM permissions to perform
+the replication. Lifecycle rules migrate data from one storage class to another, not from one bucket to another. Static website hosting is not a
+prerequisite for replication.
+Enable a lifecycle rule to migrate data to the second region.
+Enable versioning on the bucket. 
+Explanation:-You must enable versioning before you can enable cross-region replication, and Amazon S3 must have IAM permissions to perform
+the replication. Lifecycle rules migrate data from one storage class to another, not from one bucket to another. Static website hosting is not a
+prerequisite for replication.
+Q7)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your company has 100TB of financial records that need to be stored for seven years by law. Experience has shown that any
+record more than one-year old is unlikely to be accessed.
+Which of the following storage plans meets these needs in the most cost efficient manner?
+Store the data in Amazon DynamoDB and run daily script to delete data older than seven years.
+Store the data on Amazon Simple Storage Service (Amazon S3) with lifecycle policies that change the storage class to Amazon Glacier after one
+year and delete the object after seven years. 
+Explanation:-Amazon S3 is the most cost effective storage on AWS, and lifecycle policies are a simple and effective feature to address the business
+requirements.
+Store the data on Amazon Elastic Block Store (Amazon EBS) volumes attached to t2.micro instances.
+Store the data in Amazon Elastic MapReduce (Amazon EMR).
+Q8) Which statements about Amazon Glacier are true? (Choose 3 answers)
+Amazon Glacier can be used as a standalone service and as an Amazon S3 storage class. 
+Explanation:-Amazon Glacier stores data in archives, which are contained in vaults. Archives are identified by system-created archive IDs, not key
+names. Chapter 3: Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Elastic Block Store (Amazon EBS)
+Amazon Glacier vaults can be locked. 
+Explanation:-Amazon Glacier stores data in archives, which are contained in vaults. Archives are identified by system-created archive IDs, not key
+names. Chapter 3: Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Elastic Block Store (Amazon EBS)
+Amazon Glacier stores data in objects that live in archives.
+Amazon Glacier archives are identified by user-specified key names.
+Amazon Glacier archives take three to five hours to restore. 
+Explanation:-Amazon Glacier stores data in archives, which are contained in vaults. Archives are identified by system-created archive IDs, not key
+names. Chapter 3: Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Elastic Block Store (Amazon EBS)
+Q9) Your web application needs four instances to support steady traffic nearly all of the time. On the last day of each month, the
+traffic triples. What is a cost-effective way to handle this traffic pattern?
+Run four On-Demand Instances constantly, then add eight Reserved Instances on the last day of each month
+Run four Reserved Instances constantly, then add eight On-Demand Instances on the last day of each month. 
+Explanation:-Reserved Instances provide cost savings when you can commit to running instances full time, such as to handle the base traffic. On-
+Demand Instances provide the flexibility to handle traffic spikes, such as on the last day of the month
+Run 12 Reserved Instances all of the time.
+Run four On-Demand Instances constantly, then add eight more On-Demand Instances on the last day of each month.
+Q10)
+Your order-processing application processes orders extracted from a queue with two Reserved Instances processing 10
+orders/minute. If an order fails during processing, then it is returned to the queue without penalty. Due to a weekend sale, the
+queues have several hundred orders backed up. While the backup is not catastrophic, you would like to drain it so that
+customers get their confirmation emails faster.
+What is a cost-effective way to drain the queue for orders?
+Deploy additional Reserved Instances to assist in processing the orders.
+Create more queues.
+Deploy additional Spot Instances to assist in processing the orders. 
+Explanation:-Spot Instances are a very cost-effective way to address temporary compute needs that are not urgent and are tolerant of interruption.
+That’s exactly the workload described here. Reserved Instances are inappropriate for temporary workloads. On-Demand Instances are good for
+temporary workloads, but don’t offer the cost savings of Spot Instances. Adding more queues is a non-responsive answer as it would not address the
+problem.
+Deploy additional On-Demand Instances to assist in processing the orders.
+Q11) Which of the following must be specified when launching a new Amazon Elastic Compute Cloud (Amazon EC2) Windows
+instance? (Choose 2 answers)
+Amazon Machine Image (AMI) 
+Explanation:-The Amazon EC2 instance ID will be assigned by AWS as part of the launch process. The administrator password is assigned by
+AWS and encrypted via the public key. The instance type defines the virtual hardware and the AMI defines the initial software state. You must specify
+both upon launch.
+The Amazon EC2 instance ID
+Password for the administrator account
+Amazon EC2 instance type 
+Explanation:-The Amazon EC2 instance ID will be assigned by AWS as part of the launch process. The administrator password is assigned by
+AWS and encrypted via the public key. The instance type defines the virtual hardware and the AMI defines the initial software state. You must specify
+both upon launch.
+Q12) You have purchased an m3.xlarge Linux Reserved instance in us-east-1a. In which ways can you modify this reservation?
+(Choose 2 answers)
+Move it to us-east-1b. 
+Explanation:-You can change the instance type only within the same instance type family, or you can change the Availability Zone. You cannot
+change the operating system nor the instance type family.
+Change it to a Windows instance.
+Change it into two m3.large instances. 
+Explanation:-You can change the instance type only within the same instance type family, or you can change the Availability Zone. You cannot
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+change the operating system nor the instance type family.
+Change it to an m4.xlarge.
+Q13)
+Your instance is associated with two security groups. The first allows Remote Desktop Protocol (RDP) access over port 3389
+from Classless Inter-Domain Routing (CIDR) block 72.14.0.0/16. The second allows HTTP access over port 80 from CIDR block
+0.0.0.0/0.
+What traffic can reach your instance?
+RDP and HTTP traffic from 72.14.0.0/16
+RDP traffic over port 3389 from 72.14.0.0/16 and HTTP traffic over port 80 from 0.0.00/0 
+Explanation:-When there are multiple security groups associated with an instance, all the rules are aggregated.
+No traffic is allowed.
+RDP and HTTP access from CIDR block 0.0.0.0/0
+Q14) Which of the following are features of enhanced networking? (Choose 3 answers)
+Border Gateway Protocol (BGP) routing
+Multiple network interfaces
+Lower latency 
+Explanation:-These are the benefits of enhanced networking.
+More Packets Per Second (PPS) 
+Explanation:-These are the benefits of enhanced networking.
+Less jitter 
+Explanation:-These are the benefits of enhanced networking.
+Q15) You are creating a High-Performance Computing (HPC) cluster and need very low latency and high bandwidth between
+instances. What combination of the following will allow this? (Choose 3 answers)
+Use Dedicated Instances.
+Enable enhanced networking on the instances. 
+Explanation:-The other answers have nothing to do with networking.
+Put the instances in a placement group. 
+Explanation:-The other answers have nothing to do with networking.
+Use an instance type with 10 Gbps network performance. 
+Explanation:-The other answers have nothing to do with networking.
+Use Reserved Instances.
+Q16) Which Amazon Elastic Compute Cloud (Amazon EC2) feature ensures that your instances will not share a physical host
+with instances from any other AWS customer?
+Dedicated Instances 
+Explanation:-Dedicated Instances will not share hosts with other accounts
+Placement groups
+Amazon Virtual Private Cloud (VPC)
+Reserved Instances
+Q17) Which of the following are true of instance stores? (Choose 2 answers)
+Very high IOPS 
+Explanation:-Instance stores are low-durability, high-IOPS storage that is included for free with the hourly cost of an instance.
+Data is lost when the instance stops. 
+Explanation:-Instance stores are low-durability, high-IOPS storage that is included for free with the hourly cost of an instance.
+Automatic backups
+Charge is based on the total amount of storage provisioned.
+Q18) Which of the following are features of Amazon Elastic Block Store (Amazon EBS)? (Choose 2 answers)
+Data on an Amazon EBS volume is lost when the attached instance is stopped.
+Amazon EBS volumes can be encrypted transparently to workloads on the attached instance. 
+Explanation:-There are no tapes in the AWS infrastructure. Amazon EBS volumes persist when the instance is stopped. The data is automatically
+replicated within an Availability Zone. Amazon EBS volumes can be encrypted upon creation and used by an instance in the same manner as if they
+were not encrypted.
+Amazon EBS data is automatically backed up to tape.
+Data stored on Amazon EBS is automatically replicated within an Availability Zone. 
+Explanation:-There are no tapes in the AWS infrastructure. Amazon EBS volumes persist when the instance is stopped. The data is automatically
+replicated within an Availability Zone. Amazon EBS volumes can be encrypted upon creation and used by an instance in the same manner as if they
+were not encrypted.
+Q19) You need to take a snapshot of an Amazon Elastic Block Store (Amazon EBS) volume. How long will the volume be
+unavailable?
+It depends on the amount of data stored on the volume.
+The volume will be available immediately. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Explanation:-There is no delay in processing when commencing a snapshot.
+It depends on the provisioned size of the volume.
+It depends on whether the attached instance is an Amazon EBS-optimized instance.
+Q20) You are restoring an Amazon Elastic Block Store (Amazon EBS) volume from a snapshot. How long will it be before the
+data is available?
+It depends on the amount of data stored on the volume.
+The data will be available immediately. 
+Explanation:-The volume is created immediately but the data is loaded lazily. This means that the volume can be accessed upon creation, and if the
+data being requested has not yet been restored, it will be restored upon first request.
+It depends on the provisioned size of the volume.
+It depends on whether the attached instance is an Amazon EBS-optimized instance.
+Q21) You have a workload that requires 15,000 consistent IOPS for data that must be durable. What combination of the following
+steps do you need? (Choose 2 answers)
+Use an instance store.
+Use a Provisioned IOPS SSD volume. 
+Explanation:-The option is incorrect because an instance store will not be durable and a magnetic volume offers an average of 100 IOPS. Amazon
+EBS-optimized instances reserve network bandwidth on the instance for IO, and Provisioned IOPS SSD volumes provide the highest consistent
+IOPS.
+Use an Amazon Elastic Block Store (Amazon EBS)-optimized instance. 
+Explanation:-The option is incorrect because an instance store will not be durable and a magnetic volume offers an average of 100 IOPS. Amazon
+EBS-optimized instances reserve network bandwidth on the instance for IO, and Provisioned IOPS SSD volumes provide the highest consistent
+IOPS.
+Use a magnetic volume.
+Q22) Which of the following can be accomplished through bootstrapping?
+Configure Operating System (OS) services.
+All of the above. 
+Explanation:-Bootstrapping runs the provided script, so anything you can accomplish in a script you can accomplish during bootstrapping.
+Install the current version of the application.
+Install the most current security updates.
+Q23) How can you connect to a new Linux instance using SSH?
+Using Multi-Factor Authentication (MFA)
+Using the private half of the instance’s key pair 
+Explanation:-The public half of the key pair is stored on the instance, and the private half can then be used to connect via SSH.
+Using a certificate
+Decrypt the root password.
+Q24) VM Import/Export can import existing virtual machines as: (Choose 2 answers)
+Amazon Machine Images (AMIs) 
+Explanation:-These are the possible outputs of VM Import/Export.
+Amazon Elastic Compute Cloud (Amazon EC2) instances 
+Explanation:-These are the possible outputs of VM Import/Export.
+Amazon Elastic Block Store (Amazon EBS) volumes
+Security groups
+Q25) Which of the following can be used to address an Amazon Elastic Compute Cloud (Amazon EC2) instance over the web?
+(Choose 2 answers)
+Amazon EC2 instance ID
+Elastic IP address 
+Explanation:-Neither the Windows machine name nor the Amazon EC2 instance ID can be resolved into an IP address to access the instance
+Windows machine name
+Public DNS name 
+Explanation:-Neither the Windows machine name nor the Amazon EC2 instance ID can be resolved into an IP address to access the instance
+Q26) Using the correctly decrypted Administrator password and RDP, you cannot log in to a Windows instance you just
+launched. Which of the following is a possible reason?
+The instance is not using enhanced networking.
+The instance is a Reserved Instance.
+There is no security group rule that allows RDP access over port 3389 from your IP address. 
+Explanation:-None of the other options will have any effect on the ability to connect.
+The instance is not an Amazon EBS-optimized instance.
+Q27)
+You have a workload that requires 1 TB of durable block storage at 1,500 IOPS during normal use. Every night there is an
+Extract, Transform, Load (ETL) task that requires 3,000 IOPS for 15 minutes.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is the most appropriate volume type for this workload?
+Use an instance store.
+Use a general-purpose SSD volume. 
+Explanation:-A short period of heavy traffic is exactly the use case for the bursting nature of general-purpose SSD volumes—the rest of the day is
+more than enough time to build up enough IOPS credits to handle the nightly task. Instance stores are not durable, magnetic volumes cannot provide
+enough IOPS, and to set up a Provisioned IOPS SSD volume to handle the peak would mean spending money for more IOPS than you need.
+Use a Provisioned IOPS SSD volume at 3,000 IOPS.
+Use a magnetic volume.
+Q28) 20. How are you billed for elastic IP addresses?
+Based on the data that flows through them
+Hourly when they are not associated with an instance 
+Explanation:-There is a very small hourly charge for allocated elastic IP addresses that are not associated with an instance
+Hourly when they are associated with an instance
+Based on the instance type to which they are attaché
+Q29) 1. What is the minimum size subnet that you can have in an Amazon VPC?
+/30
+/28 
+Explanation:-There is a very small hourly charge for allocated elastic IP addresses that are not associated with an instance
+/26
+/24
+Q30)
+You are a solutions architect working for a large travel company that is migrating its existing server estate to AWS. You have
+recommended that they use a custom Amazon VPC, and they have agreed to proceed. They will need a public subnet for their
+web servers and a private subnet in which to place their databases. They also require that the web servers and database
+servers be highly available and that there be a minimum of two web servers and two database servers each.
+How many subnets should you have to maintain high availability?
+4 
+Explanation:-You need two public subnets (one for each Availability Zone) and two private subnets (one for each Availability Zone). Therefore, you
+need four subnets.
+3
+2
+1
+Q31) Which of the following is an optional security control that can be applied at the subnet layer of a VPC?
+Firewall
+Security Group
+Network ACL 
+Explanation:-Network ACLs are associated to a VPC subnet to control traffic flow.
+Web application firewall
+Q32) What is the maximum size IP address range that you can have in an Amazon VPC?
+/16 
+Explanation:-The maximum size subnet that you can have in a VPC is /16.
+/24
+/28
+/30
+Q33) You create a new subnet and then add a route to your route table that routes traffic out from that subnet to the Internet
+using an IGW. What type of subnet have you created?
+A public subnet 
+Explanation:-By creating a route out to the Internet using an IGW, you have made this subnet public.
+An external subnet
+A private subnet
+An internal subnet
+Q34) What happens when you create a new Amazon VPC?
+Three subnets are created by default in one Availability Zone.
+Three subnets are created by default—one for each Availability Zone.
+A main route table is created by default. 
+Explanation:-When you create an Amazon VPC, a route table is created by default. You must manually create subnets and an IGW.
+An IGW is created by default.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q35) You create a new VPC in US-East-1 and provision three subnets inside this Amazon VPC. Which of the following
+statements is true?
+All subnets will be able to communicate with each other by default. 
+Explanation:-When you provision an Amazon VPC, all subnets can communicate with each other by default.
+All subnets are public by default.
+By default, these subnets will not be able to communicate with each other; you will need to create routes.
+Each subnet will have identical CIDR blocks.
+Q36) How many IGWs can you attach to an Amazon VPC at any one time?
+1 
+Explanation:-You may only have one IGW for each Amazon VPC.
+2
+3
+4
+Q37) What aspect of an Amazon VPC is stateful?
+Amazon DynamoDB
+Security groups 
+Explanation:-Security groups are stateful, whereas network ACLs are stateless
+Network ACLs
+Amazon S3
+Q38)
+You have created a custom Amazon VPC with both private and public subnets. You have created a NAT instance and deployed
+this instance to a public subnet. You have attached an EIP address and added your NAT to the route table. Unfortunately,
+instances in your private subnet still cannot access the Internet.
+What may be the cause of this?
+Your NAT has been deployed on a Windows instance, but your other instances are Linux. You should redeploy the NAT onto a Linux instance.
+You should disable source/destination checks on the NAT. 
+Explanation:-You should disable source/destination checks on the NAT.
+Your NAT should be behind an Elastic Load Balancer.
+Your NAT is in a public subnet, but it needs to be in a private subnet.
+Q39) Which of the following will occur when an Amazon Elastic Block Store (Amazon EBS)- backed Amazon EC2 instance in an
+Amazon VPC with an associated EIP is stopped and started? (Choose 2 answers)
+All data on Amazon EBS devices will be lost.
+The ENI is detached.
+The underlying host for the instance is changed. 
+Explanation:-In the EC2-Classic network, the EIP will be disassociated with the instance; in the EC2-VPC network, the EIP remains associated with
+the instance. Regardless of the underlying network, a stop/start of an Amazon EBS-backed Amazon EC2 instance always changes the host
+computer.
+The EIP will be dissociated from the instance.
+All data on instance-store devices will be lost. 
+Explanation:-In the EC2-Classic network, the EIP will be disassociated with the instance; in the EC2-VPC network, the EIP remains associated with
+the instance. Regardless of the underlying network, a stop/start of an Amazon EBS-backed Amazon EC2 instance always changes the host
+computer.
+Q40) How many VPC Peering connections are required for four VPCs located within the same AWS region to be able to send
+traffic to each of the others?
+6 
+Explanation:-Six VPC Peering connections are needed for each of the four VPCs to send traffic to the other.
+5
+4
+3
+Q41) Which of the following AWS resources would you use in order for an EC2-VPC instance to resolve DNS names outside of
+AWS?
+A routing rule
+A DHCP option set 
+Explanation:-A DHCP option set allows customers to define DNS servers for DNS name resolution, establish domain names for instances within an
+Amazon VPC, define NTP servers, and define the NetBIOS name servers
+A VPC peering connection
+An IGW
+Q42) Which of the following is the Amazon side of an Amazon VPN connection?
+An EIP
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A CGW
+An IGW
+A VPG 
+Explanation:-A CGW is the customer side of a VPN connection, and an IGW connects a network to the Internet. A VPG is the Amazon side of a VPN
+connection.
+Q43) What is the default limit for the number of Amazon VPCs that a customer may have in a region?
+There is no default maximum number of VPCs within a region.
+7
+6
+5 
+Explanation:-The default limit for the number of Amazon VPCs that a customer may have in a region is 5.
+Q44)
+You are responsible for your company’s AWS resources, and you notice a significant amount of traffic from an IP address in a
+foreign country in which your company does not have customers. Further investigation of the traffic indicates the source of the
+traffic is scanning for open ports on your EC2-VPC instances.
+Which one of the following resources can deny the traffic from reaching the instances?
+NAT instance
+Network ACL 
+Explanation:-Network ACL rules can deny traffic.
+Security group
+An Amazon VPC endpoint
+Q45) Which of the following is the security protocol supported by Amazon VPC?
+Point-to-Point Tunneling Protocol (PPTP)
+SSH
+Advanced Encryption Standard (AES)
+IPsec 
+Explanation:-IPsec is the security protocol supported by Amazon VPC.
+Q46) Which of the following Amazon VPC resources would you use in order for EC2-VPC instances to send traffic directly to
+Amazon S3?
+Amazon S3 gateway
+IGW
+CGW
+VPC endpoint 
+Explanation:-An Amazon VPC endpoint enables you to create a private connection between your Amazon VPC and another AWS service without
+requiring access over the Internet or through a NAT device, VPN connection, or AWS Direct Connect.
+Q47) What properties of an Amazon VPC must be specified at the time of creation? (Choose 2 answers)
+The region for the Amazon VPC 
+Explanation:-The CIDR block is specified upon creation and cannot be changed. An Amazon VPC is associated with exactly one region which must
+be specified upon creation. You can add a subnet to an Amazon VPC any time after it has been created, provided its address range falls within the
+Amazon VPC CIDR block and does not overlap with the address range of any existing CIDR block. You can set up peering relationships between
+Amazon VPCs after they have been created.
+One or more subnets for the Amazon VPC
+The CIDR block representing the IP address range 
+Explanation:-The CIDR block is specified upon creation and cannot be changed. An Amazon VPC is associated with exactly one region which must
+be specified upon creation. You can add a subnet to an Amazon VPC any time after it has been created, provided its address range falls within the
+Amazon VPC CIDR block and does not overlap with the address range of any existing CIDR block. You can set up peering relationships between
+Amazon VPCs after they have been created.
+Amazon VPC Peering relationships
+Q48) Which Amazon VPC feature allows you to create a dual-homed instance?
+Security groups
+ENI 
+Explanation:-Attaching an ENI associated with a different subnet to an instance can make the instance dual-homed.
+EIP address
+CGW
+Q49) Which of the following are required elements of an Auto Scaling group? (Choose 2 answers)
+Launch configuration 
+Explanation:-An Auto Scaling group must have a minimum size and a launch configuration defined in order to be created. Health checks and a
+desired capacity are optional.
+Desired capacity
+Health checks
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Minimum size 
+Explanation:-An Auto Scaling group must have a minimum size and a launch configuration defined in order to be created. Health checks and a
+desired capacity are optional.
+Q50)
+You have created an Elastic Load Balancing load balancer listening on port 80, and you registered it with a single Amazon
+Elastic Compute Cloud (Amazon EC2) instance also listening on port 80. A client makes a request to the load balancer with the
+correct protocol and port for the load balancer.
+In this scenario, how many connections does the balancer maintain?
+3
+2 
+Explanation:-The load balancer maintains two separate connections: one connection with the client and one connection with the Amazon EC2
+instance.
+1
+4
+Q51) How long does Amazon CloudWatch keep metric data?
+2 weeks 
+Explanation:-Amazon CloudWatch metric data is kept for 2 weeks.
+1 week
+2 days
+1 day
+Q52) Which of the following are the minimum required elements to create an Auto Scaling launch configuration?
+Launch configuration name, AMI, instance type, key pair, security group, and block device mapping
+Launch configuration name, AMI, instance type, key pair, and security group
+Launch configuration name, AMI, instance type, and key pair
+Launch configuration name, Amazon Machine Image (AMI), and instance type 
+Explanation:-Only the launch configuration name, AMI, and instance type are needed to create an Auto Scaling launch configuration. Identifying a
+key pair, security group, and a block device mapping are optional elements for an Auto Scaling launch configuration.
+Q53) You are responsible for the application logging solution for your company’s existing applications running on multiple
+Amazon EC2 instances. Which of the following is the best approach for aggregating the application logs within AWS?
+An Elastic Load Balancing listener
+Amazon CloudWatch Logs Agent 
+Explanation:-You can use the Amazon CloudWatch Logs Agent installer on existing Amazon EC2 instances to install and configure the CloudWatch
+Logs Agent.
+Amazon CloudWatch custom metrics
+An internal Elastic Load Balancing load balancer
+Q54) Which of the following must be configured on an Elastic Load Balancing load balancer to accept incoming traffic?
+A listener 
+Explanation:-You can use the Amazon CloudWatch Logs Agent installer on existing Amazon EC2 instances to install and configure the CloudWatch
+Logs Agent.
+A network interface
+A port
+An instance
+Q55)
+You create an Auto Scaling group in a new region that is configured with a minimum size value of 10, a maximum size value of
+100, and a desired capacity value of 50. However, you notice that 30 of the Amazon Elastic Compute Cloud (Amazon EC2)
+instances within the Auto Scaling group fail to launch.
+Which of the following is the cause of this behavior?
+You have not raised your default Amazon EC2 capacity (20) for the new region. 
+Explanation:-The default Amazon EC2 instance limit for all regions is 20.
+You did not attach an Elastic Load Balancing load balancer to the Auto Scaling group.
+The Auto Scaling group maximum value cannot be more than 20.
+You cannot define an Auto Scaling group larger than 20.
+Q56)
+You want to host multiple Hypertext Transfer Protocol Secure (HTTPS) websites on a fleet of Amazon EC2 instances behind an
+Elastic Load Balancing load balancer with a single X.509 certificate.
+How must you configure the Secure Sockets Layer (SSL) certificate so that clients connecting to the load balancer are not
+presented with a warning when they connect?
+Create SSL certificates for each Availability Zone with a SAN value for each website name.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create multiple SSL certificates with a SAN value for each website name.
+Create one SSL certificate with the Server Name Indication (SNI) value checked.
+Create one SSL certificate with a Subject Alternative Name (SAN) value for each website name. 
+Explanation:-An SSL certificate must specify the name of the website in either the subject name or listed as a value in the SAN extension of the
+certificate in order for connecting clients to not receive a warning.
+Q57)
+Your web application front end consists of multiple Amazon Compute Cloud (Amazon EC2) instances behind an Elastic Load
+Balancing load balancer. You have configured the load balancer to perform health checks on these Amazon EC2 instances.
+If an instance fails to pass health checks, which statement will be true?
+The instance is quarantined by the load balancer for root cause analysis.
+The load balancer stops sending traffic to the instance that failed its health check. 
+Explanation:-When Amazon EC2 instances fail the requisite number of consecutive health checks, the load balancer stops sending traffic to the
+Amazon EC2 instance.
+The instance is terminated automatically by the load balancer.
+The instance is replaced automatically by the load balancer.
+Q58) In the basic monitoring package for Amazon Elastic Compute Cloud (Amazon EC2), what Amazon CloudWatch metrics are
+available?
+Hypervisor visible metrics such as CPU utilization 
+Explanation:-Amazon CloudWatch metrics provide hypervisor visible metrics.
+Database visible metrics such as number of connections
+Operating system visible metrics such as memory utilization
+Web server visible metrics such as number of failed transaction requests
+Q59) Auto Scaling supports which of the following plans for Auto Scaling groups? (Choose 3 answers)
+Dynamic 
+Explanation:-Auto Scaling supports maintaining the current size of an Auto Scaling group using four plans: maintain current levels, manual scaling,
+scheduled scaling, and dynamic scaling.
+Preemptive
+Scheduled 
+Explanation:-Auto Scaling supports maintaining the current size of an Auto Scaling group using four plans: maintain current levels, manual scaling,
+scheduled scaling, and dynamic scaling.
+Manual 
+Explanation:-Auto Scaling supports maintaining the current size of an Auto Scaling group using four plans: maintain current levels, manual scaling,
+scheduled scaling, and dynamic scaling.
+Predictive
+End-user request driven
+ 

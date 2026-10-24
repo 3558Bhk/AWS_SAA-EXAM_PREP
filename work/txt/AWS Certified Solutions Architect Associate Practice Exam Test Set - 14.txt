@@ -1,0 +1,511 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Sheet
+Q1)
+A cell phone company is running dynamic-content television commercials for a contest. They want their website to handle
+traffic spikes that come after a commercial airs. The website is interactive, offering personalized content to each visitor based
+on location, purchase history, and the current commercial airing.
+Which architecture will configure Auto Scaling to scale out to respond to spikes of demand, while minimizing costs during quiet
+periods?
+Use Amazon CloudFront and Amazon Simple Storage Service (Amazon S3) to cache changing content, with the Auto Scaling group set as the
+origin. Configure Auto Scaling to have sufficient instances necessary to initially populate CloudFront and Amazon ElastiCache, and then scale in
+after the cache is fully populated.
+Configure Auto Scaling to scale out as traffic increases. Configure the launch configuration to start new instances from a preconfigured Amazon
+Machine Image (AMI). 
+Explanation:-Auto Scaling is designed to scale out based on an event like increased traffic while being cost effective when not needed.
+Set the minimum size of the Auto Scaling group so that it can handle high traffic volumes without needing to scale out.
+Create an Auto Scaling group large enough to handle peak traffic loads, and then stop some instances. Configure Auto Scaling to scale out when
+traffic increases using the stopped instances, so new capacity will come online quickly.
+Q2) For an application running in the ap-northeast-1 region with three Availability Zones (apnortheast-1a, ap-northeast-1b, and
+ap-northeast-1c), which instance deployment provides high availability for the application that normally requires nine running
+Amazon Elastic Compute Cloud (Amazon EC2) instances but can run on a minimum of 65 percent capacity while Auto Scaling
+launches replacement instances in the remaining Availability Zones?
+Deploy the application on nine servers in ap-northeast-1b, and keep nine stopped instances in ap-northeast-1a as reserve.
+Deploy the application on six servers in ap-northeast-1b and three servers in apnortheast-1c.
+Deploy the application on three servers in ap-northeast-1a, three servers in apnortheast-1b, and three servers in ap-northeast-1c. 
+Explanation:-Auto Scaling will provide high availability across three Availability Zones with three Amazon EC2 instances in each and keep capacity
+above the required minimum capacity, even in the event of an entire Availability Zone becoming unavailable.
+Deploy the application on four servers in ap-northeast-1a and five servers in apnortheast-1b, and keep five stopped instances in ap-northeast-1a
+as reserve.
+Q3) Which of the following are characteristics of the Auto Scaling service on AWS? (Choose 3 answers)
+Enforces a minimum number of running Amazon EC2 instances 
+Explanation:-Auto Scaling responds to changing conditions by adding or terminating instances, launches instances from an AMI specified in the
+launch configuration associated with the Auto Scaling group, and enforces a minimum number of instances in the min-size parameter of the Auto
+Scaling group.
+Collects and tracks metrics and sets alarms
+Delivers push notifications
+Launches instances from a specified Amazon Machine Image (AMI) 
+Explanation:-Auto Scaling responds to changing conditions by adding or terminating instances, launches instances from an AMI specified in the
+launch configuration associated with the Auto Scaling group, and enforces a minimum number of instances in the min-size parameter of the Auto
+Scaling group.
+Sends traffic to healthy instances
+Responds to changing conditions by adding or terminating Amazon Elastic Compute Cloud (Amazon EC2) instances 
+Explanation:-Auto Scaling responds to changing conditions by adding or terminating instances, launches instances from an AMI specified in the
+launch configuration associated with the Auto Scaling group, and enforces a minimum number of instances in the min-size parameter of the Auto
+Scaling group.
+Q4) Why is the launch configuration referenced by the Auto Scaling group instead of being part of the Auto Scaling group?
+All of the above 
+Explanation:-All statements are true about launch configurations being loosely coupled and referenced by the Auto Scaling group instead of being
+part of the Auto Scaling group.
+It allows you to change security groups associated with the instances launched without having to make changes to the Auto Scaling group.
+It facilitates rolling out a patch to an existing set of instances managed by an Auto Scaling group.
+It allows you to change the Amazon Elastic Compute Cloud (Amazon EC2) instance type and Amazon Machine Image (AMI) without disrupting the
+Auto Scaling group.
+None of these
+Q5) An Auto Scaling group may use: (Choose 2 answers)
+On-premises instances
+Already running instances if they use the same Amazon Machine Image (AMI) as the Auto Scaling group’s launch configuration and are not
+already part of another Auto Scaling group
+Stopped instances
+Spot Instances 
+Explanation:-An Auto Scaling group may use On-Demand and Spot Instances. An Auto Scaling group may not use already stopped instances,
+instances running someplace other than AWS, and already running instances not started by the Auto Scaling group itself.
+On-Demand Instances 
+Explanation:-An Auto Scaling group may use On-Demand and Spot Instances. An Auto Scaling group may not use already stopped instances,
+instances running someplace other than AWS, and already running instances not started by the Auto Scaling group itself.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q6) Amazon CloudWatch supports which types of monitoring plans? (Choose 2 answers)
+Detailed monitoring, which is free
+Detailed monitoring, which has an additional cost 
+Explanation:-Amazon CloudWatch has two plans: basic, which is free, and detailed, which has an additional cost. There is no ad hoc plan for
+Amazon CloudWatch.
+Ad hoc monitoring, which has an additional cost
+Ad hoc monitoring, which is free
+Basic monitoring, which has an additional cost
+Basic monitoring, which is free 
+Explanation:-Amazon CloudWatch has two plans: basic, which is free, and detailed, which has an additional cost. There is no ad hoc plan for
+Amazon CloudWatch.
+Q7) Elastic Load Balancing health checks may be _____________. (Choose 3 answers)
+A page request 
+Explanation:-An Elastic Load Balancing health check may be a ping, a connection attempt, or a page that is checked
+A connection attempt 
+Explanation:-An Elastic Load Balancing health check may be a ping, a connection attempt, or a page that is checked
+A key pair verification
+A ping 
+Explanation:-An Elastic Load Balancing health check may be a ping, a connection attempt, or a page that is checked
+An Amazon Elastic Compute Cloud (Amazon EC2) instance status check
+Q8) When an Amazon Elastic Compute Cloud (Amazon EC2) instance registered with an Elastic Load Balancing load balancer
+using connection draining is deregistered or unhealthy, which of the following will happen? (Choose 2 answers)
+Forcibly close all connections to that instance after a timeout period.
+Redirect the requests to a user-defined error page like “Oops this is embarrassing” or “Under Construction.” 
+Explanation:-When connection draining is enabled, the load balancer will stop sending requests to a deregistered or unhealthy instance and
+attempt to complete in-flight requests until a connection draining timeout period is reached, which is 300 seconds by default.
+Keep the connections open to that instance, and attempt to complete in-flight requests. 
+Explanation:-When connection draining is enabled, the load balancer will stop sending requests to a deregistered or unhealthy instance and
+attempt to complete in-flight requests until a connection draining timeout period is reached, which is 300 seconds by default.
+Immediately close all existing connections to that instance.
+Leave the connections open as long as the load balancer is running.
+Q9) Elastic Load Balancing supports which of the following types of load balancers? (Choose 3 answers)
+Hypertext Transfer Protocol Secure (HTTPS) using Secure Sockets Layer (SSL) 
+Explanation:-Elastic Load Balancing supports Internet-facing, internal, and HTTPS load balancers.
+Interim
+Itinerant
+Internal 
+Explanation:-Elastic Load Balancing supports Internet-facing, internal, and HTTPS load balancers.
+Cross-region
+Internet-facing 
+Explanation:-Elastic Load Balancing supports Internet-facing, internal, and HTTPS load balancers.
+Q10) Which of the following methods will allow an application using an AWS SDK to be authenticated as a principal to access
+AWS Cloud services? (Choose 2 answers)
+Run the application on an Amazon EC2 instance with an assigned IAM role. 
+Explanation:-Programmatic access is authenticated with an access key, not with user names/passwords. IAM roles provide a temporary security
+token to an application using an SDK.
+Create an IAM user and store both parts of the access key for the user in the application’s configuration. 
+Explanation:-Programmatic access is authenticated with an access key, not with user names/passwords. IAM roles provide a temporary security
+token to an application using an SDK.
+Create an IAM user and store the user name and password for the user in the application’s configuration.
+Make all the API calls over an SSL connection.
+Q11) Which of the following are found in an IAM policy? (Choose 2 answers)
+Action 
+Explanation:-IAM policies are independent of region, so no region is specified in the policy. IAM policies are about authorization for an already-
+authenticated principal, so no password is needed.
+Region
+Service Name 
+Explanation:-IAM policies are independent of region, so no region is specified in the policy. IAM policies are about authorization for an already-
+authenticated principal, so no password is needed.
+Password
+Q12)
+Your AWS account administrator left your company today. The administrator had access to the root user and a personal IAM
+administrator account. With these accounts, he generated other IAM accounts and keys.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Which of the following should you do today to protect your AWS infrastructure? (Choose 4 answers)
+Delete all IAM accounts.
+Delete the administrator’s personal IAM account. 
+Explanation:-Locking down your root user and all accounts to which the administrator had access is the key here. Deleting all IAM accounts is not
+necessary, and it would cause great disruption to your operations. Amazon EC2 roles use temporary security tokens, so relaunching Amazon EC2
+instances is not necessary.
+Rotate keys and change passwords for IAM accounts. 
+Explanation:-Locking down your root user and all accounts to which the administrator had access is the key here. Deleting all IAM accounts is not
+necessary, and it would cause great disruption to your operations. Amazon EC2 roles use temporary security tokens, so relaunching Amazon EC2
+instances is not necessary.
+Put an IP restriction on the root user. 
+Explanation:-Locking down your root user and all accounts to which the administrator had access is the key here. Deleting all IAM accounts is not
+necessary, and it would cause great disruption to your operations. Amazon EC2 roles use temporary security tokens, so relaunching Amazon EC2
+instances is not necessary.
+Change the password and add MFA to the root user. 
+Explanation:-Locking down your root user and all accounts to which the administrator had access is the key here. Deleting all IAM accounts is not
+necessary, and it would cause great disruption to your operations. Amazon EC2 roles use temporary security tokens, so relaunching Amazon EC2
+instances is not necessary.
+Relaunch all Amazon EC2 instances with new roles.
+Q13) Which of the following actions can be authorized by IAM? (Choose 2 answers)
+Querying an Oracle database
+Adding a message to an Amazon Simple Queue Service (Amazon SQS) queue 
+Explanation:-IAM controls access to AWS resources only. Installing ASP.NET will require Windows operating system authorization, and querying an
+Oracle database will require Oracle authorization.
+Installing ASP.NET on a Windows Server
+Launching an Amazon Linux EC2 instance 
+Explanation:-IAM controls access to AWS resources only. Installing ASP.NET will require Windows operating system authorization, and querying an
+Oracle database will require Oracle authorization.
+Q14) Which of the following are IAM security features? (Choose 2 answers)
+MFA 
+Explanation:-Amazon DynamoDB global secondary indexes are a performance feature of Amazon DynamoDB; Consolidated Billing is an
+accounting feature allowing all bills to roll up under a single account. While both are very valuable features, neither is a security feature.
+Amazon DynamoDB global secondary indexes
+Password policies 
+Explanation:-Amazon DynamoDB global secondary indexes are a performance feature of Amazon DynamoDB; Consolidated Billing is an
+accounting feature allowing all bills to roll up under a single account. While both are very valuable features, neither is a security feature.
+Consolidated Billing
+Q15) Which of the following are benefits of using Amazon EC2 roles? (Choose 2 answers)
+Key rotation is not necessary. 
+Explanation:-Amazon EC2 roles must still be assigned a policy. Integration with Active Directory involves integration between Active Directory and
+IAM via SAML.
+Credentials do not need to be stored on the Amazon EC2 instance. 
+Explanation:-Amazon EC2 roles must still be assigned a policy. Integration with Active Directory involves integration between Active Directory and
+IAM via SAML.
+No policies are required.
+Integration with Active Directory is automatic.
+Q16) Which of the following are based on temporary security tokens? (Choose 2 answers)
+Root user
+Federation 
+Explanation:-Amazon EC2 roles provide a temporary token to applications running on the instance; federation maps policies to identities from other
+sources via temporary tokens.
+MFA
+Amazon EC2 roles 
+Explanation:-Amazon EC2 roles provide a temporary token to applications running on the instance; federation maps policies to identities from other
+sources via temporary tokens.
+Q17)
+Your security team is very concerned about the vulnerability of the IAM administrator user accounts (the accounts used to
+configure all IAM features and accounts).
+What steps can be taken to lock down these accounts? (Choose 3 answers)
+Apply a source IP address condition to the policy that only grants permissions when the user is on the corporate network. 
+Explanation:-Neither B nor E are features supported by IAM.
+Implement a password policy on the AWS account. 
+Explanation:-Neither B nor E are features supported by IAM.
+Limit logins to a particular U.S. state.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Add multi-factor authentication (MFA) to the accounts. 
+Explanation:-Neither B nor E are features supported by IAM.
+Add a CAPTCHA test to the accounts.
+Q18) You want to grant the individuals on your network team the ability to fully manipulateAmazon EC2 instances. Which of the
+following accomplish this goal? (Choose 2answers)
+Create a NetworkTeam IAM group, and have each team member log in to the AWS Management Console using the user name/password for the
+group.
+Create a new policy that grants EC2:* actions on all resources, and assign that policy to each individual’s IAM user account on the network team.
+Explanation:-Access requires an appropriate policy associated with a principal. Response A is merely a policy with no principal, and response D is
+not a principal as IAM groups do not have user names and passwords. Response B is the best solution; response C will also work but it is much
+harder to manage.
+Create a new policy allowing EC2:* actions, and name the policy NetworkTeam.
+Assign the managed policy, EC2FullAccess, to a group named NetworkTeam, and assign all the team members’ IAM user accounts to that group. 
+Explanation:-Access requires an appropriate policy associated with a principal. Response A is merely a policy with no principal, and response D is
+not a principal as IAM groups do not have user names and passwords. Response B is the best solution; response C will also work but it is much
+harder to manage.
+Q19) What is the format of an IAM policy?
+JSON 
+Explanation:-An IAM policy is a JSON document.
+Key/value pairs
+XML
+Tab-delimited text
+Q20) Which of the following is not a supported Amazon Simple Notification Service (Amazon SNS) protocol?
+Email-JSON
+Amazon DynamoDB 
+Explanation:-Amazon DynamoDB is not a supported Amazon SNS protocol.
+AWS Lambda
+HTTPS
+Q21) When you create a new Amazon Simple Notification Service (Amazon SNS) topic, which of the following is created
+automatically?
+A subscriber
+An Amazon Simple Queue Service (Amazon SQS) queue to deliver your Amazon SNS topic
+An Amazon Resource Name (ARN) 
+Explanation:-When you create a new Amazon SNS topic, an Amazon ARN is created automatically.
+A message
+Q22) Which of the following are features of Amazon Simple Notification Service (Amazon SNS)? (Choose 3 answers)
+Topic 
+Explanation:-Publishers, subscribers, and topics are the correct answers. You have subscribers to an Amazon SNS topic, not readers.
+Readers
+Subscribers 
+Explanation:-Publishers, subscribers, and topics are the correct answers. You have subscribers to an Amazon SNS topic, not readers.
+Publishers 
+Explanation:-Publishers, subscribers, and topics are the correct answers. You have subscribers to an Amazon SNS topic, not readers.
+Q23) What is the default time for an Amazon Simple Queue Service (Amazon SQS) visibility timeout?
+60 seconds
+30 seconds 
+Explanation:-The default time for an Amazon SQS visibility timeout is 30 seconds
+1 hour
+12 hours
+Q24) What is the longest time available for an Amazon Simple Queue Service (Amazon SQS) visibility timeout?
+12 hours 
+Explanation:-The maximum time for an Amazon SQS visibility timeout is 12 hours
+1 hour
+60 seconds
+30 seconds
+Q25) Which of the following options are valid properties of an Amazon Simple Queue Service (Amazon SQS) message? (Choose
+2 answers)
+Type
+Body 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Explanation:-The valid properties of an SQS message are Message ID and Body. Each message receives a system-assigned Message ID that
+Amazon SQS returns to you in the SendMessage response. The Message Body is composed of name/value pairs and the unstructured,
+uninterpreted content.
+Destination
+Message ID 
+Explanation:-The valid properties of an SQS message are Message ID and Body. Each message receives a system-assigned Message ID that
+Amazon SQS returns to you in the SendMessage response. The Message Body is composed of name/value pairs and the unstructured,
+uninterpreted content.
+Q26)
+You are a solutions architect who is working for a mobile application company that wants to use Amazon Simple Workflow
+Service (Amazon SWF) for their new takeout ordering application. They will have multiple workflows that will need to interact.
+What should you advise them to do in structuring the design of their Amazon SWF environment?
+Workflows cannot interact with each other; they would be better off using Amazon Simple Queue Service (Amazon SQS) and Amazon Simple
+Notification Service (Amazon SNS) for their application.
+Use a single domain with a single workflow and collapse all activities to within this single workflow.
+Use multiple domains, each containing a single workflow, and design the workflows to interact across the different domains.
+Use a single domain containing multiple workflows. In this manner, the workflows will be able to interact. 
+Explanation:-Use a single domain with multiple workflows. Workflows within separate domains cannot interact.
+Q27) In Amazon Simple Workflow Service (Amazon SWF), which of the following are actors? (Choose 3 answers)
+Deciders 
+Explanation:-In Amazon SWF, actors can be activity workers, workflow starters, or deciders.
+Workflow starters 
+Explanation:-In Amazon SWF, actors can be activity workers, workflow starters, or deciders.
+Activity workers 
+Explanation:-In Amazon SWF, actors can be activity workers, workflow starters, or deciders.
+Activity tasks
+Q28)
+You are designing a new application, and you need to ensure that the components of your application are not tightly coupled.
+You are trying to decide between the different AWS Cloud services to use to achieve this goal. Your requirements are that
+messages between your application components may not be delivered more than once, tasks must be completed in either a
+synchronous or asynchronous fashion, and there must be some form of application logic that decides what do when tasks have
+been completed.
+What application service should you use?
+Amazon Simple Storage Service (Amazon S3)
+Amazon Simple Workflow Service (Amazon SWF) 
+Explanation:-Amazon SWF would best serve your purpose in this scenario because it helps developers build, run, and scale background jobs that
+have parallel or sequential steps. You can think of Amazon SWF as a fully-managed state tracker and task coordinator in the Cloud.
+Amazon Simple Queue Service (Amazon SQS)
+Amazon Simple Email Service (Amazon SES)
+Q29) How does Amazon Simple Queue Service (Amazon SQS) deliver messages?
+Sequentially
+Amazon SQS doesn’t guarantee delivery of your messages in any particular order. 
+Explanation:-Amazon SQS does not guarantee in what order your messages will be delivered
+First In, First Out (FIFO)
+Last In, First Out (LIFO)
+Q30) Of the following options, what is an efficient way to fanout a single Amazon Simple Notification Service (Amazon SNS)
+message to multiple Amazon Simple Queue Service (Amazon SQS) queues?
+Amazon SNS allows exactly one subscriber to each topic, so fanout is not possible.
+Create an Amazon SNS topic using Amazon SNS. Create an application that subscribes to that topic and duplicates the message. Send copies to
+multiple Amazon SQS queues.
+Create one Amazon SQS queue that subscribes to multiple Amazon SNS topics.
+Create an Amazon SNS topic using Amazon SNS. Then create and subscribe multiple Amazon SQS queues sent to the Amazon SNS topic. 
+Explanation:-Multiple queues can subscribe to an Amazon SNS topic, which can enable parallel asynchronous processing.
+Q31)
+Your application polls an Amazon Simple Queue Service (Amazon SQS) queue frequently and returns immediately, often with
+empty ReceiveMessageResponses.
+What is one thing that can be done to reduce Amazon SQS costs?
+Pricing on Amazon SQS does not include a cost for service requests; therefore, there is no concern.
+Increase the timeout value for short polling to wait for messages longer before returning a response.
+Change the message visibility value to a higher number.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Use long polling by supplying a WaitTimeSeconds of greater than 0 seconds when calling ReceiveMessage. 
+Explanation:-Long polling allows your application to poll the queue, and, if nothing is there, Amazon Elastic Compute Cloud (Amazon EC2) waits for
+an amount of time you specify (between 1 and 20 seconds). If a message arrives in that time, it is delivered to your application as soon as possible. If
+a message does not arrive in that time, you need to execute the ReceiveMessage function again.
+Q32) What is the longest time available for an Amazon Simple Queue Service (Amazon SQS) long polling timeout?
+30 seconds
+20 seconds 
+Explanation:-The maximum time for an Amazon SQS long polling timeout is 20 seconds
+10 seconds
+1 hour
+Q33) What is the longest configurable message retention period for Amazon Simple Queue Service (Amazon SQS)?
+30 seconds
+14 days 
+Explanation:-The longest configurable message retention period for Amazon SQS is 14 days.
+4 days
+30 minutes
+Q34) What is the default message retention period for Amazon Simple Queue Service (Amazon SQS)?
+30 seconds
+4 days 
+Explanation:-The default message retention period that can be set in Amazon SQS is four days.
+30 minutes
+14 days
+Q35)
+Amazon Simple Notification Service (Amazon SNS) is a push notification service that lets you send individual or multiple
+messages to large numbers of recipients.
+What types of clients are supported?
+Mobile and AMQP support for publisher and subscriber client types
+Publisher and subscriber client types 
+Explanation:-With Amazon SNS, you send individual or multiple messages to large numbers of recipients using publisher and subscriber client
+types.
+Producers and consumers supported by C and C++ clients
+Java and JavaScript clients that support publisher and subscriber types
+Q36) In Amazon Simple Workflow Service (Amazon SWF), a decider is responsible for what?
+Executing your workflow
+Defining work coordination logic by specifying work sequencing, timing, and failure conditions 
+Explanation:-The decider schedules the activity tasks and provides input data to the activity workers. The decider also processes events that arrive
+while the workflow is in progress and closes the workflow when the objective has been completed.
+Executing each step of the work
+Registering activities and workflow with Amazon SWF
+ 

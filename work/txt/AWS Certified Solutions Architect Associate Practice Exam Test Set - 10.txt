@@ -1,0 +1,783 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Sheet
+Q1)
+You are tasked with setting up a Linux bastion host for access to Amazon EC2 instances running in your VPC. Only clients connecting
+from the corporate external public IP address 72.34.51.100 should have SSH access to the host.
+Which option will meet the customer requirement?
+Network ACL Inbound Rule: Protocol - UDP, Port Range - 22, Source 72.34.51.100/32
+Security Group Inbound Rule: Protocol - UDP, Port Range - 22, Source 72.34.51.100/32
+Security Group Inbound Rule: Protocol - TCP. Port Range - 22, Source 72.34.51.100/32
+Network ACL Inbound Rule: Protocol - TCP, Port Range-22, Source 72.34.51.100/0
+Q2) Is decreasing the storage size of a DB Instance permitted?
+Depends on the RDMS used
+Yes
+No
+Q3) You have decided to change the instance type for instances running in your application tier that is using Auto Scaling. In which
+area below would you change the instance type definition?
+Auto Scaling launch configuration 
+Explanation:-A launch configuration is a template that an EC2 Auto Scaling group uses to launch EC2 instances. When you create a launch configuration,
+you specify information for the instances such as the ID of the Amazon Machine Image (AMI), the instance type, a key pair, one or more security groups,
+and a block device mapping. If you've launched an EC2 instance before, you specified the same information in order to launch the instance. When you
+create an EC2 Auto Scaling group, you must specify a launch configuration. You can specify your launch configuration with multiple EC2 Auto Scaling
+groups. However, you can only specify one launch configuration for an EC2 Auto Scaling group at a time, and you can't modify a launch configuration after
+you've created it. Therefore, if you want to change the launch configuration for your EC2 Auto Scaling group, you must create a launch configuration and
+then update your EC2 Auto Scaling group with the new launch configuration. When you change the launch configuration for your EC2 Auto Scaling group,
+any new instances are launched using the new configuration parameters, but existing instances are not affected. Refer:
+https://aws.amazon.com/ec2/autoscaling/faqs/
+Auto Scaling tags
+Auto Scaling group
+Auto Scaling policy
+Q4) Fill in the blanks: "To ensure failover capabilities, consider using a _____ for incoming traffic on a network interface".
+secondary public IP
+secondary private IP
+primary public IP
+add on secondary IP
+Q5) Which technique can be used to integrate AWS IAM (Identity and Access Management) with an on-premise LDAP (Lightweight
+Directory Access Protocol) directory service?
+Use the LDAP credentials to restrict a group of users from launching specific EC2 instance types.
+Use IAM roles to automatically rotate the IAM credentials when LDAP credentials are updated.
+Use AWS Security Token Service from an identity broker to issue short-lived AWS credentials.
+Use SAML (Security Assertion Markup Language) to enable single sign-on between AWS and LDAP
+Use an IAM policy that references the LDAP account identifiers and the AWS credentials.
+Q6) What AWS services now support VPC endpoints feature for optimizing security? (Select three)
+DynamoDB
+S3
+DNS Route 53
+Kinesis
+RDS
+Q7) What are three characteristics of an Amazon Virtual Private Cloud?
+Dedicated single tenant hardware only
+Multiple private IP addresses per network interface
+Broadcasts
+Public and private IP addressing 
+Explanation:-Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the AWS Cloud where you can launch AWS
+resources in a virtual network that you define. You have complete control over your virtual networking environment, including selection of your own IP
+address range, creation of subnets, and configuration of route tables and network gateways. You can use both IPv4 and IPv6 in your VPC for secure and
+easy access to resources and applications. Refer: https://aws.amazon.com/vpc/
+Persistent public IP addresses
+HSRP
+Q8) What is the difference between VPC main route table and custom route table?
+Main route table is created for public and private subnets
+Custom route table is created for private subnets
+Custom route table is created for public subnets 
+Explanation:-The following are the key concepts for route tables.
+Main route table—The route table that automatically comes with your VPC. It controls the routing for all subnets that are not explicitly associated with any
+other route table.
+Custom route table—A route table that you create for your VPC.
+Refer: https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html
+Custom route table is the default
+VPC only creates a main route table when started
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q9) What is the purpose of the native VPC router?
+Route packets from instances to S3 storage volumes
+Route packets between subnets 
+Explanation:-Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the AWS Cloud where you can launch AWS
+resources in a virtual network that you define. You have complete control over your virtual networking environment, including selection of your own IP
+address range, creation of subnets, and configuration of route tables and network gateways. You can use both IPv4 and IPv6 in your VPC for secure and
+easy access to resources and applications.
+You can easily customize the network configuration of your Amazon VPC. For example, you can create a public-facing subnet for your web servers that
+have access to the internet. You can also place your backend systems, such as databases or application servers, in a private-facing subnet with no internet
+access. You can use multiple layers of security, including security groups and network access control lists, to help control access to Amazon EC2 instances
+in each subnet.
+Refer: https://aws.amazon.com/vpc/
+Route packets between private cloud instances
+Route packets across the internet
+Route packets across VPN
+Q10) How are private DNS servers assigned to an Amazon VPC?
+Select default VPC
+Select nondefault VPC 
+Explanation:-Refer: https://aws.amazon.com/about-aws/whats-new/2014/11/05/amazon-route-53-now-supports-private-dns-with-amazon-vpc/
+Not supported
+Select EC-2 classic
+Q11) Which of the following are characteristics of a reserved instance? (Choose 3 answers)
+It is specific to an instance Type
+It can be applied to instances launched by Auto Scaling 
+Explanation:-Refer: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html
+It is specific to an Amazon Machine Image (AMI)
+It can be migrated across Availability Zones
+It can be used to lower Total Cost of Ownership (TCO) of a system
+Q12) What is an isolated database environment running in the cloud (Amazon RDS) called?
+DB Unit
+DB Instance 
+Explanation:-A DB instance is an isolated database environment running in the cloud. It is the basic building block of Amazon RDS. A DB instance can
+contain multiple user-created databases, and can be accessed using the same client tools and applications you might use to access a standalone
+database instance. Refer:
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html#:~:text=A%20DB%20instance%20is%20an,access%20a%20standalone%20database%20instance.
+DB Server
+DB Volume
+Q13) In regards to IAM you can edit user properties later, but you cannot use the console to change the ___________.
+user name 
+Explanation:-To change a user's name or path, you must use the AWS CLI, Tools for Windows PowerShell, or AWS API. There is no option in the console
+to rename a user. Refer: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html
+password
+default group
+Q14) Can I attach more than one policy to a particular entity?
+No
+Only if within GovCloud
+Yes always
+Only if within VPC
+Q15) Can the string value of 'Key' be prefixed with laws?
+Yes
+Only for EC2 not S3
+No
+Only for S3 not EC
+Q16) In AWS, which security aspects are the customer's responsibility? Choose 4 answers
+Decommissioning storage devices
+Patch management on the EC2 instance's operating system
+Life-cycle management of IAM credentials
+Security Group and ACL (Access Control List) settings 
+Explanation:-The customer assumes responsibility and management of the guest operating system (including updates and security patches), other
+associated application software as well as the configuration of the AWS provided security group firewall. Refer:
+https://aws.amazon.com/compliance/shared-responsibility-
+model/#:~:text=The%20customer%20assumes%20responsibility%20and,AWS%20provided%20security%20group%20firewall.
+Controlling physical access to compute resources
+Encryption of EBS (Elastic Block Storage) volumes
+Q17) Is the SQL Server Audit feature supported in the Amazon RDS SQL Server engine?
+Yes
+No
+Q18) Which Amazon service can I use to define a virtual network that closely resembles a traditional data center?
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Amazon ServiceBus
+Amazon VPC 
+Explanation:-Amazon Virtual Private Cloud (Amazon VPC) enables you to launch AWS resources into a virtual network that you've defined. This virtual
+network closely resembles a traditional network that you'd operate in your own data center, with the benefits of using the scalable infrastructure of AWS.
+Refer: https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-
+vpc.html#:~:text=Amazon%20Virtual%20Private%20Cloud%20(Amazon,the%20scalable%20infrastructure%20of%20AWS.
+Amazon EMR
+Amazon RDS
+Q19) It is advised that you watch the Amazon CloudWatch "_____" metric (available via the AWS Management Console or Amazon
+Cloud Watch APIs) carefully and recreate the Read Replica should it fall behind due to replication errors.
+Single Replica 
+Explanation:-Search Results Featured snippet from the web Amazon RDS allows you to gain visibility into how far a read replica has fallen behind its
+source DB instance. The number of seconds that the read replica is behind the master is published as an Amazon CloudWatch metric ("Replica Lag")
+available via the AWS Management Console or Amazon CloudWatch APIs. Refer: https://acloud.guru/forums/aws-certified-sysops-administrator-
+associate/discussion/-KYSMGj7iTpg-gmqGLDE/what-is-replica-
+lag#:~:text=Amazon%20RDS%20allows%20you%20to,Console%20or%20Amazon%20CloudWatch%20APIs.
+Replica Lag
+Read Replica
+Write Lag
+Q20) When using the following AWS services, which should be implemented in multiple Availability Zones for high availability
+solutions? (Choose 2 answers)
+Amazon Elastic Load Balancing 
+Explanation:-Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances,
+containers, IP addresses, and Lambda functions. It can handle the varying load of your application traffic in a single Availability Zone or across multiple
+Availability Zones. Refer: https://aws.amazon.com/elasticloadbalancing/
+Amazon Elastic Compute Cloud (EC2) 
+Explanation:-Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure, resizable compute capacity in the cloud. It is designed
+to make web-scale cloud computing easier for developers. Amazon EC2's simple web service interface allows you to obtain and configure capacity with
+minimal friction. Refer: https://aws.amazon.com/ec2/
+Amazon DynamoDB
+Amazon Simple Notification Service (SNS)
+Amazon Simple Storage Service (S3)
+Q21) Your web application front end consists of multiple EC2 instances behind an Elastic Load Balancer. You configured ELB to
+perform health checks on these EC2 instances, if an instance fails to pass health checks, which statement will be true?
+The instance is replaced automatically by the ELB.
+The instance gets quarantined by the ELB for root cause analysis.
+The instance gets terminated automatically by the ELB.
+The ELB stops sending traffic to the instance that failed its health check.
+Q22) What AWS service automatically publishes access logs every five minutes?
+CloudTrail
+Elastic Load Balancer 
+Explanation:-Elastic Load Balancing publishes a log file for each load balancer node every 5 minutes. Log delivery is eventually consistent. The load
+balancer can deliver multiple logs for the same period. Refer: https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-
+logs.html#:~:text=Elastic%20Load%20Balancing%20publishes%20a,logs%20for%20the%20same%20period.
+VPC Flow Logs
+DNS Route 53
+Q23)
+You have developed a web-based application for file sharing that will allow customers to access files. There are a variety of sizes
+that include larger .pdf and video files.
+What two solution stacks could tenants use for an online file sharing service? (Select two)
+EC2, ELB, Auto-Scaling, S3
+Route 53, Auto-Scaling, DynamoDB
+EC2, Auto-Scaling, RDS
+AWS CloudFront 
+Explanation:-Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers
+globally with low latency, high transfer speeds, all within a developer-friendly environment. Refer: https://aws.amazon.com/cloudfront/
+Q24) What infrastructure services are provided to EC2 instances? (Select three)
+Transport
+Compute
+Storage 
+Explanation:-When designing your Windows applications to run on Amazon EC2, you can plan for rapid deployment and rapid reduction of compute and
+storage resources, based on your changing needs. Refer: https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2Win_Infrastructure.html
+VPN
+Security
+Support
+Q25) What steps are required from AWS console to copy an EBS-backed AMI for a database instance cross-region?
+Create Snapshot of Instance-store AMI, select Copy AMI option, select destination region
+Create Snapshot of EBS-backed AMI, select Copy Snapshot option, select destination region 
+Explanation:-Search Results Featured snippet from the web Copying an AMI. You can copy an Amazon Machine Image (AMI) within or across AWS
+Regions using the AWS Management Console, the AWS Command Line Interface or SDKs, or the Amazon EC2 API, all of which support the CopyImage
+action. You can copy both Amazon EBS-backed AMIs and instance-store-backed AMIs. Refer:
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html
+Select copy database volume and destination region
+Select Copy EBS-backed AMI option and destination region
+Create Snapshot of data volume, select Copy, select destination region
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q26) How is capacity (compute, storage and network speed) managed and assigned to EC2 instances?
+IOPS
+Instance type 
+Explanation:-Amazon EC2 provides a wide selection of instance types optimized to fit different use cases. Instance types comprise varying combinations
+of CPU, memory, storage, and networking capacity and give you the flexibility to choose the appropriate mix of resources for your applications. Each
+instance type includes one or more instance sizes, allowing you to scale your resources to the requirements of your target workload. Refer:
+https://aws.amazon.com/ec2/instance-types/
+AMI
+Auto-Scaling
+Q27) What storage type enable permanent attachment of volumes to EC2 instances?
+EBS 
+Explanation:-Amazon EBS offers data persistence, dynamic performance adjustments, and the ability to detach and reattach volumes, allowing you to
+resize clusters for big data analytics engines such as Hadoop and Spark. Refer: https://aws.amazon.com/ebs/?ebs-whats-new.sort-
+by=item.additionalFields.postDateTime&ebs-whats-new.sort-order=desc
+TDS
+RDS
+S3
+Instance store
+Q28) What is the recommended method for migrating (copying) an EC2 instance to a different region?
+Stop instance and copy AMI to destination region
+Select AMI associated with EC2 instance and use Copy AMI option 
+Explanation:-Moving an EC2 Instance to a Different Availability Zone/Region 
+1. Shutdown / stop the instance. 
+2. Right-click the instance and select Create 
+3. Image to make an AMI from the instance. 
+4. Go to the AMI page, right-click on the new AMI and select Launch Instance. 
+5. In the new instance settings, choose a specific (different) availability zone. 
+Refer: https://d1.awsstatic.com/whitepapers/AWS_Migrate_Resources_To_New_Region.pdf
+Terminate instance, select region, copy instance to destination region
+Cross-region copy is not currently supported
+Q29) What are two attributes that define an EC2 instance type?
+EBS volume storage
+License type
+vCPU 
+Explanation:-Refer: https://aws.amazon.com/ec2/instance-types/
+IP address
+Auto-Scaling
+Q30) For which of the following use cases are Simple Workflow Service (SWF) and Amazon EC2 an appropriate solution? (Choose 2
+answers)
+Using as an SNS (Simple Notification Service) endpoint to trigger execution of video transcoding jobs
+Orchestrating the execution of distributed and auditable business processes
+Managing a multi-step and multi-decision checkout process of an e-commerce website
+Using as an endpoint to collect thousands of data points per hour from a distributed fleet of sensors
+Using as a distributed session store for your web application
+Q31) Security groups act like a firewall at the instance level, whereas ____________ are an additional layer of security that act at the
+subnet level.
+DB Security Groups
+VPC Security Groups
+Network ACLs 
+Explanation:-A network access control list (ACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one
+or more subnets. You might set up network ACLs with rules similar to your security groups in order to add an additional layer of security to your VPC. Refer:
+https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-
+acls.html#:~:text=A%20network%20access%20control%20list,of%20security%20to%20your%20VPC.
+Q32)
+You launch an Amazon EC2 instance without an assigned AVVS identity and Access Management (IAM) role. Later, you decide that
+the instance should be running with an IAM role.
+Which action must you take in order to have a running Amazon EC2 instance with an IAM role assigned to it?
+Create an image of the instance, and use this image to launch a new instance with the desired IAM role assigned.
+Create an image of the instance, add a new IAM role with the same permissions as the desired IAM role, and deregister the image with the new role
+assigned.
+Create a new IAM role with the same permissions as an existing IAM role, and assign it to the running instance.
+Create an image of the instance, and register the image with an IAM role assigned and an Amazon EBS volume mapping.
+Q33) MySQL installations default to port _____.
+3306 
+Explanation:-The default MySQL port number is 3306. Refer: https://aws.amazon.com/getting-started/hands-on/create-mysql-db/
+443
+80
+1158
+Q34) What feature requires tenants to disable source/destination check?
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NAT 
+Explanation:-An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between your VPC
+and the internet. An internet gateway serves two purposes: to provide a target in your VPC route tables for internet-routable traffic, and to perform network
+address translation (NAT) for instances that have been assigned public IPv4 addresses. Refer:
+https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html
+VPC peering 
+Explanation:-Each EC2 instance performs source/destination checks by default. This means that the instance must be the source or destination of any
+traffic it sends or receives. However, a NAT instance must be able to send and receive traffic when the source or destination is not itself. Therefore, you
+must disable source/destination checks on the NAT instance.
+You can disable the SrcDestCheck attribute for a NAT instance that's either running or stopped using the console or the command line.
+To disable source/destination checking using the console
+Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+In the navigation pane, choose Instances.
+Select the NAT instance, choose Actions, Networking, Change Source/Dest. Check.
+For the NAT instance, verify that this attribute is disabled. Otherwise, choose Yes, Disable.
+If the NAT instance has a secondary network interface, choose it from Network interfaces on the Description tab and choose the interface ID to go to the
+network interfaces page. Choose Actions, Change Source/Dest. Check, disable the setting, and choose Save.
+Refer: https://docs.aws.amazon.com/vpc/latest/userguide/VPC_NAT_Instance.html
+Data replication
+Elastic IP (EIP)
+Internet gateway
+Q35) What's an ECU?
+Extended Cluster User.
+None of these.
+Elastic Computer Usage.
+Elastic Compute Unit. 
+Explanation:-Amazon EC2 uses a variety of measures to provide each instance with a consistent and predictable amount of CPU capacity. In order to
+make it easy for developers to compare CPU capacity between different instance types, we have defined an Amazon EC2 Compute Unit. The amount of
+CPU that is allocated to a particular instance is expressed in terms of these EC2 Compute Units. We use several benchmarks and tests to manage the
+consistency and predictability of the performance from an EC2 Compute Unit. The EC2 Compute Unit (ECU) provides the relative measure of the integer
+processing power of an Amazon EC2 instance. Over time, we may add or substitute measures that go into the definition of an EC2 Compute Unit, if we find
+metrics that will give you a clearer picture of compute capacity. Refer: https://aws.amazon.com/ec2/faqs/
+Q36) In order to optimize performance for a compute cluster that requires low inter-node latency, which of the following feature
+should you use?
+AWS Direct Connect
+EC2 Dedicated Instances
+Placement Groups 
+Explanation:-Cluster – packs instances close together inside an Availability Zone. This strategy enables workloads to achieve the low-latency network
+performance necessary for tightly-coupled node-to-node communication that is typical of HPC applications. Refer:
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html
+Multiple Availability Zones
+VPC private subnets
+Q37) What is the default maximum number of MFA devices in use per AWS account (at the root account level)?
+1 
+Explanation:-You can enable only one MFA device per AWS account root user or IAM user. Refer:
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable.html#:~:text=You%20can%20enable%20only%20one,root%20user%20or%20IAM%20user.
+5
+15
+10
+Q38) Please select the Amazon EC2 resource which can be tagged.
+Placement groups 
+Explanation:-To help categorize and manage your existing placement groups, you can tag them with custom metadata. For more information about how
+tags work, see Tagging your Amazon EC2 resources. When you tag a placement group, the instances that are launched into the placement group are not
+automatically tagged. Refer: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-
+groups.html#:~:text=To%20help%20categorize%20and%20manage,group%20are%20not%20automatically%20tagged.
+Elastic IP addresses
+Key pairs
+Amazon EBS snapshots
+Q39)
+You are using an m1.small EC2 Instance with one 300 GB EBS volume to host a relational database. You determined that write
+throughput to the database needs to be increased.
+Which of the following approaches can help achieve this? (Choose 2 answers)
+Increase the size of the EC2 Instance.
+Add an EBS volume and place into RAID 5.
+Place the instance in an Auto Scaling Groups
+Enable Multi-AZ mode.
+Use an array of EBS volumes.
+Put the database behind an Elastic Load Balancer.
+Q40) What does Amazon Route53 provide?
+A scalable Domain Name System. 
+Explanation:-Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. It is designed to give developers and
+businesses an extremely reliable and cost effective way to route end users to Internet applications by translating names like www.example.com into the
+numeric IP addresses like 192.0. Refer:
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://aws.amazon.com/route53/#:~:text=Amazon%20Route%2053%20is%20a,numeric%20IP%20addresses%20like%20192.0.
+None of these.
+A global Content Delivery Network.
+An SSH endpoint for Amazon EC2.
+Q41) What are the four levels of AWS Premium Support?
+Basic, Startup, Business, Enterprise
+Basic, Developer, Business, Enterprise 
+Explanation:-AWS Support offers four support plans: Basic, Developer, Business, and Enterprise. Refer:
+https://docs.aws.amazon.com/awssupport/latest/user/getting-
+started.html#:~:text=AWS%20Support%20offers%20four%20support,Developer%2C%20Business%2C%20and%20Enterprise.
+Free, Bronze, Silver, Gold
+All support is free
+Q42) Your company has asked you to capture and forward a real-time data stream on a massive scale directly to RedShift for analysis
+with BI tools. What AWS tool is most appropriate that provides the feature set and cost effective?
+CloudFront
+SNS
+Kinesis Firehose
+Elastic Map Reduce
+SQS
+DynamoDB
+Q43) What feature permits tenants to use a private domain name instead of the domain name that CloudFront assigns to a
+distribution?
+MX record
+CNAME record 
+Explanation:-In CloudFront, an alternate domain name, also known as a CNAME, lets you use your own domain name (for example, www.example.com )
+in your files' URLs instead of using the domain name that CloudFront assigns to your distribution. Refer:
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#:~:text=In%20CloudFront%2C%20an%20alternate%20domain,CloudFront%20assigns%20to%20your%20distribution.
+Route 53
+RTMP
+Signed URL
+Q44) What Amazon AWS service is available to guarantee the consuming of a unique message only once?
+Beanstalk
+SQL
+Exchange
+SQS 
+Explanation:-Standard queues provide at-least-once delivery, which means that each message is delivered at least once. FIFO queues provide exactly-
+once processing, which means that each message is delivered once and remains available until a consumer processes it and deletes it. Refer:
+https://aws.amazon.com/sqs/faqs/#:~:text=Q%3A%20Does%20Amazon%20SQS%20guarantee,processes%20it%20and%20deletes%20it.
+Q45) What is the fastest and easiest method for migrating an on-premises VMware virtual machine to the AWS cloud?
+AWS Storage Gateway
+AWS Server Migration Service 
+Explanation:- AWS Server Migration Service automates the migration of your on-premises VMware vSphere, Microsoft Hyper-V/SCVMM, and Azure virtual
+machines to the AWS Cloud. AWS SMS incrementally replicates your server VMs as cloud-hosted Amazon Machine Images (AMIs) ready for deployment on
+Amazon EC2. Refer: https://docs.aws.amazon.com/server-migration-service/latest/userguide/server-migration.html
+Amazon Marketplace
+EC2 Import/Export
+Q46) Select the stateless protocol from the following?
+HTTP 
+Explanation:-HTTP is called as a stateless protocol because each command is request is executed independently, without any knowledge of the requests
+that were executed before it. It is the protocol used for the web.
+TCP
+FTP
+SSH
+Q47) What are three valid endpoints for an API gateway?
+HTTP method
+Web server
+AWS service
+Lambda function
+RESTful API
+Q48) How is a volume selected (identified) when making an EBS Snapshot?
+account id
+volume id
+tag
+ARN 
+Explanation:-An Amazon Resource Name (ARN) is a file naming convention used to identify a particular resource in the Amazon Web Services (AWS)
+public cloud. ARNs, which are specific to AWS, help an administrator track and use AWS items and policies across AWS products and API calls.
+Q49) Does Route 53 support MX Records?
+It supports CNAME records, but not MX records.
+Yes.
+No
+Only Primary MX records. Secondary MX records are not supported.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q50) If I want my instance to run on a single-tenant hardware, which value do I have to set the instance's tenancy attribute to?
+Dedicated 
+Explanation:-Dedicated Instances are Amazon EC2 instances that run in a virtual private cloud (VPC) on hardware that's dedicated to a single customer.
+Dedicated Instances that belong to different AWS accounts are physically isolated at a hardware level, even if those accounts are linked to a single payer
+account. However, Dedicated Instances may share hardware with other instances from the same AWS account that are not Dedicated Instances. Refer:
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html
+Isolated
+One
+Reserved
+Q51) What is the charge for the data transfer incurred in replicating data between your primary and standby?
+Same as the standard data transfer charge 
+Explanation:-You are not charged for the data transfer incurred in replicating data between your primary and standby. Internet data transfer in and out of
+your DB instance is charged the same as with a standard deployment. Refer: https://aws.amazon.com/rds/faqs/
+Double the standard data transfer charge
+No charge. It is free.
+Half of the standard data transfer charge
+Q52) What are characteristics of Amazon S3? (Choose 2 answers)
+S3 allows you to store unlimited amounts of data. 
+Explanation:-Amazon S3 has various features you can use to organize and manage your data in ways that support specific use cases, enable cost
+efficiencies, enforce security, and meet compliance requirements. Data is stored as objects within resources called “buckets”, and a single object can be up
+to 5 terabytes in size. Refer:
+https://aws.amazon.com/s3/features/#:~:text=Amazon%20S3%20has%20various%20features,to%205%20terabytes%20in%20size.
+S3 offers Provisioned IOPS.
+S3 allows you to store objects of virtually unlimited size.
+S3 should be used to host a relational database.
+Objects are directly accessible via a URL.
+Q53) What is the name of licensing model in which I can use your existing Oracle Database licenses to run Oracle deployments on
+Amazon RDS?
+Role Bases License
+Bring Your Own License 
+Explanation:-Bring Your Own License (BYOL): In this licensing model, you can use your existing Oracle Database licenses to run Oracle deployments on
+Amazon RDS. To run a DB instance under the BYOL model, you must have the appropriate Oracle Database license (with Software Update License &
+Support) for the DB instance class and Oracle Database edition you wish to run. You must also follow Oracle's policies for licensing Oracle Database
+software in the cloud computing environment. DB instances reside in the Amazon EC2 environment, and Oracle's licensing policy for Amazon EC2 is
+located here. Refer: https://aws.amazon.com/rds/oracle/faqs/
+Enterprise License
+License Included
+Q54) How can you secure data at rest on an EBS volume?
+Use an encrypted file system on top of the EBS volume. 
+Explanation:-Refer: https://cloudacademy.com/blog/how-to-encrypt-an-ebs-volume-the-new-amazon-ebs-encryption/
+Create an IAM policy that restricts read and write access to the volume.
+Encrypt the volume using the S3 server-side encryption service.
+Attach the volume to an instance using EC2's SSL interface.
+Write the data randomly instead of sequentially.
+Q55) State whether the following statement holds Correct or Incorrect. "The new DB Instance that is created when you promote a
+Read Replica retains the backup window period."
+INCORRECT
+CORRECT
+Q56) Are you able to integrate a multi-factor token service with the AWS Platform?
+Yes, using the AWS multi-factor token devices to authenticate users on the AWS platform.
+No, you cannot integrate multi-factor token devices with the AWS platform.
+Yes, you can integrate private multi-factor token devices to authenticate users to the AWS platform.
+Q57) Which Amazon Elastic Compute Cloud feature can you query from within the instance to access instance properties?
+Instance metadata 
+Explanation:-Although you can only access instance metadata and user data from within the instance itself, the data is not protected by authentication or
+cryptographic methods. Anyone who has direct access to the instance, and potentially any software running on the instance, can view its metadata.
+Therefore, you should not store sensitive data, such as passwords or long-lived encryption keys, as user data. Refer:
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html
+Resource tags
+Instance user data
+Amazon Machine Image
+Q58)
+A photo-sharing service stores pictures in Amazon Simple Storage Service (S3) and allows application sign-in using an OpenID
+Connect-compatible identity provider.
+Which AWS Security Token Service approach to temporary access should you use for the Amazon S3 operations?
+SAML-based Identity Federation
+Cross-Account Access
+AWS Identity and Access Management roles
+Web Identity Federation 
+ 
+
+
+
+
+
+
+
+
+Explanation:-AWS Identity and Access Management (IAM) supports identity federation, which enables external identities, such as users in your corporate
+directory, to sign in to the AWS Management Console via single sign-on (SSO). Refer: https://aws.amazon.com/blogs/security/tag/web-identity-federation/
+Q59)
+You have an application running on an Amazon Elastic Compute Cloud instance, that uploads 5 GB video objects to Amazon Simple
+Storage Service (S3). Video uploads are taking longer than expected, resulting in poor application performance.
+Which method will help improve performance of your application?
+Leveraging Amazon CloudFront, use the HTTP POST method to reduce latency.
+Enable enhanced networking
+Use Amazon S3 multipart upload 
+Explanation:-Multipart Upload allows you to upload a single object as a set of parts. After all parts of your object are uploaded, Amazon S3 then presents
+the data as a single object. With this feature you can create parallel uploads, pause and resume an object upload, and begin uploads before you know the
+total object size. Refer: https://aws.amazon.com/about-aws/whats-new/2010/11/10/Amazon-S3-Introducing-Multipart-Upload/
+Use Amazon Elastic Block Store Provisioned IOPs and use an Amazon EBS-optimized instance
+Q60)
+You are deploying an application to collect votes for a very popular television show. Millions of users will submit votes using mobile
+devices. The votes must be collected into a durable, scalable, and highly available data store for real-time public tabulation.
+Which service should you use?
+Amazon Kinesis 
+Explanation:-Amazon Kinesis Data Streams is a scalable and durable real-time data streaming service that can continuously capture gigabytes of data per
+second from hundreds of thousands of sources. Refer:
+https://aws.amazon.com/kinesis/#:~:text=Amazon%20Kinesis%20Data%20Streams%20is,streams%20into%20AWS%20data%20stores
+Amazon Redshift
+Amazon DynamoDB
+Amazon Simple Queue Service
+ 
